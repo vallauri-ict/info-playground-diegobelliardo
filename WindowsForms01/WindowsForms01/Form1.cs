@@ -41,5 +41,22 @@ namespace WindowsForms01
             f2b.Text = "Form 2 con passaggio di TextBox";
             f2b.Show();
         }
+
+        private void btnFormModale_Click(object sender, EventArgs e)
+        {
+            FormModale fm = new FormModale();
+            if (fm.ShowDialog() == DialogResult.OK)
+            {
+                txtNomeFM.Text = fm.nome;
+                txtEtaFM.Text = fm.eta;
+                MessageBox.Show("Premuto OK!");
+            }
+            else
+            {
+                txtNomeFM.Text = "";
+                txtEtaFM.Text = "";
+                MessageBox.Show("Premuto Annulla!");
+            }
+        }
     }
 }

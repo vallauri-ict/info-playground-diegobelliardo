@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{33E18F0B-6BAA-46D4-94CB-EC7E2F3140A8}</ProjectGuid>
+    <ProjectGuid>{9754B851-3AB2-490F-9F7F-772354895A1A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WindowsForms01</RootNamespace>
-    <AssemblyName>WindowsForms01</AssemblyName>
+    <RootNamespace>_02_FormMDI</RootNamespace>
+    <AssemblyName>02-FormMDI</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,43 +46,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Figlia1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Figlia1.Designer.cs">
+      <DependentUpon>Figlia1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Figlia2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Figlia2.Designer.cs">
+      <DependentUpon>Figlia2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="ModalEsci.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormFiglia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormFiglia.Designer.cs">
-      <DependentUpon>FormFiglia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormModale.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormModale.Designer.cs">
-      <DependentUpon>FormModale.cs</DependentUpon>
+    <Compile Include="ModalEsci.Designer.cs">
+      <DependentUpon>ModalEsci.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Figlia1.resx">
+      <DependentUpon>Figlia1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Figlia2.resx">
+      <DependentUpon>Figlia2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormFiglia.resx">
-      <DependentUpon>FormFiglia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormModale.resx">
-      <DependentUpon>FormModale.cs</DependentUpon>
+    <EmbeddedResource Include="ModalEsci.resx">
+      <DependentUpon>ModalEsci.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
