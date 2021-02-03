@@ -37,7 +37,7 @@ namespace _12_EsStagisti
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbClasse = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbAzienda = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbSezione = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -125,17 +125,17 @@ namespace _12_EsStagisti
             this.cmbClasse.Size = new System.Drawing.Size(121, 21);
             this.cmbClasse.TabIndex = 8;
             // 
-            // comboBox1
+            // cmbAzienda
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbAzienda.FormattingEnabled = true;
+            this.cmbAzienda.Items.AddRange(new object[] {
             "Azienda 1",
             "Azienda 2",
             "Azienda 3"});
-            this.comboBox1.Location = new System.Drawing.Point(350, 62);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 10;
+            this.cmbAzienda.Location = new System.Drawing.Point(350, 62);
+            this.cmbAzienda.Name = "cmbAzienda";
+            this.cmbAzienda.Size = new System.Drawing.Size(121, 21);
+            this.cmbAzienda.TabIndex = 10;
             // 
             // label5
             // 
@@ -214,15 +214,18 @@ namespace _12_EsStagisti
             this.btnInserisci.TabIndex = 17;
             this.btnInserisci.Text = "Inserisci";
             this.btnInserisci.UseVisualStyleBackColor = true;
+            this.btnInserisci.Click += new System.EventHandler(this.btnInserisci_Click);
             // 
             // btnRicerca
             // 
+            this.btnRicerca.Enabled = false;
             this.btnRicerca.Location = new System.Drawing.Point(265, 133);
             this.btnRicerca.Name = "btnRicerca";
             this.btnRicerca.Size = new System.Drawing.Size(223, 23);
             this.btnRicerca.TabIndex = 18;
             this.btnRicerca.Text = "Ricerca Azienda";
             this.btnRicerca.UseVisualStyleBackColor = true;
+            this.btnRicerca.Click += new System.EventHandler(this.btnRicerca_Click);
             // 
             // dgvStudenti
             // 
@@ -274,7 +277,7 @@ namespace _12_EsStagisti
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cmbSezione);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbAzienda);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmbClasse);
             this.Controls.Add(this.label4);
@@ -286,6 +289,7 @@ namespace _12_EsStagisti
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudenti)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -302,7 +306,7 @@ namespace _12_EsStagisti
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbClasse;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbAzienda;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbSezione;
         private System.Windows.Forms.Label label6;
