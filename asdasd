@@ -1,0 +1,85 @@
+[33mcommit 6a30c31ad0be30776d75be85835774b77bb4b4ed[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: diegobelliardo <57402618+diegobelliardo@users.noreply.github.com>
+Date:   Wed Jan 27 10:08:47 2021 +0100
+
+    Nuovo esercizio EsStagisti
+    
+    Iniziato nuovo esercizio che fa uso di ereditarietà e delegate
+
+[33mcommit 6d2a0d3af6407ab26f9cbff7a0bfd858e7745a49[m
+Author: diegobelliardo <57402618+diegobelliardo@users.noreply.github.com>
+Date:   Fri Jan 15 09:58:48 2021 +0100
+
+    Terminato primo esercizio sulle classi astratte preso dalle dispense di Mana
+
+[33mcommit ab2c4cee91bbc4d9beb7a88c2d0fd8a2922c6eb9[m
+Author: diegobelliardo <57402618+diegobelliardo@users.noreply.github.com>
+Date:   Fri Dec 18 09:26:00 2020 +0100
+
+    Terminato es 10
+
+[33mcommit f75abffaaa86296aaa2d0d0daafdbbfcf21df389[m
+Author: diegobelliardo <57402618+diegobelliardo@users.noreply.github.com>
+Date:   Fri Nov 13 12:02:14 2020 +0100
+
+    Iniziato es 08-Lista da finire
+
+[33mcommit 8ec915b3f5ad744810cde99630488e7c89ceef39[m
+Author: diegobelliardo <57402618+diegobelliardo@users.noreply.github.com>
+Date:   Wed Nov 4 12:28:23 2020 +0100
+
+    Esercizio sulle classi indexate
+
+[33mcommit e210aadd051fc52943964e6e07bc20bdade53019[m
+Author: diegobelliardo <57402618+diegobelliardo@users.noreply.github.com>
+Date:   Fri Oct 30 09:54:17 2020 +0100
+
+    Realizzati esercizi: 04 sui metodi factory e 05 sulle classi singleton
+
+[33mcommit 8d8ae39a2bef4520376ea24173dc92e42d1ea880[m
+Author: diegobelliardo <57402618+diegobelliardo@users.noreply.github.com>
+Date:   Wed Oct 28 10:59:46 2020 +0100
+
+    Membri statici, classi statiche
+
+[33mcommit 2888aaa4078cef01c4f1b573c457b8c9d660d71a[m
+Author: Stud. Pietro Gariuolo <p.gariuolo.0893@vallauri.net>
+Date:   Wed Oct 21 10:54:08 2020 +0200
+
+    Iniziato es OOP01. Ancora da vedere l'esercizio delle dispense sull'overload dei costruttori
+
+[33mcommit cf30f08bb21d3e0392d7ea90746a384e0eb6d640[m
+Author: Prof. Belliardo Diego <diego.belliardo@vallauri.net>
+Date:   Wed Oct 21 08:41:57 2020 +0200
+
+    Aggiunto 01 davanti al primo progetto per averli in ordine
+
+[33mcommit c84ca3a4fd8f302cfae52e0506eefc2cc830be60[m
+Author: Prof. Belliardo Diego <diego.belliardo@vallauri.net>
+Date:   Wed Oct 7 09:38:21 2020 +0200
+
+    Terminato Es1 e fatto Es2: con form MDI, menu e toolStrip
+
+[33mcommit 3bdb4c1b2d671ad029e456d386a7dbdc94d999e1[m
+Author: Prof. Belliardo Diego <diego.belliardo@vallauri.net>
+Date:   Wed Sep 30 09:47:03 2020 +0200
+
+    Implementate le Form Figlie
+
+[33mcommit d868664d243ea1f2ef4c765333a28be2987e14bb[m
+Author: diegobelliardo <57402618+diegobelliardo@users.noreply.github.com>
+Date:   Wed Sep 23 12:08:32 2020 +0200
+
+    Create README.md
+
+[33mcommit 3724375bce16c6d1e44078d29dca2d5290e1d589[m
+Author: diegobelliardo <57402618+diegobelliardo@users.noreply.github.com>
+Date:   Wed Sep 23 12:05:37 2020 +0200
+
+    Create README.md
+
+[33mcommit 0c21328c4cd80170f8b3ac0565d80118c60190c7[m
+Author: diegobelliardo <57402618+diegobelliardo@users.noreply.github.com>
+Date:   Wed Sep 23 11:57:33 2020 +0200
+
+    first commit
