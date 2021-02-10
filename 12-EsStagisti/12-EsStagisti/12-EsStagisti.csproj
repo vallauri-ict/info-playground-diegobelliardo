@@ -47,7 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsAlunno.cs" />
+    <Compile Include="clsElenco.cs" />
     <Compile Include="clsPersona.cs" />
+    <Compile Include="clsStagista.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

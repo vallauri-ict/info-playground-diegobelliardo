@@ -38,13 +38,21 @@ namespace _12_EsStagisti
             set => specializzazione = value;
         }
 
-        public clsAlunno(string nome, string cognome, string città) : base(nome, cognome, città)
+        public clsAlunno(string nome, string cognome, string città, string classe, string sezione, string spec) 
+            : base(nome, cognome, città)
         {
+            Classe = Convert.ToChar(classe);
+            Specializzazione = spec;
+            Sezione = Convert.ToChar(sezione);
+            progressivo++;
+            matricola = "A" + progressivo.ToString().PadLeft(5, '0');
         }
 
         public override string visualizza()
         {
-            throw new NotImplementedException();
+            return Matricola + " " + Nome + " " + Cognome + " " + Città + " " + Classe + " " 
+                    + Sezione + " " + Specializzazione;
+
         }
     }
 }
