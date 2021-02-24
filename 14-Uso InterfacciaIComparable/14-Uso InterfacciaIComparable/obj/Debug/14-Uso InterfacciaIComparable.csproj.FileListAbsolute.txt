@@ -7,3 +7,13 @@ C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\14-Uso Interfacc
 C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\14-Uso InterfacciaIComparable\14-Uso InterfacciaIComparable\obj\Debug\14-Uso InterfacciaIComparable.csproj.GenerateResource.cache
 C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\14-Uso InterfacciaIComparable\14-Uso InterfacciaIComparable\obj\Debug\14-Uso InterfacciaIComparable.exe
 C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\14-Uso InterfacciaIComparable\14-Uso InterfacciaIComparable\obj\Debug\14-Uso InterfacciaIComparable.pdb
+C:\Users\fenic\Desktop\info-playground-diegobelliardo\14-Uso InterfacciaIComparable\14-Uso InterfacciaIComparable\bin\Debug\14-Uso InterfacciaIComparable.exe.config
+C:\Users\fenic\Desktop\info-playground-diegobelliardo\14-Uso InterfacciaIComparable\14-Uso InterfacciaIComparable\bin\Debug\14-Uso InterfacciaIComparable.exe
+C:\Users\fenic\Desktop\info-playground-diegobelliardo\14-Uso InterfacciaIComparable\14-Uso InterfacciaIComparable\bin\Debug\14-Uso InterfacciaIComparable.pdb
+C:\Users\fenic\Desktop\info-playground-diegobelliardo\14-Uso InterfacciaIComparable\14-Uso InterfacciaIComparable\obj\Debug\14-Uso InterfacciaIComparable.csprojAssemblyReference.cache
+C:\Users\fenic\Desktop\info-playground-diegobelliardo\14-Uso InterfacciaIComparable\14-Uso InterfacciaIComparable\obj\Debug\_14_Uso_InterfacciaIComparable.Form1.resources
+C:\Users\fenic\Desktop\info-playground-diegobelliardo\14-Uso InterfacciaIComparable\14-Uso InterfacciaIComparable\obj\Debug\_14_Uso_InterfacciaIComparable.Properties.Resources.resources
+C:\Users\fenic\Desktop\info-playground-diegobelliardo\14-Uso InterfacciaIComparable\14-Uso InterfacciaIComparable\obj\Debug\14-Uso InterfacciaIComparable.csproj.GenerateResource.cache
+C:\Users\fenic\Desktop\info-playground-diegobelliardo\14-Uso InterfacciaIComparable\14-Uso InterfacciaIComparable\obj\Debug\14-Uso InterfacciaIComparable.csproj.CoreCompileInputs.cache
+C:\Users\fenic\Desktop\info-playground-diegobelliardo\14-Uso InterfacciaIComparable\14-Uso InterfacciaIComparable\obj\Debug\14-Uso InterfacciaIComparable.exe
+C:\Users\fenic\Desktop\info-playground-diegobelliardo\14-Uso InterfacciaIComparable\14-Uso InterfacciaIComparable\obj\Debug\14-Uso InterfacciaIComparable.pdb
