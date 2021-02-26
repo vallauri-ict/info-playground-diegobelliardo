@@ -1,0 +1,10 @@
+C:\Users\fenic\Desktop\info-playground-diegobelliardo\17-PrimoEsDispenseMana[Delegate]\17-PrimoEsDispenseMana[Delegate]\bin\Debug\17-PrimoEsDispenseMana[Delegate].exe.config
+C:\Users\fenic\Desktop\info-playground-diegobelliardo\17-PrimoEsDispenseMana[Delegate]\17-PrimoEsDispenseMana[Delegate]\bin\Debug\17-PrimoEsDispenseMana[Delegate].exe
+C:\Users\fenic\Desktop\info-playground-diegobelliardo\17-PrimoEsDispenseMana[Delegate]\17-PrimoEsDispenseMana[Delegate]\bin\Debug\17-PrimoEsDispenseMana[Delegate].pdb
+C:\Users\fenic\Desktop\info-playground-diegobelliardo\17-PrimoEsDispenseMana[Delegate]\17-PrimoEsDispenseMana[Delegate]\obj\Debug\17-PrimoEsDispenseMana[Delegate].csprojAssemblyReference.cache
+C:\Users\fenic\Desktop\info-playground-diegobelliardo\17-PrimoEsDispenseMana[Delegate]\17-PrimoEsDispenseMana[Delegate]\obj\Debug\_17_PrimoEsDispenseMana_Delegate_.Form1.resources
+C:\Users\fenic\Desktop\info-playground-diegobelliardo\17-PrimoEsDispenseMana[Delegate]\17-PrimoEsDispenseMana[Delegate]\obj\Debug\_17_PrimoEsDispenseMana_Delegate_.Properties.Resources.resources
+C:\Users\fenic\Desktop\info-playground-diegobelliardo\17-PrimoEsDispenseMana[Delegate]\17-PrimoEsDispenseMana[Delegate]\obj\Debug\17-PrimoEsDispenseMana[Delegate].csproj.GenerateResource.cache
+C:\Users\fenic\Desktop\info-playground-diegobelliardo\17-PrimoEsDispenseMana[Delegate]\17-PrimoEsDispenseMana[Delegate]\obj\Debug\17-PrimoEsDispenseMana[Delegate].csproj.CoreCompileInputs.cache
+C:\Users\fenic\Desktop\info-playground-diegobelliardo\17-PrimoEsDispenseMana[Delegate]\17-PrimoEsDispenseMana[Delegate]\obj\Debug\17-PrimoEsDispenseMana[Delegate].exe
+C:\Users\fenic\Desktop\info-playground-diegobelliardo\17-PrimoEsDispenseMana[Delegate]\17-PrimoEsDispenseMana[Delegate]\obj\Debug\17-PrimoEsDispenseMana[Delegate].pdb

@@ -10,6 +10,11 @@ using System.Windows.Forms;
 
 namespace _16_PrimoEsempioDelegate
 {
+    //Dichiarazione del delegate che accetta 2 parametri interi
+    //e restituisce un valore intero
+    public delegate int Operazione(int a, int b);
+    
+    
     public partial class Form1 : Form
     {
         public Form1()
@@ -17,11 +22,7 @@ namespace _16_PrimoEsempioDelegate
             InitializeComponent();
         }
 
-        //Dichiarazione del delegate che accetta 2 parametri interi
-        //e restituisce un valore intero
-        public delegate int Operazione(int a, int b);
-
-
+        
         //dichiaro le 3 funzioni che utilizzerò con il delegate
         public int Somma(int x, int y)
         {
@@ -37,6 +38,19 @@ namespace _16_PrimoEsempioDelegate
         {
             return x * y;
         }
+
+        public int dif(int a, int b, Operazione op)
+        {
+            if (a>=b)
+            {
+                return op(a, b);
+            }
+            else
+            {
+                return op(b, a);
+            }
+        }
+
 
         private void btnSomma_Click(object sender, EventArgs e)
         {
@@ -55,6 +69,22 @@ namespace _16_PrimoEsempioDelegate
 
             //Richiamo 
             MessageBox.Show("Prodotto= " + op(10, 15));
+        }
+
+        private void btnSottrazione_Click(object sender, EventArgs e)
+        {
+            /*
+            Operazione op = Sottrazione;
+
+            MessageBox.Show("Sottrazione= "+op(15,10));
+            */
+
+            //3° metodo
+            //istanziamo il delegato
+            Operazione op = Sottrazione;  //puntatore a sottrazione
+
+            //richiamo dif passandogli come parametro il delegato
+            MessageBox.Show("differenza = " + dif(10, 12, op).ToString());
         }
     }
 }
