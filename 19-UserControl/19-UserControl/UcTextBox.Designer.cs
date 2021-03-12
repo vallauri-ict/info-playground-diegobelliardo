@@ -1,14 +1,13 @@
-﻿
-namespace _19_UserControl
+﻿namespace _19_UserControl
 {
     partial class UcTextBox
     {
-        /// <summary> 
+        /// <summary>
         /// Variabile di progettazione necessaria.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// Pulire le risorse in uso.
         /// </summary>
         /// <param name="disposing">ha valore true se le risorse gestite devono essere eliminate, false in caso contrario.</param>
@@ -23,7 +22,7 @@ namespace _19_UserControl
 
         #region Codice generato da Progettazione componenti
 
-        /// <summary> 
+        /// <summary>
         /// Metodo necessario per il supporto della finestra di progettazione. Non modificare 
         /// il contenuto del metodo con l'editor di codice.
         /// </summary>
@@ -34,20 +33,20 @@ namespace _19_UserControl
             // 
             // txtTesto
             // 
-            this.txtTesto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTesto.Location = new System.Drawing.Point(0, 0);
             this.txtTesto.Name = "txtTesto";
-            this.txtTesto.Size = new System.Drawing.Size(206, 22);
+            this.txtTesto.Size = new System.Drawing.Size(100, 20);
             this.txtTesto.TabIndex = 0;
-            this.txtTesto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTesto_KeyPress);
+            this.txtTesto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnKeyPress);
+            this.txtTesto.Leave += new System.EventHandler(this.OnLeave);
             // 
             // UcTextBox
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.txtTesto);
             this.Name = "UcTextBox";
-            this.Size = new System.Drawing.Size(206, 23);
+            this.Size = new System.Drawing.Size(102, 22);
             this.ResumeLayout(false);
             this.PerformLayout();
 

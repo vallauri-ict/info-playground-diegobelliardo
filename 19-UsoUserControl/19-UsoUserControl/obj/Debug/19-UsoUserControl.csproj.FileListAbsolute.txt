@@ -1,0 +1,9 @@
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo-2020-4binf\19-UsoUserControl\19-UsoUserControl\bin\Debug\19-UsoUserControl.exe.config
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo-2020-4binf\19-UsoUserControl\19-UsoUserControl\bin\Debug\19-UsoUserControl.exe
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo-2020-4binf\19-UsoUserControl\19-UsoUserControl\bin\Debug\19-UsoUserControl.pdb
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo-2020-4binf\19-UsoUserControl\19-UsoUserControl\obj\Debug\19-UsoUserControl.csprojResolveAssemblyReference.cache
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo-2020-4binf\19-UsoUserControl\19-UsoUserControl\obj\Debug\_19_UsoUserControl.Form1.resources
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo-2020-4binf\19-UsoUserControl\19-UsoUserControl\obj\Debug\_19_UsoUserControl.Properties.Resources.resources
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo-2020-4binf\19-UsoUserControl\19-UsoUserControl\obj\Debug\19-UsoUserControl.csproj.GenerateResource.Cache
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo-2020-4binf\19-UsoUserControl\19-UsoUserControl\obj\Debug\19-UsoUserControl.exe
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo-2020-4binf\19-UsoUserControl\19-UsoUserControl\obj\Debug\19-UsoUserControl.pdb

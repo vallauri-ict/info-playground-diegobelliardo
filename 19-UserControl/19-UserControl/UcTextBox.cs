@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,37 +10,40 @@ using System.Windows.Forms;
 
 namespace _19_UserControl
 {
-    public partial class UcTextBox : UserControl
+    public partial class UcTextBox: UserControl
     {
-
         private bool numero = false;  // se true la textbox accetta solo numeri
         private string testo;         // testo della textbox
         private int cifreDecimali = 0; //countiene il numero di cifre decimali (dopo la virgola)
 
         public bool Numero
         {
-            get => numero;
-            set => numero = value;
+            get { return numero; }
+            set { numero = value; }
         }
 
         public string Testo
         {
-            get => testo=txtTesto.Text;
+            get
+            {
+                testo = txtTesto.Text;
+                return testo;
+            }
             set
             {
                 testo = value;
                 txtTesto.Text = testo;
-            } 
+            }
         }
 
         public int CifreDecimali
         {
-            get => cifreDecimali;
+            get { return cifreDecimali; }
             set
             {
                 cifreDecimali = value;
                 ReimpostaTesto();
-            } 
+            }
         }
 
         public UcTextBox()
@@ -51,12 +54,12 @@ namespace _19_UserControl
 
         private void ReimpostaTesto()
         {
-            if (numero && Testo!="")
+            if (numero && Testo != "")
             {
                 try
                 {
                     //controllare che non ci siano più di 1 virgola
-                    if (ContaVirgola(Testo)>1)
+                    if (ContaVirgola(Testo) > 1)
                     {
                         throw new Exception("Ci sono troppe virgole");
                     }
@@ -97,22 +100,21 @@ namespace _19_UserControl
             Testo = "";
         }
 
-        private void TxtTesto_KeyPress(object sender, KeyPressEventArgs e)
+        private void OnKeyPress(object sender, KeyPressEventArgs e)
         {
-
-        }
-
-        /*
-        private void TxtTesto_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (numero)
-            {                               //  char.IsPunctuation()
+            if (Numero)
+            {
                 if (!(char.IsDigit(e.KeyChar) || e.KeyChar == ',' || char.IsControl(e.KeyChar)))
                 {
-                    throw new NotImplementedException();
+                    e.Handled = true;
+                    //throw new NotImplementedException();
                 }
             }
         }
-        */
+
+        private void OnLeave(object sender, EventArgs e)
+        {
+            ReimpostaTesto();
+        }
     }
 }

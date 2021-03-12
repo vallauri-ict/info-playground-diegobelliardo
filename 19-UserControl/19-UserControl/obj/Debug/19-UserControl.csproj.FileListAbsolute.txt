@@ -1,8 +1,7 @@
-C:\Users\fenic\Desktop\info-playground-diegobelliardo\19-UserControl\19-UserControl\obj\Debug\19-UserControl.csprojAssemblyReference.cache
-C:\Users\fenic\Desktop\info-playground-diegobelliardo\19-UserControl\19-UserControl\obj\Debug\_19_UserControl.UcTextBox.resources
-C:\Users\fenic\Desktop\info-playground-diegobelliardo\19-UserControl\19-UserControl\obj\Debug\19-UserControl.csproj.GenerateResource.cache
-C:\Users\fenic\Desktop\info-playground-diegobelliardo\19-UserControl\19-UserControl\obj\Debug\19-UserControl.csproj.CoreCompileInputs.cache
-C:\Users\fenic\Desktop\info-playground-diegobelliardo\19-UserControl\19-UserControl\bin\Debug\19-UserControl.dll
-C:\Users\fenic\Desktop\info-playground-diegobelliardo\19-UserControl\19-UserControl\bin\Debug\19-UserControl.pdb
-C:\Users\fenic\Desktop\info-playground-diegobelliardo\19-UserControl\19-UserControl\obj\Debug\19-UserControl.dll
-C:\Users\fenic\Desktop\info-playground-diegobelliardo\19-UserControl\19-UserControl\obj\Debug\19-UserControl.pdb
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo-2020-4binf\19-UserControl\19-UserControl\bin\Debug\19-UserControl.dll
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo-2020-4binf\19-UserControl\19-UserControl\bin\Debug\19-UserControl.pdb
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo-2020-4binf\19-UserControl\19-UserControl\obj\Debug\19-UserControl.csprojResolveAssemblyReference.cache
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo-2020-4binf\19-UserControl\19-UserControl\obj\Debug\_19_UserControl.UcTextBox.resources
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo-2020-4binf\19-UserControl\19-UserControl\obj\Debug\19-UserControl.csproj.GenerateResource.Cache
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo-2020-4binf\19-UserControl\19-UserControl\obj\Debug\19-UserControl.dll
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo-2020-4binf\19-UserControl\19-UserControl\obj\Debug\19-UserControl.pdb
