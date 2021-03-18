@@ -3,4 +3,4 @@
 _Prof. Diego Belliardo_
 
 
-### Qua andremo ad inserire i vari progetti a scopo didattico che faremo durante le lezioni
+### Vari progetti svolti durante le lezioni con le varie classi
