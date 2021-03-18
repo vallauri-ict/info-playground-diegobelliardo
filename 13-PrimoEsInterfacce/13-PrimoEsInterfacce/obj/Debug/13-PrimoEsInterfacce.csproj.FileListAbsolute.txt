@@ -1,0 +1,9 @@
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\13-PrimoEsInterfacce\13-PrimoEsInterfacce\bin\Debug\13-PrimoEsInterfacce.exe.config
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\13-PrimoEsInterfacce\13-PrimoEsInterfacce\bin\Debug\13-PrimoEsInterfacce.exe
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\13-PrimoEsInterfacce\13-PrimoEsInterfacce\bin\Debug\13-PrimoEsInterfacce.pdb
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\13-PrimoEsInterfacce\13-PrimoEsInterfacce\obj\Debug\13-PrimoEsInterfacce.csprojAssemblyReference.cache
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\13-PrimoEsInterfacce\13-PrimoEsInterfacce\obj\Debug\_13_PrimoEsInterfacce.Form1.resources
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\13-PrimoEsInterfacce\13-PrimoEsInterfacce\obj\Debug\_13_PrimoEsInterfacce.Properties.Resources.resources
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\13-PrimoEsInterfacce\13-PrimoEsInterfacce\obj\Debug\13-PrimoEsInterfacce.csproj.GenerateResource.cache
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\13-PrimoEsInterfacce\13-PrimoEsInterfacce\obj\Debug\13-PrimoEsInterfacce.exe
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\13-PrimoEsInterfacce\13-PrimoEsInterfacce\obj\Debug\13-PrimoEsInterfacce.pdb
