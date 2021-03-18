@@ -1,0 +1,7 @@
+1) SELECT Nome FROM Sale WHERE Citta = 'Pisa'
+2) SELECT Titolo FROM Film WHERE Regista = 'F. Fellini' AND AnnoProduzione > 1960
+3) SELECT Titolo, Durata FROM Film WHERE Genere = 'Fantascienza' AND AnnoProduzione > 1960 AND (Nazionalita = 'Francese' OR Nazionalita = 'Giapponese')
+4) SELECT Titolo FROM Film WHERE (Genere = 'Fantascienza' AND Nazionalita = 'Giapponese' AND AnnoProduzione > 1960) OR Nazionalita = 'Francese'
+5) SELECT Titolo FROM Film WHERE Regista = (SELECT Regista FROM Film WHERE Titolo = 'Casablanca')
+6) SELECT Titolo, Genere FROM Film f, Proiezioni p WHERE p.CodFilm = f.CodFilm AND p.DataProiezione = '25/12/2004'
+7) SELECT Titolo, Genere FROM Film f, Proiezioni p, Sale s WHERE p.CodFilm = f.CodFilm AND p.DataProiezione = '25/12/2004' AND p.CodSala = s.CodSala AND s.Citta = 'Napoli'

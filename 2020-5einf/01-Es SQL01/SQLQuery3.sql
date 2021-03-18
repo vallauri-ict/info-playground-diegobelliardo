@@ -1,0 +1,1 @@
+﻿SELECT Titolo, Genere FROM Film f, Proiezioni p, Sale s WHERE p.CodFilm = f.CodFilm AND p.DataProiezione = '25/12/2004' AND p.CodSala = s.CodSala AND s.Citta = 'Napoli'
