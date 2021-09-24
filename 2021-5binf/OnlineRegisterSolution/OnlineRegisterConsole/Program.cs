@@ -1,10 +1,16 @@
 ﻿using System;
 using System.Data.SqlClient;
+using OnlineRegisterClassLibrary;
 
 namespace OnlineRegisterConsole
 {
     class Program
     {
+        private const string scriptPath =
+            @"C:\Users\fenic\Desktop\info-playground-diegobelliardo\2021-5binf\OnlineRegisterSolution\Data\OnlineRegister\";
+        private static dbTools db =
+            new dbTools(
+                @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\fenic\Desktop\info-playground-diegobelliardo\2021-5binf\OnlineRegisterSolution\Data\OnlineRegister\Register.mdf;Integrated Security=True;Connect Timeout=30");
         static void Main(string[] args)
         {
             Console.Title="Online Register";
@@ -31,14 +37,23 @@ namespace OnlineRegisterConsole
                 switch (choise)
                 {
                     case '1':
-                        
-                        StudentList();
+                        Console.Write("\n*** STUDENT LIST ***\n");
+                        Console.Write(db.getTableList("Student"));
+                        Console.Write("************************\n");
                         Console.ReadKey(true);
                         break;
                     case '2':
                         Console.WriteLine("Call class list");
                         Console.ReadKey(true);
                         break;
+                    case 't':
+                    case 'T':
+                        InitializzeStudent();
+                        break;
+                    case 'x':
+                    case 'X':
+                        break;
+
                     default:
                         Console.WriteLine("Work in progress");
                         Console.ReadKey(true);
@@ -48,27 +63,12 @@ namespace OnlineRegisterConsole
             } while (choise !='x' && choise !='X');
         }
 
-        public static void StudentList()
+        private static void InitializzeStudent()
         {
-            string connStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\fenic\Desktop\info-playground-diegobelliardo\2021-5binf\OnlineRegisterSolution\Data\OnlineRegister\Register.mdf;Integrated Security=True;Connect Timeout=30";
-            using (SqlConnection dbConn = new SqlConnection(connStr))
-            {
-                using (SqlCommand dbCmd=new SqlCommand("SELECT * FROM Student",dbConn))
-                {
-                    dbConn.Open();
-                    using (SqlDataReader dbReader = dbCmd.ExecuteReader())
-                    {
-                        while (dbReader.Read())
-                        {
-                            Console.WriteLine(dbReader.GetString(1)+" - "+dbReader.GetString(2));
-                        }
-                    }
-                }
-                    
-
-
-
-            }
+            Console.Write("\n*** INITIALIZZE STUDENT TABLE ***\n");
+            Console.Write(db.executeSqlScript(scriptPath+ "Student.sql"));
+            Console.Write("");
+            Console.ReadKey(true);
         }
     }
 }
