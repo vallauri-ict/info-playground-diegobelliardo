@@ -1,0 +1,12 @@
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\2021-4binf\WindowsForms02\WindowsForms02\bin\Debug\WindowsForms02.exe.config
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\2021-4binf\WindowsForms02\WindowsForms02\bin\Debug\WindowsForms02.exe
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\2021-4binf\WindowsForms02\WindowsForms02\bin\Debug\WindowsForms02.pdb
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\2021-4binf\WindowsForms02\WindowsForms02\obj\Debug\WindowsForms02.csprojAssemblyReference.cache
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\2021-4binf\WindowsForms02\WindowsForms02\obj\Debug\WindowsForms02.Figlia1.resources
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\2021-4binf\WindowsForms02\WindowsForms02\obj\Debug\WindowsForms02.Figlia2.resources
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\2021-4binf\WindowsForms02\WindowsForms02\obj\Debug\WindowsForms02.Form1.resources
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\2021-4binf\WindowsForms02\WindowsForms02\obj\Debug\WindowsForms02.Properties.Resources.resources
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\2021-4binf\WindowsForms02\WindowsForms02\obj\Debug\WindowsForms02.csproj.GenerateResource.cache
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\2021-4binf\WindowsForms02\WindowsForms02\obj\Debug\WindowsForms02.exe
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\2021-4binf\WindowsForms02\WindowsForms02\obj\Debug\WindowsForms02.pdb
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\2021-4binf\WindowsForms02\WindowsForms02\obj\Debug\WindowsForms02.ModaleEsci.resources
