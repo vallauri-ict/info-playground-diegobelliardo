@@ -77,5 +77,11 @@ namespace WindowsForms02
                 e.Cancel=true;
             }
         }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Form2 f = new Form2();
+            f.ShowDialog();
+        }
     }
 }

@@ -10,3 +10,4 @@ C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\2021-4binf\Windo
 C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\2021-4binf\WindowsForms02\WindowsForms02\obj\Debug\WindowsForms02.exe
 C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\2021-4binf\WindowsForms02\WindowsForms02\obj\Debug\WindowsForms02.pdb
 C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\2021-4binf\WindowsForms02\WindowsForms02\obj\Debug\WindowsForms02.ModaleEsci.resources
+C:\Users\diego.belliardo\Desktop\info-playground-diegobelliardo\2021-4binf\WindowsForms02\WindowsForms02\obj\Debug\WindowsForms02.Form2.resources
