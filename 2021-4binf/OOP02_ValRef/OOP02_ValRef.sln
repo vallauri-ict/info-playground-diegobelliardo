@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.108
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP02_ValRef", "OOP02_ValRef\OOP02_ValRef.csproj", "{BD856569-1A67-470D-98F2-A62A56EA8321}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD856569-1A67-470D-98F2-A62A56EA8321}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD856569-1A67-470D-98F2-A62A56EA8321}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD856569-1A67-470D-98F2-A62A56EA8321}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD856569-1A67-470D-98F2-A62A56EA8321}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6115AAED-3B28-4F86-974F-6291AC0D5D03}
+	EndGlobalSection
+EndGlobal
