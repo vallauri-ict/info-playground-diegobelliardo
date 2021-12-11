@@ -46,5 +46,31 @@ namespace RegEx01
                 m = m.NextMatch();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string str = "123ABCDE456FGHIJKL789MNOPQ012";
+            string pattern = @"\d+";
+
+            Regex reg = new Regex(pattern);
+            string[] s = reg.Split(str);
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                MessageBox.Show("Stringa "+(i+1)+": \""+s[i]+"\"");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string str = "This is    text with    far    too much    whitespace.";
+            string pattern = @"\s+";
+            string replacement = " ";
+
+            Regex reg = new Regex(pattern);
+            string s = reg.Replace(str,replacement);
+
+            MessageBox.Show("Stringa originale: \""+str+"\"\nStringa corretta: \""+s+"\"");
+        }
     }
 }
