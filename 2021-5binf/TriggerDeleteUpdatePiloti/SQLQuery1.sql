@@ -1,0 +1,1 @@
+﻿UPDATE Driver SET full_name='Paperino' where country='IT'
