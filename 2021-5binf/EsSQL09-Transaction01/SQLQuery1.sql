@@ -1,0 +1,17 @@
+﻿BEGIN TRANSACTION
+
+	INSERT INTO Dipendenti VALUES ('Viola',3500);
+	SAVE TRANSACTION Punto2
+
+	SELECT * FROM Dipendenti
+
+	INSERT INTO Dipendenti VALUES ('Marrone',2500);
+	SAVE TRANSACTION Punto3
+
+	SELECT * FROM Dipendenti
+
+	ROLLBACK TRANSACTION Punto2
+
+	SELECT * FROM Dipendenti
+
+COMMIT
