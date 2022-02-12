@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.108
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LancioDado01", "LancioDado01\LancioDado01.csproj", "{01BE9DF4-10E9-4875-AF07-1FA658F61A3E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01BE9DF4-10E9-4875-AF07-1FA658F61A3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01BE9DF4-10E9-4875-AF07-1FA658F61A3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01BE9DF4-10E9-4875-AF07-1FA658F61A3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01BE9DF4-10E9-4875-AF07-1FA658F61A3E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {36B5E7A8-FE64-4E93-976D-42EEA8EF33DD}
+	EndGlobalSection
+EndGlobal
