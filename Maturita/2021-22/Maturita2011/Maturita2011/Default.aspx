@@ -19,7 +19,9 @@
                 <ItemTemplate>
                     <tr>
                         <td><%# Eval("codice") %> </td>
-                        <td><%# Eval("nome") %></td>
+                        <td><%# Eval("nome") %></td> 
+                        <td><%# Eval("rischioEstinzione") %></td> 
+                        <td><%# Eval("nomeOrdine") %></td> 
                         
                     </tr>
                 </ItemTemplate>

@@ -18,7 +18,7 @@ namespace Maturita2011
                 string sql = "SELECT nome FROM parchi";
                 NomeParco.Text = db.GetDataList(sql)[0];
 
-                sql = "SELECT * FROM specie";
+                sql = "SELECT s.codice,s.nome,s.rischioEstinzione,o.nome as nomeOrdine FROM specie s, ordini o where o.codice=s.codiceordine";
                 rptTable.DataSource = db.GetDataTable(sql);
                 rptTable.DataBind();
 
