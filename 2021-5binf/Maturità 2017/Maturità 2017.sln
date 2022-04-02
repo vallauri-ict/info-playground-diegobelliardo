@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.108
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maturità 2017", "Maturità 2017\Maturità 2017.csproj", "{5A0B997A-725D-44D5-98FD-5C90E6FB2661}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A0B997A-725D-44D5-98FD-5C90E6FB2661}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A0B997A-725D-44D5-98FD-5C90E6FB2661}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A0B997A-725D-44D5-98FD-5C90E6FB2661}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A0B997A-725D-44D5-98FD-5C90E6FB2661}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {58C5F67D-FF7F-43B8-90B4-094AE87D3353}
+	EndGlobalSection
+EndGlobal
