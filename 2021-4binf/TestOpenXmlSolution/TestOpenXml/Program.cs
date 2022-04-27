@@ -6,8 +6,10 @@ using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Drawing.Charts;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
+using Style = DocumentFormat.OpenXml.Wordprocessing.Style;
 
 namespace TestOpenXml
 {
@@ -91,7 +93,7 @@ namespace TestOpenXml
 
             // Paragraph properties
             SpacingBetweenLines sblUl = new SpacingBetweenLines() { After = "0" };  // Get rid of space between bullets  
-            Indentation iUl = new Indentation() { Left = "indentation", Hanging = "360" };  // correct indentation  
+            Indentation iUl = new Indentation() { Left = "720", Hanging = "360" };  // correct indentation  
             NumberingProperties npUl = new NumberingProperties(
                 new NumberingLevelReference() { Val = 1 },
                 new NumberingId() { Val = 2 }
