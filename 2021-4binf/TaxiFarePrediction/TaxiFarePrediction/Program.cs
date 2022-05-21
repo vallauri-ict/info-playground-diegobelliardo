@@ -16,6 +16,17 @@ namespace TaxiFarePrediction
         static readonly string _testDataPath = Path.Combine(Environment.CurrentDirectory, "Data", "taxi-fare-test.csv");
         static readonly string _modelPath = Path.Combine(Environment.CurrentDirectory, "Data", "Model.zip");
 
+        static TaxiTrip taxiTripSample = new TaxiTrip()
+        {
+            VendorId = "VTS",
+            RateCode = "1",
+            PassengerCount = 4,
+            TripTime = 2280,
+            TripDistance = 16.02f,
+            PaymentType = "CRD",
+            FareAmount = 0 // To predict. Actual/Observed = 15.5
+        };
+
         private static ITransformer Train(MLContext mlContext, string dataPath)
         {
             IDataView dataView = mlContext.Data.LoadFromTextFile<TaxiTrip>(dataPath, hasHeader: true, separatorChar: ',');
@@ -31,7 +42,7 @@ namespace TaxiFarePrediction
             return model;
         }
 
-        private void Evaluate(MLContext mlContext, ITransformer model)
+        private static void Evaluate(MLContext mlContext, ITransformer model)
         {
             IDataView dataView = mlContext.Data.LoadFromTextFile<TaxiTrip>(_testDataPath, hasHeader: true, separatorChar: ',');
             var predictions = model.Transform(dataView);
@@ -42,6 +53,17 @@ namespace TaxiFarePrediction
             Console.WriteLine($"*------------------------------------------------");
             Console.WriteLine($"*       RSquared Score:      {metrics.RSquared:0.##}");
             Console.WriteLine($"*       Root Mean Squared Error:      {metrics.RootMeanSquaredError:#.##}");
+        }
+
+        private static void TestSinglePrediction(MLContext mlContext, ITransformer model)
+        {
+            var predictionFunction = mlContext.Model.CreatePredictionEngine<TaxiTrip, TaxiTripFarePrediction>(model);
+
+            var prediction = predictionFunction.Predict(taxiTripSample);
+
+            Console.WriteLine($"*********************************************************************");
+            Console.WriteLine($"Predicted fare: {prediction.FareAmount:0.####}, actual fare: 15.5");
+            Console.WriteLine($"*********************************************************************");
         }
 
         static void Main(string[] args)
@@ -55,9 +77,10 @@ namespace TaxiFarePrediction
             Evaluate(mlContext, model);
 
             //Utilizzo del modello per stimare una corsa
-
+            TestSinglePrediction(mlContext, model);
+            Console.ReadKey();
         }
 
-
+       
     }
 }
