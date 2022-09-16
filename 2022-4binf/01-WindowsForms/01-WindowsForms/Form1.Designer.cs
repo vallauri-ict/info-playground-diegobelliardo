@@ -28,13 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.btnF2 = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // btnF2
+            // 
+            this.btnF2.Location = new System.Drawing.Point(13, 13);
+            this.btnF2.Name = "btnF2";
+            this.btnF2.Size = new System.Drawing.Size(75, 23);
+            this.btnF2.TabIndex = 0;
+            this.btnF2.Text = "Apri Form F2";
+            this.btnF2.UseVisualStyleBackColor = true;
+            this.btnF2.Click += new System.EventHandler(this.btnF2_Click);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(481, 209);
+            this.Controls.Add(this.btnF2);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnF2;
     }
 }
 

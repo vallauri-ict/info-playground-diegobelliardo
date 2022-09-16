@@ -16,5 +16,10 @@ namespace _01_WindowsForms
         {
             InitializeComponent();
         }
+
+        private void btnF2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
