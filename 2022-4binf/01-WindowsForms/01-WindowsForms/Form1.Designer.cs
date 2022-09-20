@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.btnF2 = new System.Windows.Forms.Button();
+            this.btnF3 = new System.Windows.Forms.Button();
+            this.btnF4Param = new System.Windows.Forms.Button();
+            this.txtMesaggio = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnF2
@@ -41,21 +45,66 @@
             this.btnF2.UseVisualStyleBackColor = true;
             this.btnF2.Click += new System.EventHandler(this.btnF2_Click);
             // 
+            // btnF3
+            // 
+            this.btnF3.Location = new System.Drawing.Point(94, 13);
+            this.btnF3.Name = "btnF3";
+            this.btnF3.Size = new System.Drawing.Size(75, 23);
+            this.btnF3.TabIndex = 1;
+            this.btnF3.Text = "Apri Form F3";
+            this.btnF3.UseVisualStyleBackColor = true;
+            this.btnF3.Click += new System.EventHandler(this.btnF3_Click);
+            // 
+            // btnF4Param
+            // 
+            this.btnF4Param.Location = new System.Drawing.Point(176, 13);
+            this.btnF4Param.Name = "btnF4Param";
+            this.btnF4Param.Size = new System.Drawing.Size(138, 23);
+            this.btnF4Param.TabIndex = 2;
+            this.btnF4Param.Text = "Apri form con parametro";
+            this.btnF4Param.UseVisualStyleBackColor = true;
+            this.btnF4Param.Click += new System.EventHandler(this.btnF4Param_Click);
+            // 
+            // txtMesaggio
+            // 
+            this.txtMesaggio.Location = new System.Drawing.Point(94, 59);
+            this.txtMesaggio.Name = "txtMesaggio";
+            this.txtMesaggio.Size = new System.Drawing.Size(100, 20);
+            this.txtMesaggio.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(13, 57);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Apri form 5";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(481, 209);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtMesaggio);
+            this.Controls.Add(this.btnF4Param);
+            this.Controls.Add(this.btnF3);
             this.Controls.Add(this.btnF2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button btnF2;
+        private System.Windows.Forms.Button btnF3;
+        private System.Windows.Forms.Button btnF4Param;
+        private System.Windows.Forms.TextBox txtMesaggio;
+        private System.Windows.Forms.Button button1;
     }
 }
 

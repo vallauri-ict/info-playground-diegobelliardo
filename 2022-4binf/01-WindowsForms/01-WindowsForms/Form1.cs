@@ -19,7 +19,26 @@ namespace _01_WindowsForms
 
         private void btnF2_Click(object sender, EventArgs e)
         {
+            F2 form2;
+            form2 = new F2();
+            form2.Text = "Sono la Form 2 - creata da Designer";
+            form2.Show();
+            
 
+        }
+
+        private void btnF3_Click(object sender, EventArgs e)
+        {
+            Form f3;
+            f3 = new Form();
+            f3.Text = "Sono la Form 3 - creata da Codice";
+            f3.Show();
+        }
+
+        private void btnF4Param_Click(object sender, EventArgs e)
+        {
+            F4 form4 = new F4(10);
+            form4.Show();
         }
     }
 }
