@@ -40,5 +40,10 @@ namespace _01_WindowsForms
             F4 form4 = new F4(10);
             form4.Show();
         }
+
+        private void btnF5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

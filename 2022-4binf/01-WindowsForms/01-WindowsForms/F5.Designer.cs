@@ -39,6 +39,7 @@
             this.btnAzzera.TabIndex = 0;
             this.btnAzzera.Text = "Azzera Messaggio";
             this.btnAzzera.UseVisualStyleBackColor = true;
+            this.btnAzzera.Click += new System.EventHandler(this.btnAzzera_Click);
             // 
             // F5
             // 

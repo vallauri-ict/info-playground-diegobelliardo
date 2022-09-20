@@ -32,7 +32,7 @@
             this.btnF3 = new System.Windows.Forms.Button();
             this.btnF4Param = new System.Windows.Forms.Button();
             this.txtMesaggio = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnF5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnF2
@@ -72,21 +72,22 @@
             this.txtMesaggio.Size = new System.Drawing.Size(100, 20);
             this.txtMesaggio.TabIndex = 3;
             // 
-            // button1
+            // btnF5
             // 
-            this.button1.Location = new System.Drawing.Point(13, 57);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Apri form 5";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnF5.Location = new System.Drawing.Point(13, 57);
+            this.btnF5.Name = "btnF5";
+            this.btnF5.Size = new System.Drawing.Size(75, 23);
+            this.btnF5.TabIndex = 4;
+            this.btnF5.Text = "Apri form 5";
+            this.btnF5.UseVisualStyleBackColor = true;
+            this.btnF5.Click += new System.EventHandler(this.btnF5_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(481, 209);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnF5);
             this.Controls.Add(this.txtMesaggio);
             this.Controls.Add(this.btnF4Param);
             this.Controls.Add(this.btnF3);
@@ -104,7 +105,7 @@
         private System.Windows.Forms.Button btnF3;
         private System.Windows.Forms.Button btnF4Param;
         private System.Windows.Forms.TextBox txtMesaggio;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnF5;
     }
 }
 
