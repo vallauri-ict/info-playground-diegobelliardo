@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.btnAzzera = new System.Windows.Forms.Button();
+            this.btnLeggi = new System.Windows.Forms.Button();
+            this.btnFormFiglia = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAzzera
@@ -41,11 +43,33 @@
             this.btnAzzera.UseVisualStyleBackColor = true;
             this.btnAzzera.Click += new System.EventHandler(this.btnAzzera_Click);
             // 
+            // btnLeggi
+            // 
+            this.btnLeggi.Location = new System.Drawing.Point(137, 13);
+            this.btnLeggi.Name = "btnLeggi";
+            this.btnLeggi.Size = new System.Drawing.Size(75, 23);
+            this.btnLeggi.TabIndex = 1;
+            this.btnLeggi.Text = "Leggi Messaggio";
+            this.btnLeggi.UseVisualStyleBackColor = true;
+            this.btnLeggi.Click += new System.EventHandler(this.btnLeggi_Click);
+            // 
+            // btnFormFiglia
+            // 
+            this.btnFormFiglia.Location = new System.Drawing.Point(13, 43);
+            this.btnFormFiglia.Name = "btnFormFiglia";
+            this.btnFormFiglia.Size = new System.Drawing.Size(118, 23);
+            this.btnFormFiglia.TabIndex = 2;
+            this.btnFormFiglia.Text = "Apri form figlia";
+            this.btnFormFiglia.UseVisualStyleBackColor = true;
+            this.btnFormFiglia.Click += new System.EventHandler(this.btnFormFiglia_Click);
+            // 
             // F5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(388, 171);
+            this.Controls.Add(this.btnFormFiglia);
+            this.Controls.Add(this.btnLeggi);
             this.Controls.Add(this.btnAzzera);
             this.Name = "F5";
             this.Text = "F5";
@@ -56,5 +80,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnAzzera;
+        private System.Windows.Forms.Button btnLeggi;
+        private System.Windows.Forms.Button btnFormFiglia;
     }
 }

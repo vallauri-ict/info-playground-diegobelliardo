@@ -27,5 +27,21 @@ namespace _01_WindowsForms
         {
             txt.Text = "";
         }
+
+        private void btnLeggi_Click(object sender, EventArgs e)
+        {
+            if (txt==null)
+            {
+                MessageBox.Show("Non è stato passato l'oggetto txtMessaggio");
+            }
+            else MessageBox.Show("Messaggio inviato: "+txt.Text);
+        }
+
+        private void btnFormFiglia_Click(object sender, EventArgs e)
+        {
+            FormFiglia figlia = new FormFiglia();
+            this.AddOwnedForm(figlia);
+            figlia.Show();
+        }
     }
 }

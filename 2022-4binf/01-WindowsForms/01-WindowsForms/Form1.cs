@@ -43,6 +43,13 @@ namespace _01_WindowsForms
 
         private void btnF5_Click(object sender, EventArgs e)
         {
+            F5 form5 = new F5(txtMesaggio);
+            form5.Show();
+        }
+
+        private void btnModale_Click(object sender, EventArgs e)
+        {
+            FormModale formModale = new FormModale();
 
         }
     }

@@ -33,6 +33,7 @@
             this.btnF4Param = new System.Windows.Forms.Button();
             this.txtMesaggio = new System.Windows.Forms.TextBox();
             this.btnF5 = new System.Windows.Forms.Button();
+            this.btnModale = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnF2
@@ -82,11 +83,22 @@
             this.btnF5.UseVisualStyleBackColor = true;
             this.btnF5.Click += new System.EventHandler(this.btnF5_Click);
             // 
+            // btnModale
+            // 
+            this.btnModale.Location = new System.Drawing.Point(13, 105);
+            this.btnModale.Name = "btnModale";
+            this.btnModale.Size = new System.Drawing.Size(112, 23);
+            this.btnModale.TabIndex = 5;
+            this.btnModale.Text = "Apri Form Modale";
+            this.btnModale.UseVisualStyleBackColor = true;
+            this.btnModale.Click += new System.EventHandler(this.btnModale_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(481, 209);
+            this.ClientSize = new System.Drawing.Size(329, 145);
+            this.Controls.Add(this.btnModale);
             this.Controls.Add(this.btnF5);
             this.Controls.Add(this.txtMesaggio);
             this.Controls.Add(this.btnF4Param);
@@ -106,6 +118,7 @@
         private System.Windows.Forms.Button btnF4Param;
         private System.Windows.Forms.TextBox txtMesaggio;
         private System.Windows.Forms.Button btnF5;
+        private System.Windows.Forms.Button btnModale;
     }
 }
 
