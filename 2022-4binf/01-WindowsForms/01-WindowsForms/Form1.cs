@@ -50,7 +50,12 @@ namespace _01_WindowsForms
         private void btnModale_Click(object sender, EventArgs e)
         {
             FormModale formModale = new FormModale();
-
+            if (formModale.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("Nome: "+ formModale.nome + "\nCognome: "+formModale.cognome);
+            }
+            else
+                MessageBox.Show("Premuto pulsante Annulla");
         }
     }
 }
