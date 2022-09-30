@@ -25,6 +25,7 @@ namespace _02_FormMDI
             f1.Size = new Size(200, 150);
             f1.StartPosition = FormStartPosition.Manual;
             f1.Location = new Point(0, 60);
+            tsslInfo.Text = "Aperta finestra figlia 1";
         }
 
         private void btnFiglia2_Click(object sender, EventArgs e)
@@ -35,6 +36,7 @@ namespace _02_FormMDI
             f2.Size = new Size(200, 150);
             f2.StartPosition = FormStartPosition.Manual;
             f2.Location = new Point(205, 60);
+            tsslInfo.Text = "Aperta finestra figlia 2";
         }
 
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
@@ -44,6 +46,7 @@ namespace _02_FormMDI
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
+            tsslInfo.Text = "";
             ModaleEsci form = new ModaleEsci();
             if (form.ShowDialog() != DialogResult.Yes)
             {
