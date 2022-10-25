@@ -58,14 +58,12 @@ namespace _04_SquadraCalcio
         private void btnCreaB_Click(object sender, EventArgs e)
         {
             sqB = new Squadra("Macedonia", txtSquadraB.Text, 0, 0, 0);
-            //txtPunteggioB.Text = (sqB.vinte * 3 + sqB.pareggiate).ToString();
         }
 
         
         private void btnCreaC_Click(object sender, EventArgs e)
         {
             sqC = new Squadra("Virtus", txtSquadraC.Text, 0, 0, 0);
-            
         }
 
 
