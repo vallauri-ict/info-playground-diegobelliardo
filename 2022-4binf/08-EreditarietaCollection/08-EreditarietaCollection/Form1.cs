@@ -33,7 +33,7 @@ namespace _08_EreditarietaCollection
 
         private void btnVisualizza_Click(object sender, EventArgs e)
         {
-            foreach (var m in torma)
+            foreach (Mostro m in torma)
             {
                 if (m is Mannaro)
                 {
