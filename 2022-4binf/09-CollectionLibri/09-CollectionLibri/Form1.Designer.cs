@@ -35,6 +35,8 @@
             this.btnInserisciLibro = new System.Windows.Forms.Button();
             this.btnCercaTitoloLibro = new System.Windows.Forms.Button();
             this.btnCercaAutoreLibro = new System.Windows.Forms.Button();
+            this.btnInserisciDizionario = new System.Windows.Forms.Button();
+            this.btnVisualizza = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -97,12 +99,35 @@
             this.btnCercaAutoreLibro.TabIndex = 6;
             this.btnCercaAutoreLibro.Text = "Cerca per autore";
             this.btnCercaAutoreLibro.UseVisualStyleBackColor = true;
+            this.btnCercaAutoreLibro.Click += new System.EventHandler(this.btnCercaAutoreLibro_Click);
+            // 
+            // btnInserisciDizionario
+            // 
+            this.btnInserisciDizionario.Location = new System.Drawing.Point(16, 111);
+            this.btnInserisciDizionario.Name = "btnInserisciDizionario";
+            this.btnInserisciDizionario.Size = new System.Drawing.Size(75, 43);
+            this.btnInserisciDizionario.TabIndex = 7;
+            this.btnInserisciDizionario.Text = "Inserisci libro in dizionario";
+            this.btnInserisciDizionario.UseVisualStyleBackColor = true;
+            this.btnInserisciDizionario.Click += new System.EventHandler(this.btnInserisciDizionario_Click);
+            // 
+            // btnVisualizza
+            // 
+            this.btnVisualizza.Location = new System.Drawing.Point(98, 111);
+            this.btnVisualizza.Name = "btnVisualizza";
+            this.btnVisualizza.Size = new System.Drawing.Size(104, 42);
+            this.btnVisualizza.TabIndex = 8;
+            this.btnVisualizza.Text = "Visualizza dizionario";
+            this.btnVisualizza.UseVisualStyleBackColor = true;
+            this.btnVisualizza.Click += new System.EventHandler(this.btnVisualizza_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(333, 118);
+            this.ClientSize = new System.Drawing.Size(333, 189);
+            this.Controls.Add(this.btnVisualizza);
+            this.Controls.Add(this.btnInserisciDizionario);
             this.Controls.Add(this.btnCercaAutoreLibro);
             this.Controls.Add(this.btnCercaTitoloLibro);
             this.Controls.Add(this.btnInserisciLibro);
@@ -126,6 +151,8 @@
         private System.Windows.Forms.Button btnInserisciLibro;
         private System.Windows.Forms.Button btnCercaTitoloLibro;
         private System.Windows.Forms.Button btnCercaAutoreLibro;
+        private System.Windows.Forms.Button btnInserisciDizionario;
+        private System.Windows.Forms.Button btnVisualizza;
     }
 }
 

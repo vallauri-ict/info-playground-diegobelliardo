@@ -13,6 +13,8 @@ namespace _09_CollectionLibri
     public partial class Form1 : Form
     {
         List<Libro> listaLibri = new List<Libro>();
+        Dictionary<int, Libro> dizionarioLibri = new Dictionary<int, Libro>();
+        int keyLibro = 0;
         public Form1()
         {
             InitializeComponent();
@@ -28,6 +30,45 @@ namespace _09_CollectionLibri
         {
             Libro ris = listaLibri.Find(bf => bf.titolo == txtTitolo.Text);
             MessageBox.Show("E' stato trovato il libro:\n"+ris.ToString());
+        }
+
+        private void btnCercaAutoreLibro_Click(object sender, EventArgs e)
+        {
+            List<Libro> elencoLibri = new List<Libro>();
+            elencoLibri = listaLibri.FindAll(bf => bf.autore == txtAutore.Text);
+            string s = "";
+            //foreach (var item in elencoLibri)
+            //{
+            //    s += "Titolo: " + item.titolo + " - Autore: " + item.autore + "\n";
+            //}
+
+            for (int i = 0; i < elencoLibri.Count; i++)
+            {
+                Libro item = elencoLibri[i];
+                s += "Titolo: " + item.titolo + " - Autore: " + item.autore + "\n";
+            }
+            MessageBox.Show(s);
+        }
+
+        private void btnInserisciDizionario_Click(object sender, EventArgs e)
+        {
+            Libro l = new Libro(txtTitolo.Text, txtAutore.Text);
+            dizionarioLibri.Add(keyLibro, l);
+            keyLibro++;
+        }
+
+        private void btnVisualizza_Click(object sender, EventArgs e)
+        {
+            foreach (var key in dizionarioLibri.Keys)
+            {
+                MessageBox.Show("Chiave: "+key.ToString());
+            }
+
+            foreach (var l in dizionarioLibri.Values)
+            {
+                MessageBox.Show("Libro: "+l.titolo+" - Autore: "+l.autore);
+            }
+
         }
     }
 }
