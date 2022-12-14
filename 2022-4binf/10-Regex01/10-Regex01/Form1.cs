@@ -20,7 +20,9 @@ namespace _10_Regex01
 
         private void btnCarta_Click(object sender, EventArgs e)
         {
-            Regex reg=new Regex(@"^[a-zA-Z0-9]\d{2}[a-zA-Z0-9](-\d{3}){2}[A-Za-z0-9]$");
+            //^[A-Z](?=[a-z]+).{3,}
+
+            Regex reg =new Regex(@"^[a-zA-Z0-9]\d{2}[a-zA-Z0-9](-\d{3}){2}[A-Za-z0-9]$");
 
             if (reg.IsMatch(txtStr.Text))
             {
@@ -76,6 +78,20 @@ namespace _10_Regex01
             {
                 MessageBox.Show("Stringa "+(i+1)+": \""+s[i]+"\"");
             }
+        }
+
+        private void btnReplace_Click(object sender, EventArgs e)
+        {
+            string str= "This is    text with   far    too   much " +
+                        "whitespace.";
+            string pattern = @"\s+";
+            string replacement = " ";
+
+            Regex reg = new Regex(pattern);
+            string result = reg.Replace(str, replacement);
+
+            MessageBox.Show("Stringa originale: \""+str+
+                            "\"\nStringa modificata: \""+result+"\"");
         }
     }
 }

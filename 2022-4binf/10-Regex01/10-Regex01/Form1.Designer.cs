@@ -35,6 +35,8 @@
             this.btnOneCar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSplit = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnReplace = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtStr
@@ -101,11 +103,32 @@
             this.btnSplit.UseVisualStyleBackColor = true;
             this.btnSplit.Click += new System.EventHandler(this.btnSplit_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(415, 133);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(317, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Uso di Replace: \"This is text with far        too    much whitespace\"";
+            // 
+            // btnReplace
+            // 
+            this.btnReplace.Location = new System.Drawing.Point(515, 159);
+            this.btnReplace.Name = "btnReplace";
+            this.btnReplace.Size = new System.Drawing.Size(75, 23);
+            this.btnReplace.TabIndex = 8;
+            this.btnReplace.Text = "Test Stringa";
+            this.btnReplace.UseVisualStyleBackColor = true;
+            this.btnReplace.Click += new System.EventHandler(this.btnReplace_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(728, 318);
+            this.Controls.Add(this.btnReplace);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnSplit);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnOneCar);
@@ -129,6 +152,8 @@
         private System.Windows.Forms.Button btnOneCar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSplit;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnReplace;
     }
 }
 
