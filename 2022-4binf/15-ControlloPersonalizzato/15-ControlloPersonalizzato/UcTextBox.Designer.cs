@@ -45,7 +45,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.txtTesto);
             this.Name = "UcTextBox";
-            this.Size = new System.Drawing.Size(97, 18);
+            this.Size = new System.Drawing.Size(103, 22);
+            this.Leave += new System.EventHandler(this.UcTextBox_Leave);
             this.ResumeLayout(false);
             this.PerformLayout();
 

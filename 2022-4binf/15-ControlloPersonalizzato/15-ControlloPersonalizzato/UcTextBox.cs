@@ -17,7 +17,18 @@ namespace _15_ControlloPersonalizzato
         private int cifreDecimali = 0;  // contiene il numero di cifre decimali (dopo la virgola)
 
         public bool Numero { get => numero; set => numero = value; }
-        public string Testo { get => testo; set => testo = value; }
+        public string Testo { 
+            get
+            {
+                testo = txtTesto.Text;
+                return testo;
+            }
+            set
+            {
+                testo=value;
+                txtTesto.Text = testo;
+            }
+        }
         public int CifreDecimali
         {
             get { return cifreDecimali; }
@@ -48,6 +59,11 @@ namespace _15_ControlloPersonalizzato
                     double numero = Math.Round(Convert.ToDouble(Testo), CifreDecimali);
                     Testo = numero.ToString();
 
+                    string[] s = Testo.Split(',');
+                    if (s[1]==null && cifreDecimali>0)
+                    {
+
+                    }
                     // Gestione degli 0 dopo la virgola in caso di numero intero
                 }
                 catch (Exception)
@@ -59,7 +75,9 @@ namespace _15_ControlloPersonalizzato
 
         private int ContaVirgole(string testo)
         {
-            return testo.Split(',').Length-1;
+            if (testo != null)
+                return testo.Split(',').Length - 1;
+            else return 0;
         }
 
         public void Pulisci()
@@ -71,11 +89,18 @@ namespace _15_ControlloPersonalizzato
         {
             if (Numero)
             {
-                if (!(char.IsDigit(e.KeyChar) || e.KeyChar==','))
+                if (!(char.IsDigit(e.KeyChar) || e.KeyChar==',' || char.IsControl(e.KeyChar)))
                 {
                     throw new Exception("Errore digitazione");
                 }
             }
         }
+
+        private void UcTextBox_Leave(object sender, EventArgs e)
+        {
+            AggiornaTesto();
+        }
+
+       
     }
 }
