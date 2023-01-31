@@ -59,17 +59,31 @@ namespace _15_ControlloPersonalizzato
                     double numero = Math.Round(Convert.ToDouble(Testo), CifreDecimali);
                     Testo = numero.ToString();
 
-                    string[] s = Testo.Split(',');
-                    if (s[1]==null && cifreDecimali>0)
-                    {
-
-                    }
                     // Gestione degli 0 dopo la virgola in caso di numero intero
+                    GestioneZeri();
                 }
                 catch (Exception)
                 {
                     throw new Exception("Valore non valido");
                 }
+            }
+        }
+
+        private void GestioneZeri()
+        {
+            int nVirgole = ContaVirgole(Testo);
+            if (nVirgole == 0 && CifreDecimali > 0) // Se non c'è la virgola
+            {
+                Testo += ',';
+                for (int i = 0; i < cifreDecimali; i++)
+                    Testo += '0';
+            }
+            else if (CifreDecimali > 0)  // Se c'è già la virgola ma gli 0 non bastano
+            {
+                int nCifreDecimali = Testo.Split(',')[1].Length;
+                if (nCifreDecimali < cifreDecimali)
+                    for (int i = nCifreDecimali; i < cifreDecimali; i++)
+                        Testo += '0';
             }
         }
 
@@ -91,7 +105,7 @@ namespace _15_ControlloPersonalizzato
             {
                 if (!(char.IsDigit(e.KeyChar) || e.KeyChar==',' || char.IsControl(e.KeyChar)))
                 {
-                    throw new Exception("Errore digitazione");
+                    e.Handled = true;
                 }
             }
         }
