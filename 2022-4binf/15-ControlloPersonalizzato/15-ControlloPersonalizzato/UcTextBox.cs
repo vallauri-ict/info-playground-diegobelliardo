@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace _15_ControlloPersonalizzato
 {
+    public delegate void ErrorEventArgsHandler(object sender, ErrorEventArgs e);
     public partial class UcTextBox: UserControl
     {
+        public event ErrorEventArgsHandler ErrorEvent;
         private bool numero = false;     // se true txtbox accetta solo numeri
         private string testo;           // testo della textBox
         private int cifreDecimali = 0;  // contiene il numero di cifre decimali (dopo la virgola)
@@ -51,7 +53,9 @@ namespace _15_ControlloPersonalizzato
                 //controllo che non ci sia più di una virgola
                 if (ContaVirgole(Testo)>1)
                 {
-                    throw new Exception("Ci sono troppe virgole");
+                    //throw new Exception("Ci sono troppe virgole");
+                    ErrorEventArgs er = new ErrorEventArgs("Ci sono troppe virgole");
+                    ErrorEvent(this, er);
                 }
                 try
                 {
@@ -64,7 +68,9 @@ namespace _15_ControlloPersonalizzato
                 }
                 catch (Exception)
                 {
-                    throw new Exception("Valore non valido");
+                    //throw new Exception("Valore non valido");
+                    ErrorEventArgs er = new ErrorEventArgs("Valore non valido");
+                    ErrorEvent(this, er);
                 }
             }
         }

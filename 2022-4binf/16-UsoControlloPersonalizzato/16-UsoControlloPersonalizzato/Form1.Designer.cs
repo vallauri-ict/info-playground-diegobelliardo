@@ -45,6 +45,7 @@
             this.txtMiaTextBox.Size = new System.Drawing.Size(103, 22);
             this.txtMiaTextBox.TabIndex = 0;
             this.txtMiaTextBox.Testo = "";
+            this.txtMiaTextBox.ErrorEvent += new _15_ControlloPersonalizzato.ErrorEventArgsHandler(this.txtMiaTextBox_ErrorEvent);
             this.txtMiaTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMiaTextBox_KeyPress);
             // 
             // chkSoloNumeri

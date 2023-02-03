@@ -63,5 +63,10 @@ namespace _16_UsoControlloPersonalizzato
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void txtMiaTextBox_ErrorEvent(object sender, _15_ControlloPersonalizzato.ErrorEventArgs e)
+        {
+            MessageBox.Show(e.ErrorMessage);
+        }
     }
 }

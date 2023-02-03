@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ErrorEventArgs.cs" />
     <Compile Include="UcTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
