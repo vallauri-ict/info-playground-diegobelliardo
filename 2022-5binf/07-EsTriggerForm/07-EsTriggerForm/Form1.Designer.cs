@@ -31,6 +31,7 @@
             this.dgvDriver = new System.Windows.Forms.DataGridView();
             this.dgvStoricoCancellazioni = new System.Windows.Forms.DataGridView();
             this.dgvStoricoUpdate = new System.Windows.Forms.DataGridView();
+            this.btnAggiorna = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDriver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStoricoCancellazioni)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStoricoUpdate)).BeginInit();
@@ -39,11 +40,9 @@
             // dgvDriver
             // 
             this.dgvDriver.AllowUserToAddRows = false;
-            this.dgvDriver.AllowUserToDeleteRows = false;
             this.dgvDriver.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDriver.Location = new System.Drawing.Point(14, 13);
             this.dgvDriver.Name = "dgvDriver";
-            this.dgvDriver.RowHeadersVisible = false;
             this.dgvDriver.Size = new System.Drawing.Size(488, 215);
             this.dgvDriver.TabIndex = 0;
             this.dgvDriver.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDriver_CellDoubleClick);
@@ -64,17 +63,28 @@
             this.dgvStoricoUpdate.AllowUserToAddRows = false;
             this.dgvStoricoUpdate.AllowUserToDeleteRows = false;
             this.dgvStoricoUpdate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStoricoUpdate.Location = new System.Drawing.Point(14, 235);
+            this.dgvStoricoUpdate.Location = new System.Drawing.Point(14, 264);
             this.dgvStoricoUpdate.Name = "dgvStoricoUpdate";
             this.dgvStoricoUpdate.RowHeadersVisible = false;
             this.dgvStoricoUpdate.Size = new System.Drawing.Size(1010, 203);
             this.dgvStoricoUpdate.TabIndex = 2;
+            // 
+            // btnAggiorna
+            // 
+            this.btnAggiorna.Location = new System.Drawing.Point(14, 235);
+            this.btnAggiorna.Name = "btnAggiorna";
+            this.btnAggiorna.Size = new System.Drawing.Size(75, 23);
+            this.btnAggiorna.TabIndex = 3;
+            this.btnAggiorna.Text = "Aggiorna DB";
+            this.btnAggiorna.UseVisualStyleBackColor = true;
+            this.btnAggiorna.Click += new System.EventHandler(this.btnAggiorna_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1036, 450);
+            this.Controls.Add(this.btnAggiorna);
             this.Controls.Add(this.dgvStoricoUpdate);
             this.Controls.Add(this.dgvStoricoCancellazioni);
             this.Controls.Add(this.dgvDriver);
@@ -93,6 +103,7 @@
         private System.Windows.Forms.DataGridView dgvDriver;
         private System.Windows.Forms.DataGridView dgvStoricoCancellazioni;
         private System.Windows.Forms.DataGridView dgvStoricoUpdate;
+        private System.Windows.Forms.Button btnAggiorna;
     }
 }
 

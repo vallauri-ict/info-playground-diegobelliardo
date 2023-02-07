@@ -75,6 +75,13 @@ namespace _07_EsTriggerForm
             PopolaDgv();
         }
 
+        private void btnAggiorna_Click(object sender, EventArgs e)
+        {
+            dgvDriver.EndEdit();
+            dataAdapterDriver.Update(dtDriver);
+            PopolaDgv();
+        }
+
         private void QueryStorico(string sqlCommand)
         {
             try
