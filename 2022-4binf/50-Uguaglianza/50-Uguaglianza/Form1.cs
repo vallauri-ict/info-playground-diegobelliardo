@@ -36,8 +36,8 @@ namespace _50_Uguaglianza
                 {
                     MessageBox.Show($"Elemento {i} Uguale\nHashCode: {p.GetHashCode()} - {p1.GetHashCode()}");
                 }
-
-                MessageBox.Show($"Hashscode: {p.GetHashCode()} - {p1.GetHashCode()}");
+                else
+                    MessageBox.Show($"Diversi! Hashscode: {p.GetHashCode()} - {p1.GetHashCode()}");
                 if (p1==p)
                 {
                     MessageBox.Show($"Elemento {i} ==");
