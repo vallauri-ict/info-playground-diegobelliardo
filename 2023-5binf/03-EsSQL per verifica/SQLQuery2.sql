@@ -72,6 +72,25 @@ FROM Film f
 WHERE 'Mastroianni' IN (SELECT a.Nome FROM Attori a, Recita r WHERE r.CodFilm = f.Id AND r.CodAttore = a.Id)
 AND 'Loren' IN (SELECT a.Nome FROM Attori a, Recita r WHERE r.CodFilm = f.Id AND r.CodAttore = a.Id);
 
+
+--11- Per ogni film in cui recita un attore francese, il titolo del film e il nome dell’attore
+SELECT f.Titolo, a.Nome
+FROM Attori a, Film f, Recita r
+WHERE a.Id=r.CodAttore
+AND r.CodFilm=f.Id
+AND a.Nazionalità='Francese'
+
+
+--12- Per ogni film che è stato proiettato a Pisa nel gennaio 2005, il titolo del film e il nome della sala.
+SELECT distinct f.Titolo, s.Nome
+FROM Film f, Proiezioni p, Sale s
+WHERE f.Id=p.CodFilm
+AND p.CodSala=s.Id
+AND s.Città='Pisa'
+AND YEAR(p.DataProiezione)=2005
+AND MONTH(p.DataProiezione)=1
+
+
 -- 13. Il numero di sale di Pisa con più di 60 posti
 SELECT COUNT(*) AS NumeroSale
 FROM Sale s
@@ -82,3 +101,37 @@ AND s.Posti > 60;
 SELECT SUM(s.Posti) AS NumeroPostiTotale
 FROM Sale s
 WHERE s.Città = 'Pisa';
+
+--15- Per ogni città, il numero di sale
+SELECT s.Città, count(*)
+FROM Sale s
+GROUP BY s.Città
+
+
+--16- Per ogni città, il numero di sale con più di 60 posti
+SELECT s.Città, count(*)
+FROM Sale s
+WHERE s.Posti>60
+GROUP BY s.Città
+
+
+--17- Per ogni regista, il numero di film diretti dopo il 1990
+
+SELECT f.Regista, count(*)
+FROM Film f
+WHERE f.AnnoProduzione>1990
+GROUP BY f.Regista
+
+--18- Per ogni regista, l’incasso totale di tutte le proiezioni dei suoi film
+SELECT f.Regista, sum(p.incasso)
+FROM Film f, Proiezioni p
+WHERE f.Id=p.CodFilm
+GROUP BY f.Regista
+
+
+
+--19- Per ogni film di S.Spielberg, il titolo del film, il numero totale di proiezioni a Pisa e l’incasso totale
+
+
+
+--20- Per ogni regista e per ogni attore, il numero di film del regista con l’attore
