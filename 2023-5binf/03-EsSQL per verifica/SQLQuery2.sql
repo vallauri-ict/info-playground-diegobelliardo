@@ -129,9 +129,38 @@ WHERE f.Id=p.CodFilm
 GROUP BY f.Regista
 
 
+--19- Per ogni film di S.Spielberg, il titolo del film, 
+--il numero totale di proiezioni a Pisa e l’incasso totale
+SELECT f.Titolo, count(*) AS N_Proiezioni, SUM(p.Incasso) AS Incasso_Totale
+FROM Film f, Proiezioni p, Sale s
+WHERE f.Id=p.CodFilm
+AND p.CodSala=s.Id
+AND f.Regista='Spielberg'
+AND s.Città='Pisa'
+GROUP BY f.Titolo
 
---19- Per ogni film di S.Spielberg, il titolo del film, il numero totale di proiezioni a Pisa e l’incasso totale
+
+--20- Per ogni regista e per ogni attore, il numero di film del regista 
+--con l’attore
+SELECT f.Regista, a.nome, count(*)
+FROM Attori a, Recita r, Film f
+WHERE f.Id=r.CodFilm
+AND r.CodAttore=a.Id
+GROUP BY f.Regista, a.Id, a.Nome
+
+
+--21 - Il regista ed il titolo dei film in cui recitano meno di 6 attori
+SELECT f.Regista, f.Titolo
+FROM Film f, Recita r
+WHERE f.Id=r.CodFilm
+GROUP BY f.Titolo,f.Regista
+HAVING count(*)<6
 
 
 
---20- Per ogni regista e per ogni attore, il numero di film del regista con l’attore
+
+
+--22- Per ogni film prodotto dopo il 2000, il codice, il titolo e l’incasso totale di tutte le sue proiezioni
+--23 - Il numero di attori dei film in cui appaiono solo attori nati prima del 1970
+--24- Per ogni film di fantascienza, il titolo e l’incasso totale di tutte le sue proiezioni
+--25- Per ogni film di fantascienza il titolo e l’incasso totale di tutte le sue proiezioni successive al 1/1/01
