@@ -156,11 +156,72 @@ WHERE f.Id=r.CodFilm
 GROUP BY f.Titolo,f.Regista
 HAVING count(*)<6
 
+-- La soluzione sotto risolve il problema dei film senza attori che
+-- nella precedente non venivano estratti
+
+SELECT f.Regista, f.Titolo
+FROM Film f
+WHERE 6>(SELECT count(*)
+			FROM Recita r
+			WHERE f.Id=r.CodFilm)
 
 
+--22- Per ogni film prodotto dopo il 2000, il codice, il titolo e 
+-- l’incasso totale di tutte le sue proiezioni
+SELECT f.Id, f.Titolo, SUM(p.Incasso) AS Incasso_Totale
+FROM Film f, Proiezioni p
+WHERE f.Id=p.CodFilm
+AND f.annoProduzione>2000
+GROUP BY f.Id, f.Titolo
 
+--23 - Il numero di attori dei film in cui appaiono solo attori nati 
+-- prima del 1970
+SELECT f.Titolo, count(*) as NumeroAttori
+FROM Film f, Recita r, Attori a
+WHERE f.Id=r.CodFilm
+AND r.CodAttore=a.Id
+GROUP BY f.Titolo
+HAVING MAX(a.AnnoNascita)<1970
 
---22- Per ogni film prodotto dopo il 2000, il codice, il titolo e l’incasso totale di tutte le sue proiezioni
---23 - Il numero di attori dei film in cui appaiono solo attori nati prima del 1970
 --24- Per ogni film di fantascienza, il titolo e l’incasso totale di tutte le sue proiezioni
---25- Per ogni film di fantascienza il titolo e l’incasso totale di tutte le sue proiezioni successive al 1/1/01
+SELECT f.Titolo, sum(p.incasso) as 'Incasso totale'
+FROM Film f, Proiezioni p
+Where f.Id=p.CodFilm
+and f.Genere='Fantascienza'
+GROUP BY f.Titolo
+
+--25- Per ogni film di fantascienza il titolo e l’incasso totale di tutte le sue proiezioni 
+-- successive al 1/1/01
+SELECT f.Titolo, sum(p.Incasso) as 'Incasso totale'
+FROM Film f, Proiezioni p
+WHERE f.Id=p.CodFilm
+AND f.Genere='Fantascienza'
+AND p.DataProiezione>'2001/01/01'
+GROUP BY f.Titolo
+
+--26- Per ogni film di fantascienza che non è mai stato proiettato prima del 1/1/01 il titolo e
+--l’incasso totale di tutte le sue proiezioni
+SELECT f.Titolo, sum(p.Incasso) as 'Incasso Totale'
+FROM Film f, Proiezioni p
+Where f.Id=p.CodFilm
+AND f.Genere='Fantascienza'
+GROUP BY f.Titolo
+HAVING min(p.DataProiezione)>'2001/01/01'
+
+
+--27- Per ogni sala di Pisa, che nel mese di gennaio 2005 ha incassato più di 20000 €, il nome della
+--sala e l’incasso totale (sempre del mese di gennaio 2005)
+
+
+
+
+
+--28- I titoli dei film che non sono mai stati proiettati a Pisa
+--29- I titoli dei film che sono stati proiettati solo a Pisa
+--30- I titoli dei film dei quali non vi è mai stata una proiezione con incasso superiore a 500 €31- I titoli dei film le cui proiezioni hanno sempre ottenuto un incasso superiore a 500 €
+--32- Il nome degli attori italiani che non hanno mai recitato in film di Fellini
+--33- Il titolo dei film di Fellini in cui non recitano attori italiani
+--34- Il titolo dei film senza attori
+--35- Gli attori che prima del 1960 hanno recitato solo nei film di Fellini
+--36- Gli attori che hanno recitato in film di Fellini solo prima del 1960
+
