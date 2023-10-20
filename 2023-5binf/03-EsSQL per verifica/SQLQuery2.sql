@@ -212,12 +212,56 @@ HAVING min(p.DataProiezione)>'2001/01/01'
 --27- Per ogni sala di Pisa, che nel mese di gennaio 2005 ha incassato più di 20000 €, il nome della
 --sala e l’incasso totale (sempre del mese di gennaio 2005)
 
-
+SELECT s.Nome, sum(p.Incasso)
+FROM Sale s, Proiezioni p
+WHERE s.Id=p.CodSala
+AND p.DataProiezione>='2005/01/01'
+AND p.DataProiezione<'2005/02/01'
+AND s.Città='Pisa'
+GROUP by s.Nome
+HAVING sum(p.Incasso)>20000
 
 
 
 --28- I titoli dei film che non sono mai stati proiettati a Pisa
+SELECT f.Titolo
+FROM Film f
+WHERE 'Pisa' NOT IN (SELECT s.Città FROM Proiezioni p, Sale s
+						WHERE f.Id=p.CodFilm
+						AND p.CodSala=s.Id)
+
+SELECT f.Titolo
+FROM Film f
+WHERE NOT EXISTS (SELECT *
+					FROM Proiezioni p, Sale s
+						WHERE f.Id=p.CodFilm
+						AND p.CodSala=s.Id
+						AND s.Città='Pisa')
+
+
 --29- I titoli dei film che sono stati proiettati solo a Pisa
+SELECT f.Titolo
+FROM Film f
+WHERE not exists (SELECT *
+					FROM Proiezioni p, Sale s
+						WHERE f.Id=p.CodFilm
+						AND p.CodSala=s.Id
+						AND s.Città<>'Pisa')
+
+SELECT f.Titolo
+FROM Film f
+WHERE 'Pisa' = All (SELECT s.Città
+					FROM Proiezioni p, Sale s
+						WHERE f.Id=p.CodFilm
+						AND p.CodSala=s.Id)
+
+
+SELECT s.Città
+FROM Proiezioni p, Sale s
+WHERE 12=p.CodFilm
+AND p.CodSala=s.Id
+
+
 --30- I titoli dei film dei quali non vi è mai stata una proiezione con incasso superiore a 500 €31- I titoli dei film le cui proiezioni hanno sempre ottenuto un incasso superiore a 500 €
 --32- Il nome degli attori italiani che non hanno mai recitato in film di Fellini
 --33- Il titolo dei film di Fellini in cui non recitano attori italiani
