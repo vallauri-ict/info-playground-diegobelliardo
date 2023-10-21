@@ -240,32 +240,118 @@ WHERE NOT EXISTS (SELECT *
 
 
 --29- I titoli dei film che sono stati proiettati solo a Pisa
-SELECT f.Titolo
+SELECT f.id, f.Titolo
 FROM Film f
 WHERE not exists (SELECT *
 					FROM Proiezioni p, Sale s
 						WHERE f.Id=p.CodFilm
 						AND p.CodSala=s.Id
 						AND s.Città<>'Pisa')
+and f.Id in (SELECT p1.CodFilm            -- Esclude i film che non hanno proiezioni
+			FROM Proiezioni p1)
 
-SELECT f.Titolo
+
+
+SELECT f.id,f.Titolo
 FROM Film f
 WHERE 'Pisa' = All (SELECT s.Città
 					FROM Proiezioni p, Sale s
 						WHERE f.Id=p.CodFilm
 						AND p.CodSala=s.Id)
+and f.Id in (SELECT p1.CodFilm		-- Esclude i film che non hanno proiezioni
+			FROM Proiezioni p1)
 
 
-SELECT s.Città
-FROM Proiezioni p, Sale s
-WHERE 12=p.CodFilm
-AND p.CodSala=s.Id
+--30- I titoli dei film dei quali non vi è mai stata una proiezione 
+-- con incasso superiore a 500 €
+SELECT f.Titolo
+FROM Film f
+WHERE not Exists (SELECT *
+				From Proiezioni p1
+				Where p1.Incasso>500
+				AND p1.CodFilm=f.Id)
 
 
---30- I titoli dei film dei quali non vi è mai stata una proiezione con incasso superiore a 500 €31- I titoli dei film le cui proiezioni hanno sempre ottenuto un incasso superiore a 500 €
+--31- I titoli dei film le cui proiezioni hanno sempre ottenuto un incasso 
+-- superiore a 500 €
+SELECT f.id,f.Titolo
+FROM Film f
+WHERE f.Id not in(SELECT f1.id
+				FROM Film f1, Proiezioni p1
+				WHERE f1.Id=p1.CodFilm
+				AND p1.Incasso < 500)
+AND f.Id in (SELECT p2.CodFilm FROM Proiezioni p2)
+
+SELECT f.id,f.Titolo
+FROM Film f
+WHERE f.Id not in(SELECT f1.id
+				FROM Film f1, Proiezioni p1
+				WHERE f1.Id=p1.CodFilm
+				AND p1.Incasso < 500)
+And Exists (Select * FROM Proiezioni p Where p.CodFilm=f.Id)
+
 --32- Il nome degli attori italiani che non hanno mai recitato in film di Fellini
+SELECT a.Nome
+FROM Film f, Attori a, Recita r
+Where f.Id=r.CodFilm
+And r.CodAttore=a.Id
+And a.Nazionalità='Italiana'
+And a.Nome not in (SELECT a1.Nome FROM Film f1, Attori a1, Recita r1
+					WHERE f1.Id=r1.CodFilm
+					AND r1.CodAttore=a1.Id
+					AND f1.Regista='Fellini')
+
+SELECT a.Nome
+FROM Attori a
+WHERE a.Nazionalità='Italiana'
+AND not Exists ( SELECT * 
+				FROM Film f, Recita r
+				WHERE f.Id=r.CodFilm
+				AND r.CodAttore=a.Id
+				AND f.Regista='Fellini')
+
+
 --33- Il titolo dei film di Fellini in cui non recitano attori italiani
+SELECT f.Titolo
+FROM Film f
+WHERE not Exists (SELECT * 
+					FROM Attori a, Recita r
+					WHERE a.Id=r.CodAttore
+					AND r.CodFilm=f.Id
+					AND a.Nazionalità='Italiana')
+AND f.Regista='Fellini'
+
+
 --34- Il titolo dei film senza attori
+SELECT f.Titolo
+FROM Film f
+WHERE f.Id not in (SELECT r.CodFilm FROM Recita r)
+
+SELECT f.Titolo
+FROM Film f
+WHERE not Exists (SELECT * FROM Recita r WHERE r.CodFilm=f.Id)
+
 --35- Gli attori che prima del 1960 hanno recitato solo nei film di Fellini
+SELECT a.Nome
+FROM Attori a
+WHERE not exists (SELECT * FROM Recita r, Film f
+				WHERE f.Regista<>'Fellini'
+					AND r.CodAttore=a.Id
+					AND f.AnnoProduzione<1960
+					AND r.CodFilm=f.Id)
+AND a.Id in (Select r.codAttore FROM Recita r)
+
+
+
+
+
 --36- Gli attori che hanno recitato in film di Fellini solo prima del 1960
 
+SELECT a.Nome
+FROM Attori a
+WHERE not exists (SELECT * FROM Recita r, Film f
+				WHERE f.Regista='Fellini'
+					AND r.CodAttore=a.Id
+					AND f.AnnoProduzione>=1960
+					AND r.CodFilm=f.Id)
+AND a.Id in (Select r.codAttore FROM Recita r)
