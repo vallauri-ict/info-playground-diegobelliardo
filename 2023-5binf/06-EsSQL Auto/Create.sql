@@ -1,0 +1,41 @@
+﻿
+
+CREATE TABLE PROPRIETARI (
+    CodF INT PRIMARY KEY,
+    Nome VARCHAR(50),
+    Residenza VARCHAR(100)
+);
+
+CREATE TABLE ASSICURAZIONI (
+    CodAss INT PRIMARY KEY,
+    Nome VARCHAR(50),
+    Sede VARCHAR(100)
+);
+
+CREATE TABLE SINISTRO (
+    CodS INT PRIMARY KEY,
+    Località VARCHAR(100),
+    Data DATE
+);
+
+
+CREATE TABLE AUTO (
+    Targa VARCHAR(10) PRIMARY KEY,
+    Marca VARCHAR(50),
+    Cilindrata INT,
+    Potenza INT,
+    CodF INT,
+    CodAss INT,
+    FOREIGN KEY (CodF) REFERENCES PROPRIETARI(CodF),
+    FOREIGN KEY (CodAss) REFERENCES ASSICURAZIONI(CodAss)
+);
+
+
+CREATE TABLE AUTOCOINVOLTE (
+    CodS INT,
+    Targa VARCHAR(10),
+    ImportoDelDanno DECIMAL(10, 2),
+    PRIMARY KEY (CodS, Targa),
+    FOREIGN KEY (CodS) REFERENCES SINISTRO(CodS),
+    FOREIGN KEY (Targa) REFERENCES AUTO(Targa)
+);
