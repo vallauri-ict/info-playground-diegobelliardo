@@ -58,3 +58,41 @@ SELECT o.NomeA, count(*) 'Numero Opere'
 FROM Opere o
 WHERE o.NomeM='Galleria degli Uffizi'
 GROUP BY o.NomeA
+
+--12- I musei che conservano almeno 20 opere di artisti italiani
+SELECT o.NomeM
+FROM Opere o, Artisti a
+WHERE a.Nazionalita = 'Italiana'
+AND a.NomeA = o.NomeA
+GROUP BY o.NomeM
+HAVING COUNT(*) > 13
+
+--13- Per le opere di artisti italiani che non hanno personaggi, 
+--il titolo dell’opera ed il nome dell’artista
+SELECT o.Codice,o.Titolo, o.NomeA
+FROM Opere o, Artisti a
+WHERE o.NomeA = a.NomeA
+AND a.Nazionalita = 'Italiana'
+AND o.Codice NOT IN(SELECT p.Codice FROM Personaggi p)
+ORDER BY o.Codice
+
+--14- Il nome dei musei di Londra che non conservano opere di artisti 
+--italiani, eccettuato Tiziano
+SELECT m.NomeM
+FROM Musei m
+WHERE m.Citta='London' 
+AND NOT EXISTS(SELECT * FROM Artisti a, Opere o WHERE a.Nazionalita='Italiana'
+				AND a.NomeA<>'Tiziano' AND o.NomeA=a.NomeA AND m.NomeM=o.NomeM)
+
+SELECT m.NomeM
+FROM Musei m
+WHERE m.Citta='London' 
+AND m.NomeM not in (SELECT o.NomeM FROM Opere o, Artisti a 
+	WHERE a.NomeA=o.NomeA AND a.Nazionalita='Italiana' AND a.NomeA<>'Tiziano')
+
+--15- Per ogni museo, il numero di opere divise per la nazionalità dell’artista
+SELECT o.NomeM, a.Nazionalita, COUNT(*)
+FROM Opere o, Artisti a
+WHERE a.NomeA=o.NomeA
+GROUP BY o.NomeM, a.Nazionalita
+ORDER BY o.NomeM, a.Nazionalita
