@@ -14,7 +14,7 @@ namespace Es01ClasseAstratta
 
         private DateTime dataNascita;
 
-        public string Prova { }
+        public string Prova { get; set; }
         
         public Studente(string nome, string cognome)
         {
