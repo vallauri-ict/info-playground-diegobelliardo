@@ -47,6 +47,7 @@ GROUP BY c.NomeCategoria
 order by percentuale DESC
 
 
+<<<<<<< HEAD
 
 --Query 6 - Restituisci i primi 5 autori con la media di libri pubblicati 
 -- per categoria di libri. Considera solo le categorie con almeno 3 libri.
@@ -74,6 +75,8 @@ ORDER BY MediaLibri DESC;
 
 
 
+=======
+>>>>>>> 6ea154c (Ripristino situazione da PC)
 SELECT  NomeAutore, CognomeAutore, COUNT(Libri.IDLibro)
 FROM Autori
 JOIN Libri ON Autori.IDAutore = Libri.AutoreID
