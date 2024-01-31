@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build">
+  <Sdk Name="Microsoft.Build.Sql" Version="0.1.12-preview" />
+  <PropertyGroup>
+    <Name>MyCourses.DB</Name>
+    <ProjectGuid>{A5DB4AF9-CC6A-4D44-ABB2-9B801CF24BC4}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
+    <ModelCollation>1033, CI</ModelCollation>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="dbo" />
+    <Folder Include="dbo\Functions" />
+    <Folder Include="dbo\StoredProcedures" />
+    <Folder Include="dbo\Tables" />
+    <Folder Include="dbo\Views" />
+  </ItemGroup>
+  <Target Name="BeforeBuild">
+    <Delete Files="$(BaseIntermediateOutputPath)\project.assets.json" />
+  </Target>
+</Project>
