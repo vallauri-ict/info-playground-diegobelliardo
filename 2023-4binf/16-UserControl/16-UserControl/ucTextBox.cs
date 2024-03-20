@@ -18,7 +18,19 @@ namespace _16_UserControl
 
 
         public bool Numero { get => numero; set => numero = value; }
-        public string Testo { get => testo; set => testo = value; }
+        public string Testo 
+        {
+            get {
+                testo = txtTextBox.Text;
+                return testo;
+            }
+            set
+            {
+                testo = value;
+                txtTextBox.Text = testo;
+            }
+        }
+
         public int CifreDecimali {
             get { return cifreDecimali; }
             set
@@ -86,11 +98,16 @@ namespace _16_UserControl
         {
             if (Numero)
             {
-                if ((char.IsDigit(e.KeyChar) || e.KeyChar==',' || char.IsControl(e.KeyChar)))
+                if (!(char.IsDigit(e.KeyChar) || e.KeyChar==',' || char.IsControl(e.KeyChar)))
                 {
-
+                    e.Handled = true;
                 }
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
