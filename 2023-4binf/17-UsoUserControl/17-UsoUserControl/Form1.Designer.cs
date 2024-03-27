@@ -45,6 +45,7 @@
             this.txtMiaTextBox.Size = new System.Drawing.Size(131, 23);
             this.txtMiaTextBox.TabIndex = 0;
             this.txtMiaTextBox.Testo = "";
+            this.txtMiaTextBox.Leave += new System.EventHandler(this.txtMiaTextBox_Leave);
             // 
             // chkNumeri
             // 
@@ -55,6 +56,7 @@
             this.chkNumeri.TabIndex = 1;
             this.chkNumeri.Text = "Accetta solo Numero";
             this.chkNumeri.UseVisualStyleBackColor = true;
+            this.chkNumeri.CheckedChanged += new System.EventHandler(this.chkNumeri_CheckedChanged);
             // 
             // nudCifreDecimali
             // 
@@ -62,6 +64,7 @@
             this.nudCifreDecimali.Name = "nudCifreDecimali";
             this.nudCifreDecimali.Size = new System.Drawing.Size(42, 20);
             this.nudCifreDecimali.TabIndex = 2;
+            this.nudCifreDecimali.ValueChanged += new System.EventHandler(this.nudCifreDecimali_ValueChanged);
             // 
             // btnPulisci
             // 

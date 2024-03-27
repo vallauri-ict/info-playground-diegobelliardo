@@ -48,19 +48,22 @@ namespace _16_UserControl
                 {
                     if (ContaVirgole(Testo) > 1)
                     {
-                        throw new Exception("Ci sono troppe virgole");
+                        MessageBox.Show("Ci sono troppe virgole");
+                        Pulisci();
                     }
+                    else
+                    {
+                        //controllo dei decimali
+                        double numero = Math.Round(Convert.ToDouble(Testo), CifreDecimali);
+                        Testo = numero.ToString();
 
-                    //controllo dei decimali
-                    double numero = Math.Round(Convert.ToDouble(Testo), CifreDecimali);
-                    Testo = numero.ToString();
-
-                    // Gestione degli 00 dopo la virgola in caso di numero intero
-
+                        // Gestione degli 00 dopo la virgola in caso di numero intero
+                    }
                 }
                 catch (Exception)
                 {
-                    throw new Exception("Valore non valido");
+                    MessageBox.Show("Valore non valido");
+                    Pulisci();
                 }
             }
         }
@@ -91,7 +94,7 @@ namespace _16_UserControl
 
         private void textBox1_Leave(object sender, EventArgs e)
         {
-            ReimpostaTesto();
+                ReimpostaTesto();
         }
 
         private void OnKeyPress(object sender, KeyPressEventArgs e)
