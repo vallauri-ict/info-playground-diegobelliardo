@@ -23,12 +23,19 @@ namespace es60p249
 
             do
             {
-                Console.WriteLine("inserisci un numero intero positivo:\n");
-                Console.ReadKey();
-
+                Console.Write("inserisci un numero intero positivo: ");
+                n=Convert.ToInt32( Console.ReadLine());
             } while (n <= 0);
 
-
+            for (i = 0; i <= n; i++)
+            {
+                for (j = 0; j < i; j++)
+                {
+                    Console.Write(cont++ + " ");
+                }
+                Console.WriteLine();
+            }
+            Console.ReadKey();
         }
     }
 }
