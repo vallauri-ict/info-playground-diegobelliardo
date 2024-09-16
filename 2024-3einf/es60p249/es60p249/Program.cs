@@ -20,21 +20,27 @@ namespace es60p249
         static void Main(string[] args)
         {
             int n=1, i, j, cont = 1;
+            String s="";
 
             do
             {
-                Console.Write("inserisci un numero intero positivo: ");
-                n=Convert.ToInt32( Console.ReadLine());
+                Console.Write("Inserisci un numero intero positivo: ");
+                s=Console.ReadLine();
+                n=Convert.ToInt32(s);
+
+//                n=Convert.ToInt32( Console.ReadLine());
             } while (n <= 0);
 
-            for (i = 0; i <= n; i++)
+            for (i = 0; i < n; i++)
             {
-                for (j = 0; j < i; j++)
+                for (j = 0; j <= i; j++)
                 {
-                    Console.Write(cont++ + " ");
+                    Console.Write(cont+" ");
+                    cont++;
                 }
                 Console.WriteLine();
             }
+
             Console.ReadKey();
         }
     }
