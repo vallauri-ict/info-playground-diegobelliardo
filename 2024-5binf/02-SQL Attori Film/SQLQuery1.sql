@@ -219,3 +219,47 @@ and NOT EXISTS (SELECT *
                 WHERE f.codFilm=r.codFilm
                 AND r.codAttore=a.codAttore
                 AND f.regista='Fellini')
+
+/* 33- Il titolo dei film di Fellini in cui non recitano attori italiani */
+SELECT *
+FROM Film f
+WHERE f.regista='Fellini'
+AND  NOT EXISTS (SELECT *
+                 FROM recita r, attori a
+                 WHERE r.codAttore=a.codAttore
+                 AND r.codFilm=f.codFilm
+                 AND a.nazionalita='Italiana')
+
+/* 34- Il titolo dei film senza attori */
+SELECT *
+FROM film f
+WHERE NOT EXISTS (SELECT *
+                  FROM recita r
+                  WHERE r.codFilm=f.codFilm)
+
+SELECT f.*
+FROM film f LEFT JOIN recita r ON f.codFilm=r.codFilm
+WHERE r.codFilm is null
+
+/* 35- Gli attori che prima del 1960 hanno recitato solo nei film di Fellini */
+SELECT *
+FROM attori a
+WHERE NOT EXISTS (SELECT *
+                  FROM recita r, film f
+                  WHERE r.codFilm=f.codFilm
+                  AND r.codAttore=a.codAttore
+                  AND f.annoProduzione<1960
+                  AND f.regista != 'Fellini')
+AND EXISTS (SELECT *                        /* Fa si che non vengano mostrati gli attori che non hanno recitato */
+            FROM recita r, film f
+                  WHERE r.codFilm=f.codFilm
+                  AND r.codAttore=a.codAttore
+                  AND f.annoProduzione<1960
+                  AND f.regista = 'Fellini')
+
+SELECT a.codAttore,f.regista,f.codFilm
+FROM attori a, film f, recita r
+WHERE a.codAttore=r.codAttore
+AND r.codFilm=f.codFilm
+AND f.annoProduzione<1960
+
