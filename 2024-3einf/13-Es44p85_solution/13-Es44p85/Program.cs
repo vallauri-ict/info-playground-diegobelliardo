@@ -78,7 +78,7 @@ namespace _13_Es44p85
 
             for(int i = 0; i < mat.GetLength(0); i++)
             {
-                for (int j = 0; j < mat.GetLength(1)-1; j++)
+                for (int j = 0; j < mat.GetLength(1); j++)
                 {
                     mat[i, j] = val++;
                 }
