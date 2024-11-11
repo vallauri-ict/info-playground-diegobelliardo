@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35303.130
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04-OOPOverride", "04-OOPOverride\04-OOPOverride.csproj", "{2AD889DD-5085-4269-9344-C18C05BF9041}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2AD889DD-5085-4269-9344-C18C05BF9041}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AD889DD-5085-4269-9344-C18C05BF9041}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AD889DD-5085-4269-9344-C18C05BF9041}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AD889DD-5085-4269-9344-C18C05BF9041}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D57E0C99-06DA-41BA-8608-5FBEAC8D4100}
+	EndGlobalSection
+EndGlobal
