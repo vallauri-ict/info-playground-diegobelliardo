@@ -16,9 +16,13 @@ namespace _04_OOPOverride
 
             lstMostri.Add(m);
 
+            // (m as Licantropo).Verso();   NO!!!
+
             Mannaro u = new Mannaro();
             //u.Verso();
             lstMostri.Add(u);
+
+            (u as Mostro).Verso();  //OK
 
             Licantropo l = new Licantropo();
             lstMostri.Add(l);
@@ -27,6 +31,15 @@ namespace _04_OOPOverride
             foreach (Mostro mostro in lstMostri)
             {
                 mostro.Verso();
+                if (mostro is Licantropo)
+                {
+                    Console.WriteLine("Si tratta di un Licantropo: "+ (mostro as Licantropo).Punti());
+                    // mostro.Punti()       NON E' POSSIBILE
+                }
+                if (mostro is Mannaro)
+                {
+                    Console.WriteLine("Si tratta di un Mannaro");
+                }
             }
 
             Console.ReadKey();

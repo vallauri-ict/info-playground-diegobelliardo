@@ -12,5 +12,10 @@ namespace _04_OOPOverride
         {
             Console.WriteLine("Classe Licantropo: ululato");
         }
+
+        public int Punti()
+        {
+            return 100;
+        }
     }
 }
