@@ -29,14 +29,16 @@ namespace _21_Es57p86
                     if (elemento <= 2) mat[i, j] = 1;
                     else
                     {
-
+                        mat[i, j] = val1 + val2;
+                        val2 = val1;
+                        val1 = mat[i, j];
                     }
+                    elemento++;
                 }
             }
 
-
-
-
+            stampaMat(mat);
+            Console.ReadKey();
         }
 
         private static void stampaMat(int[,] mat1)
@@ -45,7 +47,7 @@ namespace _21_Es57p86
             {
                 for (int j = 0; j < mat1.GetLength(1); j++)
                 {
-                    Console.Write(mat1[i, j].ToString().PadLeft(3));
+                    Console.Write(mat1[i, j].ToString().PadLeft(5));
                 }
                 Console.WriteLine();
             }
