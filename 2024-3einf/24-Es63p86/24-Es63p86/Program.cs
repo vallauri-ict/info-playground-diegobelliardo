@@ -11,7 +11,6 @@ namespace _24_Es63p86
         static void Main(string[] args)
         {
             string s1 = "Ciao", s2 = "Cane", s3 = "Carta";
-//            string[] elementi = {s1, s2, s3};
 
             // S1 la più piccola
             if (s1.CompareTo(s2)<=0 && s1.CompareTo(s3)<=0)
@@ -51,28 +50,5 @@ namespace _24_Es63p86
             }
             Console.ReadKey();
         }
-
-        /*            for (int i = 0; i < elementi.Length; i++)
-                    {
-                        int pos = primaStringa(elementi,i);
-                        string aus = elementi[pos];
-                        elementi[pos] = elementi[i];
-                        elementi[i] = aus;
-                    }*/
-
-/*        private static int primaStringa(string[] elementi, int i)
-        {
-            bool trovato = false;
-            int pos = i;
-
-
-
-            while(!trovato && i < elementi.Length)
-            {
-                
-            }
-
-            return pos;
-        }*/
     }
 }
