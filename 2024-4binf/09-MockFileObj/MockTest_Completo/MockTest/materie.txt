@@ -1,0 +1,10 @@
+﻿1;Matematica
+2;Italiano
+3;Scienze
+4;Storia
+5;Geografia
+6;Inglese
+7;Educazione Fisica
+8;Arte
+9;Musica
+10;Tecnologia
