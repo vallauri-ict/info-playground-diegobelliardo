@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35303.130
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "33-RicorsioneSelectionS", "33-RicorsioneSelectionS\33-RicorsioneSelectionS.csproj", "{11C0FD04-F11F-4C36-BEB1-AB8E1A1D2ABC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11C0FD04-F11F-4C36-BEB1-AB8E1A1D2ABC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11C0FD04-F11F-4C36-BEB1-AB8E1A1D2ABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11C0FD04-F11F-4C36-BEB1-AB8E1A1D2ABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11C0FD04-F11F-4C36-BEB1-AB8E1A1D2ABC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7DFD17CA-098E-4B39-B965-AF75DA7170AE}
+	EndGlobalSection
+EndGlobal
