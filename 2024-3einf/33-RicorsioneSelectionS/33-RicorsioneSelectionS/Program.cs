@@ -16,26 +16,73 @@ namespace _33_RicorsioneSelectionS
 
             Console.WriteLine("SELECTION SORT RICORSIVO\n");
             CaricaVet(v, r);
-            CopiaVet(v, vr);
+            v.CopyTo(vr,0);
+            //CopiaVet(v, vr);
             StampaVet(v);
+            Console.ReadKey();
+
+            Console.WriteLine("\n\nVettore Ordinato con metodo classico:");
             SelectionSort(v);
-            SelectionSortRicorsivo(v);
+            StampaVet(v);
 
+            Console.WriteLine("\n\nVettore Ordinato con metodo ricorsivo:");
+            SelectionSortRicorsivo(vr,0);
+            StampaVet(vr);
+
+            Console.ReadKey();
         }
 
-        private static void SelectionSortRicorsivo(int[] v)
+        private static void SelectionSortRicorsivo(int[] v,int startIndex)
         {
-            throw new NotImplementedException();
-        }
+            if (startIndex == v.Length-1) { return; }
 
-        private static void CopiaVet(int[] v, int[] vr)
-        {
-            throw new NotImplementedException();
+            int minIndex = startIndex;
+            for (int j = startIndex + 1; j < v.Length; j++)
+            {
+                if (v[j] < v[minIndex])
+                {
+                    minIndex = j;
+                }
+            }
+
+            //scambio elementi
+            if (minIndex != startIndex)
+            {
+                int temp = v[startIndex];
+                v[startIndex] = v[minIndex];
+                v[minIndex] = temp;
+            }
+
+            Console.WriteLine();
+            StampaVet(v);
+
+            //Chiamata ricorsiva per il resto del vettore
+            SelectionSortRicorsivo(v,startIndex+1);
         }
 
         private static void SelectionSort(int[] v)
         {
-            
+            for (int i = 0; i < v.Length - 1; i++)
+            {
+                int minIndex = i;
+                for (int j = i + 1; j < v.Length; j++)
+                {
+                    if (v[j] < v[minIndex])
+                    {
+                        minIndex = j;
+                    }
+                }
+                //scambio elementi
+                if (minIndex != i)
+                {
+                    int temp = v[i];
+                    v[i] = v[minIndex];
+                    v[minIndex] = temp;
+                }
+
+                Console.WriteLine();
+                StampaVet(v);
+            }
         }
 
         private static void StampaVet(int[] v)
