@@ -56,6 +56,7 @@
             this.chkNumeri.TabIndex = 1;
             this.chkNumeri.Text = "Accetta solo Numeri";
             this.chkNumeri.UseVisualStyleBackColor = true;
+            this.chkNumeri.CheckedChanged += new System.EventHandler(this.chkNumeri_CheckedChanged);
             // 
             // nudCifreDecimali
             // 
@@ -63,6 +64,7 @@
             this.nudCifreDecimali.Name = "nudCifreDecimali";
             this.nudCifreDecimali.Size = new System.Drawing.Size(45, 20);
             this.nudCifreDecimali.TabIndex = 2;
+            this.nudCifreDecimali.ValueChanged += new System.EventHandler(this.nudCifreDecimali_ValueChanged);
             // 
             // btnVisualizza
             // 

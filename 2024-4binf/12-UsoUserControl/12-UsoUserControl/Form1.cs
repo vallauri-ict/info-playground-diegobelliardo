@@ -34,10 +34,32 @@ namespace _12_UsoUserControl
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            ImpostaProperty(false);
+        }
+
+        private void ImpostaProperty(bool numero)
+        {
             txtMiaTextBox.Pulisci();
             nudCifreDecimali.Value = 0;
-            chkNumeri.Checked = false;
-            txtMiaTextBox.Numero = chkNumeri.Checked;
+            chkNumeri.Checked = numero;
+            txtMiaTextBox.Numero = numero;
+            try
+            {
+                txtMiaTextBox.CifreDecimali = Convert.ToInt32(nudCifreDecimali.Value);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void chkNumeri_CheckedChanged(object sender, EventArgs e)
+        {
+            ImpostaProperty(chkNumeri.Checked);
+        }
+
+        private void nudCifreDecimali_ValueChanged(object sender, EventArgs e)
+        {
             try
             {
                 txtMiaTextBox.CifreDecimali = Convert.ToInt32(nudCifreDecimali.Value);
