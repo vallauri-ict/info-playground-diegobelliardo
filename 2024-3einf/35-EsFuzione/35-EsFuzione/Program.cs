@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,8 +10,27 @@ namespace _35_EsFuzione
 {
     internal class Program
     {
+        static string[] a = new string[]
+           {
+                "Marco", "Luca", "Giovanni", "Alessandro", "Francesco",
+                "Matteo", "Andrea", "Roberto", "Giuseppe", "Daniele",
+                "Davide", "Simone", "Stefano", "Antonio", "Giulio",
+                "Federico", "Paolo", "Leonardo", "Giorgio", "Salvatore"
+           };
+
+        static string[] b = new string[]
+        {
+                "Rossi", "Bianchi", "Verdi", "Neri", "Gialli",
+                "Marini", "Romano", "Esposito", "Ferrari", "Conti",
+                "Giordano", "Simone", "Leonardo", "Sorrentino", "Barbieri",
+                "Corsi", "De Luca", "Vitali", "Pellegrini", "Santoro"
+        };
         static void Main(string[] args)
         {
+            // ordino i vettori perché non lo sono
+            Array.Sort(a);
+            Array.Sort(b);
+
             int scelta;
             do
             {
@@ -21,6 +42,7 @@ namespace _35_EsFuzione
                         break;
                     case 1:
                         Console.WriteLine("Caso 1");
+                        FusioneBase();
                         break;
                     case 2:
                         Console.WriteLine("Caso 2");
@@ -32,6 +54,72 @@ namespace _35_EsFuzione
                 Console.ReadKey();
             }
             while (scelta != 0);
+        }
+
+        private static void FusioneBase()
+        {
+            StampaVet(a, "Vettore a:");
+            StampaVet(b, "Vettore b:");
+
+            string[] c = new string[a.Length+b.Length];
+
+            int i = 0; int j = 0; int k = 0;
+            do
+            {
+                if (a[i].CompareTo(b[j]) > 0)
+                {
+                    c[k] = b[j];
+                    j++;
+                }
+                else
+                {
+                    if (a[i].CompareTo(b[j]) == 0)
+                    {
+                        c[k] = a[i];
+                        i++; j++;
+                    }
+                    else
+                    {
+                        c[k] = a[i];
+                        i++;
+                    }
+                }
+                k++;
+            } 
+//            while(k< a.Length + b.Length)   NON FUNZIONA CON ELEMENTI UNGAULI
+//                                            NEI VETTORI a E b
+            while((i<a.Length) && (j<b.Length));
+
+            if (i>=a.Length)
+            {
+                for (int h = j; h < b.Length; h++)
+                {
+                    c[k] = b[h];
+                    k++;
+                }
+            }
+            else
+            {
+                for (int h = i; h < a.Length; h++)
+                {
+                    c[k] = a[h];
+                    k++;
+                }
+            }
+            Array.Resize(ref c, k);
+            StampaVet(c, "\nVettore c: ");
+        }
+
+        private static void StampaVet(string[] a, string message)
+        {
+            Console.WriteLine(message);
+            for (int i = 0; i < a.Length; i++) { 
+                Console.Write(a[i].PadLeft(12));
+                if ((i + 1) % 6 == 0) { 
+                    Console.WriteLine();
+                }
+            }
+            Console.WriteLine() ;   
         }
 
         private static int visualizzaMenu()
