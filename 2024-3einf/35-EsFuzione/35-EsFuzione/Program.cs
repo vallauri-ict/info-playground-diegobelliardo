@@ -12,18 +12,12 @@ namespace _35_EsFuzione
     {
         static string[] a = new string[]
            {
-                "Marco", "Luca", "Giovanni", "Alessandro", "Francesco",
-                "Matteo", "Andrea", "Roberto", "Giuseppe", "Daniele",
-                "Davide", "Simone", "Stefano", "Antonio", "Giulio",
-                "Federico", "Paolo", "Leonardo", "Giorgio", "Salvatore"
+                "Marco", "Luca", "Giovanni"
            };
 
         static string[] b = new string[]
         {
-                "Rossi", "Bianchi", "Verdi", "Neri", "Gialli",
-                "Marini", "Romano", "Esposito", "Ferrari", "Conti",
-                "Giordano", "Simone", "Leonardo", "Sorrentino", "Barbieri",
-                "Corsi", "De Luca", "Vitali", "Pellegrini", "Santoro"
+                "Bianchi", "Esposito", "Ferrari", "Conti"
         };
         static void Main(string[] args)
         {
@@ -64,12 +58,12 @@ namespace _35_EsFuzione
 
             const string TAPPO = "zzz";
 
+            string[] c = new string[a.Length + b.Length];
+
             Array.Resize(ref a, a.Length + 1);
             Array.Resize(ref b, b.Length + 1);
 
             a[a.Length-1] = b[b.Length-1] = TAPPO;
-
-            string[] c = new string[a.Length + b.Length];
 
             int i = 0; int j = 0; 
 
@@ -147,7 +141,7 @@ namespace _35_EsFuzione
         private static void StampaVet(string[] a, string message)
         {
             Console.WriteLine(message);
-            a=new string[3];
+            //a=new string[3];
             for (int i = 0; i < a.Length; i++) { 
                 Console.Write(a[i].PadLeft(12));
                 if ((i + 1) % 6 == 0) { 
