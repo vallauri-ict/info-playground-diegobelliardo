@@ -8,6 +8,10 @@ namespace _39_SaltoInAlto
 {
     internal class ClsSalti
     {
+        const int LARGHEZZATABTOT = 40;
+
+
+
         static Random rnd = new Random();
         internal static void CaricaNazioni(string[] nazione)
         {
@@ -34,6 +38,112 @@ namespace _39_SaltoInAlto
             {
                 int sex = rnd.Next(2);
                 sesso[i] = sex == 0 ? "M" : "F";
+            }
+        }
+
+        internal static void VisualizzaDati(string[] atleti, string[] sesso, string[] nazione, int[] salti)
+        {
+            IntestaTabella();
+            for (int i = 0; i<atleti.Length; i++)
+            {
+                StampaRiga(atleti[i], sesso[i], nazione[i], salti[i]);
+            }
+            ChiudiTabella();
+        }
+
+        private static void ChiudiTabella()
+        {
+            Console.WriteLine("".PadLeft(LARGHEZZATABTOT, '-'));
+        }
+
+        private static void StampaRiga(string v1, string v2, string v3, int v4)
+        {
+            string st1 = v1.PadLeft(10);
+            string st2 = v2.PadLeft(4);
+            string st3 = v3.PadLeft(10);
+            string st4 = v4.ToString().PadLeft(3);
+            Console.WriteLine($"| {st1} | {st2} | {st3} | {st4} |");
+        }
+
+        private static void IntestaTabella()
+        {
+            Console.WriteLine("".PadLeft(LARGHEZZATABTOT, '-'));
+            string st1 = "Atleta".PadLeft(10);
+            string st2 = "Sex".PadLeft(4);
+            string st3 = "Nazione".PadLeft(10);
+            string st4 = "Ris".PadLeft(3);
+            Console.WriteLine($"| {st1} | {st2} | {st3} | {st4} |");
+        }
+
+        internal static void ClassificaGenerale(string[] atleti, string[] sesso, string[] nazione, int[] salti)
+        {
+            for (int i = 0; i <= atleti.Length-2; i++)
+            {
+                int posMin = i;
+                for (int j = i + 1; j <= atleti.Length - 1; j++)
+                {
+                    if (salti[posMin] < salti[j])
+                    {
+                        posMin = j;
+                    }
+                }
+                if(posMin != i)
+                {
+                    ScambiaStringhe(ref sesso[i], ref sesso[posMin]);
+                    ScambiaStringhe(ref atleti[i], ref atleti[posMin]);
+                    ScambiaStringhe(ref nazione[i], ref nazione[posMin]);
+                    ScambiaInteri(ref salti[i], ref salti[posMin]);
+                }
+            }
+        }
+
+        private static void ScambiaInteri(ref int v1, ref int v2)
+        {
+            int aus = v1;
+            v1 = v2;
+            v2 = aus;
+        }
+
+        private static void ScambiaStringhe(ref string v1, ref string v2)
+        {
+            string aus=v1;
+            v1=v2;
+            v2 = aus;
+        }
+
+        internal static double MediaSaltiNazione(string[] atleti, string[] sesso, string[] nazione, int[] salti, string naz)
+        {
+            OrdinaPerNazione(atleti, sesso, nazione, salti);
+            VisualizzaDati(atleti, sesso, nazione, salti);
+
+            int somma = 0, conta = 0, i = 0;
+            bool superato=false;
+
+            while(!superato && i < nazione.Length - 1)
+            {
+
+            }
+        }
+
+        private static void OrdinaPerNazione(string[] atleti, string[] sesso, string[] nazione, int[] salti)
+        {
+            for (int i = 0; i < nazione.Length-1; i++)
+            {
+                int posMin = i;
+                for (int j = i+1; j < nazione.Length; j++)
+                {
+                    if (nazione[posMin].ToUpper().CompareTo(nazione[j].ToUpper()) > 0)
+                    {
+                        posMin = j;
+                    }
+                }
+                if (posMin != i)
+                {
+                    ScambiaStringhe(ref sesso[i], ref sesso[posMin]);
+                    ScambiaStringhe(ref atleti[i], ref atleti[posMin]);
+                    ScambiaStringhe(ref nazione[i], ref nazione[posMin]);
+                    ScambiaInteri(ref salti[i], ref  salti[posMin]);
+                }
             }
         }
     }

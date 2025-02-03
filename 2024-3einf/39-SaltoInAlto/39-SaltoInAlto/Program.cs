@@ -27,13 +27,16 @@ namespace _39_SaltoInAlto
                 switch (scelta)
                 {
                     case 1:
-                        Console.WriteLine(scelta);
+                        ClsSalti.VisualizzaDati(atleti, sesso, nazione, salti);
                         break;
                     case 2:
-                        Console.WriteLine(scelta);
+                        ClsSalti.ClassificaGenerale(atleti,sesso, nazione, salti);
+                        ClsSalti.VisualizzaDati(atleti, sesso, nazione, salti);
                         break;
                     case 3:
-                        Console.WriteLine(scelta);
+                        Console.Write("Inserisci la nazione: ");
+                        string naz=Console.ReadLine();
+                        double media = ClsSalti.MediaSaltiNazione(atleti, sesso, nazione, salti, naz);
                         break;
                     case 4:
                         break;
@@ -72,9 +75,5 @@ namespace _39_SaltoInAlto
             return sc;
         }
 
-        private static void CaricaSalti(int[] salti)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
