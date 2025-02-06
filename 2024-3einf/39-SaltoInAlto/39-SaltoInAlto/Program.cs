@@ -37,8 +37,17 @@ namespace _39_SaltoInAlto
                         Console.Write("Inserisci la nazione: ");
                         string naz=Console.ReadLine();
                         double media = ClsSalti.MediaSaltiNazione(atleti, sesso, nazione, salti, naz);
+                        if (media == -1)
+                        {
+                            Console.WriteLine($"La nazione {naz} non è presente!");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"La media della nazione {naz} è "+media.ToString("F2"));
+                        }
                         break;
                     case 4:
+                        ClsSalti.MediaSaltiOgniNazione(atleti, sesso, nazione, salti);
                         break;
                     case 5:
                         break;

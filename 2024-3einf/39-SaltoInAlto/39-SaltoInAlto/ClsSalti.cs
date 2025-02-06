@@ -117,12 +117,26 @@ namespace _39_SaltoInAlto
             VisualizzaDati(atleti, sesso, nazione, salti);
 
             int somma = 0, conta = 0, i = 0;
-            bool superato=false;
+            bool superato=false, trovato=false;
 
             while(!superato && i < nazione.Length - 1)
             {
-
+                if (nazione[i].ToUpper() == naz.ToUpper())
+                {
+                    somma += salti[i];
+                    conta++;
+                    trovato = true;
+                }
+                if (nazione[i].ToUpper().CompareTo(naz.ToUpper()) > 0)
+                {
+                    superato = true;
+                }
+                i++;
             }
+
+            double media = trovato ? (double)somma / conta : -1;
+
+            return media;
         }
 
         private static void OrdinaPerNazione(string[] atleti, string[] sesso, string[] nazione, int[] salti)
@@ -145,6 +159,33 @@ namespace _39_SaltoInAlto
                     ScambiaInteri(ref salti[i], ref  salti[posMin]);
                 }
             }
+        }
+
+        internal static void MediaSaltiOgniNazione(string[] atleti, string[] sesso, string[] nazione, int[] salti)
+        {
+            OrdinaPerNazione(atleti, sesso, nazione, salti);
+            VisualizzaDati(atleti, sesso, nazione, salti);
+
+            double somma=salti[0], media;
+            int conta = 1;
+
+            for (int i = 0; i < nazione.Length - 1; i++)
+            {
+                if (nazione[i] == nazione[i + 1])
+                {
+                    somma += salti[i + 1];
+                    conta++;
+                }
+                else
+                {
+                    media=somma/conta;
+                    Console.WriteLine($"La media per la nazione {nazione[i]} è " + media.ToString("F2"));
+                    somma = salti[i + 1];
+                    conta = 1;
+                }
+            }
+            media = somma / conta;
+            Console.WriteLine($"La media per la nazione {nazione[nazione.Length-1]} è " + media.ToString("F2"));
         }
     }
 }
