@@ -187,5 +187,100 @@ namespace _39_SaltoInAlto
             media = somma / conta;
             Console.WriteLine($"La media per la nazione {nazione[nazione.Length-1]} è " + media.ToString("F2"));
         }
+
+        internal static void ClassificaPerNazioni(string[] atleti, string[] sesso, string[] nazione, int[] salti)
+        {
+            OrdinaPerNazione(atleti,sesso, nazione, salti);
+            VisualizzaDati(atleti, sesso, nazione, salti);
+
+            // variabili di appoggio
+            string[] naz = new string[nazione.Length];
+            double[] medie = new double[nazione.Length];
+            int j = 0;
+
+            int somma = salti[0], conta = 1;
+            double media = 0;
+
+            for(int i = 0; i<nazione.Length - 1;i++)
+            {
+                if (nazione[i] == nazione[i+1])
+                {
+                    somma += salti[i + 1];
+                    conta++;
+                }
+                else
+                {
+                    media = (double)somma / conta;
+                    naz[j] = nazione[i];
+                    medie[j] = media;
+                    j++;
+                    somma= salti[i + 1];
+                    conta = 1;
+                }
+            }
+            media = (double)somma / conta;
+            naz[j] = nazione[nazione.Length-1];
+            medie[j] = media;
+
+            OrdinaPerMedia(naz,medie);
+        }
+
+        private static void OrdinaPerMedia(string[] nazione, double[] medie)
+        {
+            for (int i = 0; i < nazione.Length - 1; i++)
+            {
+                int posMin = i;
+                for (int j = i + 1; j < nazione.Length; j++)
+                {
+                    if (medie[posMin]<medie[j])
+                    {
+                        posMin = j;
+                    }
+                }
+                if (posMin != i)
+                {
+                    ScambiaStringhe(ref nazione[i], ref nazione[posMin]);
+                    ScambiaDouble(ref medie[i], ref medie[posMin]);
+                }
+            }
+        }
+
+        private static void ScambiaDouble(ref double v1, ref double v2)
+        {
+            v1 = v1 + v2;
+            v2 = v1 - v2;
+            v1 = v1 - v2;
+
+            /**************************
+             * v1=10;   v2=20
+             *
+             * v1=30
+             * v2=10
+             * v1=20
+             * 
+             * Non richiede variabili ma più lento
+             * **************************/
+        }
+
+        internal static void MediaSaltiUominiDonne(string[] sesso, int[] salti)
+        {
+            double sommaF=0, sommaM=0;
+            int cont = 0;
+
+            for (int i = 0; i < salti.Length; i++)
+            {
+                if (sesso[i]=="M")
+                {
+                    sommaM += salti[i];
+                    cont++;
+                }
+                else
+                {
+                    sommaF += salti[i];
+                }
+            }
+            Console.WriteLine($"Media salti uomini: {(sommaM / cont).ToString("N2")}\n" +
+                $"Media salti donne: {(sommaF / (salti.Length - cont)).ToString("N2")}");
+        }
     }
 }

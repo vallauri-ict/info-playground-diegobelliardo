@@ -50,10 +50,13 @@ namespace _39_SaltoInAlto
                         ClsSalti.MediaSaltiOgniNazione(atleti, sesso, nazione, salti);
                         break;
                     case 5:
+                        ClsSalti.ClassificaPerNazioni(atleti, sesso, nazione, salti);
                         break;
                     case 6:
+                        ClsSalti.MediaSaltiUominiDonne(sesso, salti);
                         break;
-                    case 7:
+                    case 7:  // Cercare i vincitori M e F della nazione prima classificata
+
                         break;
                     case 0:
                         Console.WriteLine(scelta);
