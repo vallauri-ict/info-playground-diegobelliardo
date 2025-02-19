@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _40_AltoBasso
+namespace _41_Tris
 {
     internal static class Program
     {
@@ -16,7 +16,7 @@ namespace _40_AltoBasso
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new _40_AltoBasso.Form1());
+            Application.Run(new Form1());
         }
     }
 }
