@@ -20,10 +20,20 @@ namespace Es_Cambieri_Impossibile
         private void FormScrutinio_Load(object sender, EventArgs e)
         {
             SettaDgv(dgvScrutinio);
-            clsScrutinio.CaricaVoti();
+            ClsScrutinio.CaricaVoti(4,10);
             /*  CaricaDgv(dgvScrutinio,clsScrutinio.voti,clsScrutinio.studenti,clsScrutinio.materie);   */
-            CaricaDgvOttimizzato(dgvScrutinio, clsScrutinio.voti, clsScrutinio.studenti, clsScrutinio.materie);
+            CaricaDgvOttimizzato(dgvScrutinio, ClsScrutinio.voti, ClsScrutinio.studenti, ClsScrutinio.materie);
             RidimensionaDgv(dgvScrutinio);
+            RiempiCombo(cmbStudente,ClsScrutinio.studenti);
+            RiempiCombo(cmbMateria, ClsScrutinio.materie);
+        }
+
+        private void RiempiCombo(ComboBox cmbStudente, string[] studenti)
+        {
+            for (int i = 0; i<studenti.Length; i++)
+            {
+                cmbStudente.Items.Add(studenti[i]);
+            }
         }
 
         private void RidimensionaDgv(DataGridView dgv)
@@ -80,10 +90,72 @@ namespace Es_Cambieri_Impossibile
                         dgv.Columns[j].HeaderCell.Value = materie[j];
                     }
                     dgv.Rows[i].Cells[j].Value = voti[i, j];
+                    if (voti[i,j] >= 6)
+                    {
+                        dgv.Rows[i].Cells[j].Style.ForeColor = Color.Green;
+                    }
+                    else if (voti[i,j] < 5)
+                    {
+                        dgv.Rows[i].Cells[j].Style.ForeColor = Color.Red;
+                    }
+                    else
+                    {
+                        dgv.Rows[i].Cells[j].Style.ForeColor = Color.DarkOrange;
+                    }
                 }
             }
             
         }
-        
+
+        private void btnContaEsiti_Click(object sender, EventArgs e)
+        {
+            int nPromossi = 0, nBocciati = 0, nRimandati = 0;
+
+            ClsScrutinio.contaEsiti(ref nPromossi, ref nBocciati, ref nRimandati);
+            if(rdbBocciati.Checked)
+            {
+                MessageBox.Show($"Ci sono {nBocciati} bocciati");
+            }
+            else if(rdbRimandati.Checked)
+            {
+                MessageBox.Show($"Ci sono {nRimandati} rimandati");
+            }
+            else MessageBox.Show($"Ci sono {nPromossi} promossi");
+        }
+
+        private void cmbStudente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string studenteSelezionato = cmbStudente.SelectedItem.ToString();
+            int sommaVoti = 0, contaInsufficienze = 0;
+            string elencoMatInsufficienti = "";
+
+            for( int i = 0;i<ClsScrutinio.materie.Length;i++)
+            {
+                int voto = ClsScrutinio.voti[cmbStudente.SelectedIndex, i];
+                sommaVoti += voto;
+
+                if(voto < 6)
+                {
+                    contaInsufficienze++;
+                    elencoMatInsufficienti += ClsScrutinio.materie[i] + " ";
+                }
+            }
+
+            string risultato;
+            if (contaInsufficienze > 3)
+            {
+                risultato = "BOCCIATO";
+            }
+            else if (contaInsufficienze == 0)
+            {
+                risultato = "PROMOSSO";
+            }
+            else risultato = "RIMANDATO";
+
+            double mediaVoti = (double)sommaVoti / ClsScrutinio.materie.Length;
+
+            MessageBox.Show($"{studenteSelezionato}\n{risultato}\n{elencoMatInsufficienti}" +
+                $"\nMEDIA: {mediaVoti}");
+        }
     }
 }

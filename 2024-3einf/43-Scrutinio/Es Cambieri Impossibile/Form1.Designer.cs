@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvScrutinio = new System.Windows.Forms.DataGridView();
             this.lblStat = new System.Windows.Forms.Label();
             this.lblStud = new System.Windows.Forms.Label();
@@ -51,39 +51,39 @@
             // 
             // dgvScrutinio
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvScrutinio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvScrutinio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvScrutinio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvScrutinio.Dock = System.Windows.Forms.DockStyle.Left;
             this.dgvScrutinio.Location = new System.Drawing.Point(0, 0);
             this.dgvScrutinio.Name = "dgvScrutinio";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvScrutinio.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvScrutinio.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvScrutinio.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvScrutinio.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvScrutinio.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvScrutinio.RowTemplate.Height = 30;
-            this.dgvScrutinio.Size = new System.Drawing.Size(1015, 552);
+            this.dgvScrutinio.Size = new System.Drawing.Size(970, 552);
             this.dgvScrutinio.TabIndex = 0;
             // 
             // lblStat
             // 
             this.lblStat.AutoSize = true;
             this.lblStat.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStat.Location = new System.Drawing.Point(1113, 10);
+            this.lblStat.Location = new System.Drawing.Point(1071, 10);
             this.lblStat.Name = "lblStat";
             this.lblStat.Size = new System.Drawing.Size(147, 25);
             this.lblStat.TabIndex = 1;
@@ -93,7 +93,7 @@
             // 
             this.lblStud.AutoSize = true;
             this.lblStud.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStud.Location = new System.Drawing.Point(1021, 62);
+            this.lblStud.Location = new System.Drawing.Point(979, 62);
             this.lblStud.Name = "lblStud";
             this.lblStud.Size = new System.Drawing.Size(79, 20);
             this.lblStud.TabIndex = 2;
@@ -103,10 +103,11 @@
             // 
             this.cmbStudente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStudente.FormattingEnabled = true;
-            this.cmbStudente.Location = new System.Drawing.Point(1106, 59);
+            this.cmbStudente.Location = new System.Drawing.Point(1064, 59);
             this.cmbStudente.Name = "cmbStudente";
             this.cmbStudente.Size = new System.Drawing.Size(227, 28);
             this.cmbStudente.TabIndex = 3;
+            this.cmbStudente.SelectedIndexChanged += new System.EventHandler(this.cmbStudente_SelectedIndexChanged);
             // 
             // gbContaEsititi
             // 
@@ -115,7 +116,7 @@
             this.gbContaEsititi.Controls.Add(this.rdbBocciati);
             this.gbContaEsititi.Controls.Add(this.rdbPromossi);
             this.gbContaEsititi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbContaEsititi.Location = new System.Drawing.Point(1025, 106);
+            this.gbContaEsititi.Location = new System.Drawing.Point(983, 106);
             this.gbContaEsititi.Name = "gbContaEsititi";
             this.gbContaEsititi.Size = new System.Drawing.Size(308, 138);
             this.gbContaEsititi.TabIndex = 4;
@@ -131,6 +132,7 @@
             this.btnContaEsiti.TabIndex = 3;
             this.btnContaEsiti.Text = "Conta Esiti";
             this.btnContaEsiti.UseVisualStyleBackColor = true;
+            this.btnContaEsiti.Click += new System.EventHandler(this.btnContaEsiti_Click);
             // 
             // rdbRimandati
             // 
@@ -169,7 +171,7 @@
             // 
             this.cmbMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMateria.FormattingEnabled = true;
-            this.cmbMateria.Location = new System.Drawing.Point(1093, 271);
+            this.cmbMateria.Location = new System.Drawing.Point(1051, 271);
             this.cmbMateria.Name = "cmbMateria";
             this.cmbMateria.Size = new System.Drawing.Size(240, 28);
             this.cmbMateria.TabIndex = 6;
@@ -178,7 +180,7 @@
             // 
             this.lblMateria.AutoSize = true;
             this.lblMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMateria.Location = new System.Drawing.Point(1021, 274);
+            this.lblMateria.Location = new System.Drawing.Point(979, 274);
             this.lblMateria.Name = "lblMateria";
             this.lblMateria.Size = new System.Drawing.Size(66, 20);
             this.lblMateria.TabIndex = 5;
@@ -187,7 +189,7 @@
             // btnMateriaBalorda
             // 
             this.btnMateriaBalorda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMateriaBalorda.Location = new System.Drawing.Point(1025, 332);
+            this.btnMateriaBalorda.Location = new System.Drawing.Point(983, 332);
             this.btnMateriaBalorda.Name = "btnMateriaBalorda";
             this.btnMateriaBalorda.Size = new System.Drawing.Size(308, 51);
             this.btnMateriaBalorda.TabIndex = 9;
@@ -197,7 +199,7 @@
             // btnStudSùGiù
             // 
             this.btnStudSùGiù.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStudSùGiù.Location = new System.Drawing.Point(1025, 489);
+            this.btnStudSùGiù.Location = new System.Drawing.Point(983, 489);
             this.btnStudSùGiù.Name = "btnStudSùGiù";
             this.btnStudSùGiù.Size = new System.Drawing.Size(308, 51);
             this.btnStudSùGiù.TabIndex = 10;
@@ -207,7 +209,7 @@
             // btnVotoTraDue
             // 
             this.btnVotoTraDue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVotoTraDue.Location = new System.Drawing.Point(1025, 410);
+            this.btnVotoTraDue.Location = new System.Drawing.Point(983, 410);
             this.btnVotoTraDue.Name = "btnVotoTraDue";
             this.btnVotoTraDue.Size = new System.Drawing.Size(308, 51);
             this.btnVotoTraDue.TabIndex = 11;
@@ -218,7 +220,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1345, 552);
+            this.ClientSize = new System.Drawing.Size(1301, 552);
             this.Controls.Add(this.btnVotoTraDue);
             this.Controls.Add(this.btnStudSùGiù);
             this.Controls.Add(this.btnMateriaBalorda);
