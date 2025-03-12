@@ -35,19 +35,22 @@
             // 
             // dgvCampoMinato
             // 
-            this.dgvCampoMinato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCampoMinato.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dgvCampoMinato.ColumnHeadersHeight = 29;
             this.dgvCampoMinato.Location = new System.Drawing.Point(0, 0);
+            this.dgvCampoMinato.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCampoMinato.Name = "dgvCampoMinato";
-            this.dgvCampoMinato.Size = new System.Drawing.Size(414, 365);
+            this.dgvCampoMinato.RowHeadersWidth = 51;
+            this.dgvCampoMinato.Size = new System.Drawing.Size(500, 420);
             this.dgvCampoMinato.TabIndex = 0;
+            this.dgvCampoMinato.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCampoMinato_CellClick);
             // 
             // btnInizia
             // 
             this.btnInizia.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInizia.Location = new System.Drawing.Point(0, 360);
+            this.btnInizia.Location = new System.Drawing.Point(0, 443);
+            this.btnInizia.Margin = new System.Windows.Forms.Padding(4);
             this.btnInizia.Name = "btnInizia";
-            this.btnInizia.Size = new System.Drawing.Size(414, 84);
+            this.btnInizia.Size = new System.Drawing.Size(552, 103);
             this.btnInizia.TabIndex = 1;
             this.btnInizia.Text = "INIZIA";
             this.btnInizia.UseVisualStyleBackColor = true;
@@ -55,11 +58,12 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 441);
+            this.ClientSize = new System.Drawing.Size(552, 543);
             this.Controls.Add(this.btnInizia);
             this.Controls.Add(this.dgvCampoMinato);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Campo Minato";
             this.Load += new System.EventHandler(this.Form1_Load);

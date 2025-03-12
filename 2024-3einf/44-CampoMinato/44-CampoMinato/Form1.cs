@@ -26,6 +26,7 @@ namespace _44_CampoMinato
         {
             InizializzaCampo();
             SettaDgv();
+            MostraDgv();
         }
 
         private void SettaDgv()
@@ -34,7 +35,33 @@ namespace _44_CampoMinato
             dgvCampoMinato.ColumnCount = DIM_CAMPO;
             dgvCampoMinato.RowCount = DIM_CAMPO;
 
+            // imposto la griglia in sola lettura
+            dgvCampoMinato.ReadOnly = true;
 
+            // nascondo header di rige e colonna
+            dgvCampoMinato.RowHeadersVisible = false;
+            dgvCampoMinato.ColumnHeadersVisible = false;
+
+            // evitare il ridimensionamento delle celle
+            dgvCampoMinato.AllowUserToResizeColumns = false;
+            dgvCampoMinato.AllowUserToResizeRows = false;
+
+            // disabilito le scrollbars
+            dgvCampoMinato.ScrollBars = ScrollBars.None;
+
+
+            dgvCampoMinato.Width = 360;
+            dgvCampoMinato.Height = 360;
+
+            // imposto la dimensione delle celle
+            for (int i = 0; i < DIM_CAMPO; i++)
+            {
+                dgvCampoMinato.Columns[i].Width = 
+                        dgvCampoMinato.Height/DIM_CAMPO;
+                dgvCampoMinato.Rows[i].Height = 
+                        dgvCampoMinato.Width/DIM_CAMPO;
+            }
+            dgvCampoMinato.ClearSelection();
         }
 
         private void InizializzaCampo()
@@ -86,8 +113,45 @@ namespace _44_CampoMinato
 
         private void btnInizia_Click(object sender, EventArgs e)
         {
-
+            InizializzaCampo();
+            MostraDgv();
+            dgvCampoMinato.Enabled = true;
         }
 
+        private void MostraDgv()
+        {
+            for (int i = 0; i < DIM_CAMPO; i++)
+            {
+                for (int j = 0; j < DIM_CAMPO; j++)
+                {
+                    dgvCampoMinato.Rows[i].Cells[j].Value =
+                        campo[i + 1, j + 1];
+                }
+            }
+        }
+
+        private void dgvCampoMinato_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int riga = e.RowIndex;
+            int colonna = e.ColumnIndex;
+            int contenutoCella = campo[riga + 1, colonna + 1];
+
+            switch(contenutoCella)
+            {
+                case -1:
+                    dgvCampoMinato.Rows[riga].Cells[colonna].Style.BackColor = Color.Red;
+                    MessageBox.Show("Hai perso!");
+                    MostraDgv();
+                    dgvCampoMinato.Enabled = false;
+                    break;
+                case 0:
+                    dgvCampoMinato.Rows[riga].Cells[colonna].Style.BackColor = Color.Green;
+                    break;
+                default:
+                    dgvCampoMinato.Rows[riga].Cells[colonna].Value =
+                        campo[riga + 1, colonna + 1];
+                    dgvCampoMinato.Rows[riga].Cells[colonna].Style.BackColor = Color.Yellow;
+                    break;
+            }
     }
 }
