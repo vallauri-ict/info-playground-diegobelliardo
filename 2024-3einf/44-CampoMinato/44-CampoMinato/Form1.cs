@@ -16,6 +16,7 @@ namespace _44_CampoMinato
         const int NUM_BOMBE = 10;
         Random rnd = new Random();
         int[,] campo = new int[DIM_CAMPO+2, DIM_CAMPO+2];
+        int mosse;
 
 
         public Form1()
@@ -24,9 +25,9 @@ namespace _44_CampoMinato
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            InizializzaCampo();
             SettaDgv();
-            MostraDgv();
+            InizializzaCampo();
+            //MostraDgv();
         }
 
         private void SettaDgv()
@@ -73,6 +74,8 @@ namespace _44_CampoMinato
 
             int x, y;
 
+            ResetCampo();
+            mosse = 0;
             for (int i = 0; i < NUM_BOMBE; i++)
             {
                 do
@@ -95,6 +98,19 @@ namespace _44_CampoMinato
 
         }
 
+        private void ResetCampo()
+        {
+            for (int i = 0; i < DIM_CAMPO + 2; i++)
+            {
+                for (int j = 0; j < DIM_CAMPO + 2; j++)
+                {
+                    campo[i, j] = 0;
+                    if (i < DIM_CAMPO && j < DIM_CAMPO)
+                        dgvCampoMinato.Rows[i].Cells[j].Style.BackColor = Color.Empty;
+                }
+            }
+        }
+
         private int ContaBombeVicino(int i, int j)
         {
             int contatore = 0;
@@ -114,8 +130,21 @@ namespace _44_CampoMinato
         private void btnInizia_Click(object sender, EventArgs e)
         {
             InizializzaCampo();
-            MostraDgv();
+            ResetValueDGV();
+            //MostraDgv();
             dgvCampoMinato.Enabled = true;
+        }
+
+        private void ResetValueDGV()
+        {
+            for (int i = 0; i < DIM_CAMPO; i++)
+            {
+                for (int j = 0; j < DIM_CAMPO; j++)
+                {
+                    dgvCampoMinato.Rows[i].Cells[j].Value = "";
+                    dgvCampoMinato.Rows[i].Cells[j].Tag = null;
+                }
+            }
         }
 
         private void MostraDgv()
@@ -136,22 +165,46 @@ namespace _44_CampoMinato
             int colonna = e.ColumnIndex;
             int contenutoCella = campo[riga + 1, colonna + 1];
 
-            switch(contenutoCella)
+            switch (contenutoCella)
             {
                 case -1:
                     dgvCampoMinato.Rows[riga].Cells[colonna].Style.BackColor = Color.Red;
+                    dgvCampoMinato.ClearSelection();
                     MessageBox.Show("Hai perso!");
                     MostraDgv();
                     dgvCampoMinato.Enabled = false;
                     break;
                 case 0:
-                    dgvCampoMinato.Rows[riga].Cells[colonna].Style.BackColor = Color.Green;
+                    // Per capire quando incrementare mosse posso:
+                    // 1) fare un test su BackColor == Color.Empty
+                    // OPPURE
+                    // 2) Utilizzare il campo Tag dell'oggetto
+
+                    if (dgvCampoMinato.Rows[riga].Cells[colonna].Tag == null)
+                    {
+                        mosse++;
+                        dgvCampoMinato.Rows[riga].Cells[colonna].Tag = "1";
+                        dgvCampoMinato.Rows[riga].Cells[colonna].Style.BackColor = Color.Green;
+                    }
                     break;
                 default:
                     dgvCampoMinato.Rows[riga].Cells[colonna].Value =
                         campo[riga + 1, colonna + 1];
-                    dgvCampoMinato.Rows[riga].Cells[colonna].Style.BackColor = Color.Yellow;
+                    if (dgvCampoMinato.Rows[riga].Cells[colonna].Tag == null)
+                    {
+                        mosse++;
+                        dgvCampoMinato.Rows[riga].Cells[colonna].Tag = "1";
+                        dgvCampoMinato.Rows[riga].Cells[colonna].Style.BackColor = Color.Yellow;
+                    }
                     break;
             }
+            dgvCampoMinato.ClearSelection();
+            if (mosse == DIM_CAMPO * DIM_CAMPO - NUM_BOMBE)
+            {
+                MessageBox.Show("Hai vinto!");
+                MostraDgv();
+                dgvCampoMinato.Enabled = false;
+            }
+        }
     }
 }
