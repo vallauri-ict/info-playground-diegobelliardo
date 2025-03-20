@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace _45_Es_Cantanti
 {
@@ -48,6 +49,7 @@ namespace _45_Es_Cantanti
             public int copieVendute;
         }
         canzone[] canzoni = new canzone[30];
+        canzone[] canzoniCantante = new canzone[30];
 
         public struct cantante
         {
@@ -113,6 +115,77 @@ namespace _45_Es_Cantanti
             dgv.RowHeadersVisible = true;
             dgv.ReadOnly = true;
             dgv.ClearSelection();
+        }
+
+        /// <summary>
+        /// Ricevuto in ingresso il nome del cantante, 
+        /// contare il numero totale di conzoni vendute, 
+        /// visualizzandole in dgvCanzoniRis
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCanzoniVendute_Click(object sender, EventArgs e)
+        {
+            string cantante;
+
+            while ((cantante = Interaction.InputBox("Inserisci il cantante")) == "");
+            string codice = CercaCodiceCantante(cantante);
+            CaricaStrutturaCanzoniCantante(codice);
+            VisualizzaCanzoniDgvCanzoniRis();
+        }
+
+        private void VisualizzaCanzoniDgvCanzoniRis()
+        {
+            int totaleCopie = 0;
+
+            dgvCanzoniRis.Rows.Clear();
+            for (int i = 0; i < canzoniCantante.Length; i++)
+            {
+                if (canzoniCantante[i].titolo != null)
+                {
+                    dgvCanzoniRis.Rows.Add(canzoniCantante[i].titolo, 
+                                           canzoniCantante[i].genere, 
+                                           canzoniCantante[i].codCantante, 
+                                           canzoniCantante[i].copieVendute);
+                    totaleCopie += canzoniCantante[i].copieVendute;
+                }
+            }
+            MessageBox.Show("Totale copie vendute: " + totaleCopie);
+        }
+
+        private void CaricaStrutturaCanzoniCantante(string codice)
+        {
+            if (codice == null)
+            {
+                MessageBox.Show("Cantante non trovato");
+                return;
+            }
+
+            int j = 0;
+
+            for (int i = 0; i < canzoni.Length; i++)
+            {
+                if (canzoni[i].codCantante == codice)
+                {
+                    canzoniCantante[j].titolo = canzoni[i].titolo;
+                    canzoniCantante[j].genere = canzoni[i].genere;
+                    canzoniCantante[j].codCantante = canzoni[i].codCantante;
+                    canzoniCantante[j].copieVendute = canzoni[i].copieVendute;
+                    j++;
+                }
+            }
+        }
+
+        private string CercaCodiceCantante(string cantante)
+        {
+            for (int i = 0; i < cantanti.Length; i++)
+            {
+                if (cantanti[i].nome == cantante)
+                {
+                    return cantanti[i].codice;
+                }
+            }
+            return null;
         }
 
         private void IntestaTabella(DataGridView dgv)

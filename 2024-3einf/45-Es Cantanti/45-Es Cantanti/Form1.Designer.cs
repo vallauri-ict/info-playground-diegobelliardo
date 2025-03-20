@@ -83,6 +83,7 @@
             this.btnCanzoniVendute.Text = "Ricevuto in ingresso il nome del cantante, contare il numero totale di conzoni ve" +
     "ndute, visualizzandole in un DataGridView";
             this.btnCanzoniVendute.UseVisualStyleBackColor = true;
+            this.btnCanzoniVendute.Click += new System.EventHandler(this.btnCanzoniVendute_Click);
             // 
             // btnClassificaCantanti
             // 
@@ -93,7 +94,6 @@
             this.btnClassificaCantanti.Text = "Dopo aver calcolato per ogni cantante il totale venduto delle loro canzoni, visua" +
     "lizzarne la classifica";
             this.btnClassificaCantanti.UseVisualStyleBackColor = true;
-//            this.btnClassificaCantanti.Click += new System.EventHandler(this.button1_Click);
             // 
             // dgvCanzoniRis
             // 
