@@ -43,42 +43,49 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(20, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.Size = new System.Drawing.Size(87, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "CANTANTI";
             // 
             // dgvCantanti
             // 
             this.dgvCantanti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCantanti.Location = new System.Drawing.Point(13, 30);
+            this.dgvCantanti.Location = new System.Drawing.Point(20, 46);
+            this.dgvCantanti.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvCantanti.Name = "dgvCantanti";
-            this.dgvCantanti.Size = new System.Drawing.Size(338, 245);
+            this.dgvCantanti.RowHeadersWidth = 62;
+            this.dgvCantanti.Size = new System.Drawing.Size(507, 377);
             this.dgvCantanti.TabIndex = 1;
             // 
             // dgvCanzoni
             // 
             this.dgvCanzoni.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCanzoni.Location = new System.Drawing.Point(386, 30);
+            this.dgvCanzoni.Location = new System.Drawing.Point(579, 46);
+            this.dgvCanzoni.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvCanzoni.Name = "dgvCanzoni";
-            this.dgvCanzoni.Size = new System.Drawing.Size(338, 245);
+            this.dgvCanzoni.RowHeadersWidth = 62;
+            this.dgvCanzoni.Size = new System.Drawing.Size(507, 377);
             this.dgvCanzoni.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(386, 13);
+            this.label2.Location = new System.Drawing.Point(579, 20);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.Size = new System.Drawing.Size(80, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "CANZONI";
             // 
             // btnCanzoniVendute
             // 
-            this.btnCanzoniVendute.Location = new System.Drawing.Point(13, 303);
+            this.btnCanzoniVendute.Location = new System.Drawing.Point(20, 466);
+            this.btnCanzoniVendute.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCanzoniVendute.Name = "btnCanzoniVendute";
-            this.btnCanzoniVendute.Size = new System.Drawing.Size(338, 59);
+            this.btnCanzoniVendute.Size = new System.Drawing.Size(507, 91);
             this.btnCanzoniVendute.TabIndex = 4;
             this.btnCanzoniVendute.Text = "Ricevuto in ingresso il nome del cantante, contare il numero totale di conzoni ve" +
     "ndute, visualizzandole in un DataGridView";
@@ -87,27 +94,31 @@
             // 
             // btnClassificaCantanti
             // 
-            this.btnClassificaCantanti.Location = new System.Drawing.Point(386, 303);
+            this.btnClassificaCantanti.Location = new System.Drawing.Point(579, 466);
+            this.btnClassificaCantanti.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClassificaCantanti.Name = "btnClassificaCantanti";
-            this.btnClassificaCantanti.Size = new System.Drawing.Size(338, 59);
+            this.btnClassificaCantanti.Size = new System.Drawing.Size(507, 91);
             this.btnClassificaCantanti.TabIndex = 5;
             this.btnClassificaCantanti.Text = "Dopo aver calcolato per ogni cantante il totale venduto delle loro canzoni, visua" +
     "lizzarne la classifica";
             this.btnClassificaCantanti.UseVisualStyleBackColor = true;
+            this.btnClassificaCantanti.Click += new System.EventHandler(this.btnClassificaCantanti_Click);
             // 
             // dgvCanzoniRis
             // 
             this.dgvCanzoniRis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCanzoniRis.Location = new System.Drawing.Point(12, 368);
+            this.dgvCanzoniRis.Location = new System.Drawing.Point(18, 566);
+            this.dgvCanzoniRis.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvCanzoniRis.Name = "dgvCanzoniRis";
-            this.dgvCanzoniRis.Size = new System.Drawing.Size(338, 245);
+            this.dgvCanzoniRis.RowHeadersWidth = 62;
+            this.dgvCanzoniRis.Size = new System.Drawing.Size(507, 377);
             this.dgvCanzoniRis.TabIndex = 6;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 670);
+            this.ClientSize = new System.Drawing.Size(1200, 1031);
             this.Controls.Add(this.dgvCanzoniRis);
             this.Controls.Add(this.btnClassificaCantanti);
             this.Controls.Add(this.btnCanzoniVendute);
@@ -115,6 +126,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvCantanti);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

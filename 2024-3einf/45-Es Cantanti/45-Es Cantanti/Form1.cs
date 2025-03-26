@@ -24,6 +24,7 @@ namespace _45_Es_Cantanti
         };
 
         string[] canz = {
+            "Smells Like Teen Spirit|Grunge|007|7000000",
             "Bohemian Rhapsody|Rock|001|6000000",
             "We Will Rock You|Rock|001|4500000",
             "Can't Help Falling in Love|Pop|002|5000000",
@@ -36,7 +37,6 @@ namespace _45_Es_Cantanti
             "Space Oddity|Rock|005|3500000",
             "With or Without You|Rock|006|5000000",
             "One|Rock|006|3500000",
-            "Smells Like Teen Spirit|Grunge|007|7000000",
             "Come as You Are|Grunge|007|4500000",
             "Lithium|Grunge|007|3000000"
         };
@@ -186,6 +186,107 @@ namespace _45_Es_Cantanti
                 }
             }
             return null;
+        }
+
+        private void btnClassificaCantanti_Click(object sender, EventArgs e)
+        {
+            /* Dopo aver calcolato per ogni cantante il 
+             * totale venduto delle loro canzoni, 
+             * visualizzarne la classifica
+             * */
+
+            OrdinaPerCantante();
+            LetturaRotturaCodice();
+            
+
+        }
+
+        private void LetturaRotturaCodice()
+        {
+            int copieVendute=0,j=0;
+            string[] codCantanti = new string[cantanti.Length];
+            int[] totaliCopie = new int[cantanti.Length];
+
+            for (int i = 0; i < canz.Length-1; i++)
+            {
+                if (canzoniCantante[i].codCantante == canzoniCantante[i+1].codCantante)
+                {
+                    copieVendute += canzoniCantante[i].copieVendute;
+                }
+                else  // Rottura di chiave
+                {
+                    copieVendute += canzoniCantante[i].copieVendute;
+                    codCantanti[j]=canzoniCantante[i].codCantante;
+                    totaliCopie[j]=copieVendute;
+                    j++;
+                    copieVendute = 0;
+                }
+            }
+            copieVendute += canzoniCantante[canz.Length - 1].copieVendute;
+            codCantanti[j] = canzoniCantante[canz.Length - 1].codCantante;
+            totaliCopie[j] = copieVendute;
+            Array.Resize(ref codCantanti,j);
+            Array.Resize(ref totaliCopie, j);
+            OrdinaVettori(codCantanti, totaliCopie);
+            stampa(codCantanti, totaliCopie);
+        }
+
+        private void OrdinaVettori(string[] codCantanti, int[] totaliCopie)
+        {
+            int posMin;
+            int ausT;
+            string aus;
+
+            for (int i = 0; i < codCantanti.Length-1; i++)
+            {
+                posMin = i;
+                for (int j = 0; j < codCantanti.Length; j++)
+                {
+                    if (totaliCopie[posMin] < totaliCopie[j])
+                    {
+                        posMin = j;
+                    }
+                }
+                if (posMin != i)
+                {
+                    aus = codCantanti[i];
+                    codCantanti[i] = codCantanti[posMin]
+                }
+            }
+        }
+
+        private void stampa(string[] codCantanti, int[] totaliCopie)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void OrdinaPerCantante()
+        {
+            for (int i = 0; i < canzoni.Length; i++)
+            {
+                canzoniCantante[i] = canzoni[i];
+            }
+
+            int posMin;
+            canzone aus;
+
+            for (int i = 0; i < canz.Length; i++)
+            {
+                posMin = i;
+                for (int j = i+1; j < canz.Length; j++)
+                {
+                    if (canzoniCantante[posMin].codCantante.CompareTo(canzoniCantante[j].codCantante)>0)
+                    {
+                        posMin = j;
+                    }
+                }
+                if (posMin!=i)
+                {
+                    aus = canzoniCantante[i];
+                    canzoniCantante[i] = canzoniCantante[posMin];
+                    canzoniCantante[posMin] = aus;
+                }
+            }
         }
 
         private void IntestaTabella(DataGridView dgv)
