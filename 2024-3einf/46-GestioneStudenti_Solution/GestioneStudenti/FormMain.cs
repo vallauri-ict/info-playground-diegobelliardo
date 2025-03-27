@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -140,6 +141,80 @@ namespace GestioneStudenti
             {
                 MessageBox.Show("Inserisci tutti i dati!", "ATTENZIONE", 
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnRicStudMat_Click(object sender, EventArgs e)
+        {
+            int matricola = 0;
+            bool trovato = false;
+
+            if (int.TryParse(Interaction.InputBox("Inserisci la matricola:"), out matricola) || matricola != 0)
+            {
+                for (int i = 0; i < nStudenti; i++)
+                {
+                    if (studenti[i].matricola == matricola)
+                    {
+                        trovato = true;
+                        MessageBox.Show(studenti[i].cognome + " " + studenti[i].nome);
+                    }
+                }
+                if (!trovato)
+                    MessageBox.Show("Matricola non trovata!");
+            }
+            else
+            {
+                MessageBox.Show("Inserisci una matricola valida!", "ATTENZIONE",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnRicStudCogN_Click(object sender, EventArgs e)
+        {
+            string cognome = Interaction.InputBox("Inserisci il cognome:");
+            string nome = Interaction.InputBox("Inserisci il nome:");
+
+            bool trovato = false;
+            for (int i = 0; i < nStudenti; i++)
+            {
+                if (studenti[i].cognome == cognome && studenti[i].nome == nome)
+                {
+                    trovato = true;
+                    MessageBox.Show("Trovato con matricola: "+studenti[i].matricola.ToString());
+                    // Posso eventualmente inserire un break per fermare il ciclo
+                }
+            }
+            if (!trovato)
+                MessageBox.Show("Studente non trovato!");
+        }
+
+        private void btnOrdinaStudNominativo_Click(object sender, EventArgs e)
+        {
+            studente temp;
+            int posMin = 0;
+            string nominativo1, nominativo2;
+
+            for (int i = 0; i < nStudenti - 1; i++)
+            {
+                posMin = i;
+                for (int j = i + 1; j < nStudenti; j++)
+                {
+                    nominativo2 = studenti[j].cognome + " " + studenti[j].nome;
+                    nominativo1 = studenti[posMin].cognome + " " + studenti[posMin].nome;
+                    if (nominativo2.CompareTo(nominativo1) < 0)
+                        posMin = j;
+                }
+                if (posMin != i)
+                {
+                    temp = studenti[i];
+                    studenti[i] = studenti[posMin];
+                    studenti[posMin] = temp;
+                }
+            }
+            dgvStudenti.Rows.Clear();
+            for (int i = 0; i < nStudenti; i++)
+            {
+                dgvStudenti.Rows.Add(studenti[i].matricola, studenti[i].cognome, studenti[i].nome, studenti[i].classe);
             }
         }
     }

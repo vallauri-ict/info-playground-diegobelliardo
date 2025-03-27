@@ -48,11 +48,11 @@
             this.rdbScritto = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbMatricole = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnRicStudMat = new System.Windows.Forms.Button();
+            this.btnRicStudCogN = new System.Windows.Forms.Button();
+            this.btnOrdinaStudNominativo = new System.Windows.Forms.Button();
+            this.btnContaStudClasse = new System.Windows.Forms.Button();
+            this.btnContaVotiStudClasse = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudenti)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvValutazioni)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupVoto)).BeginInit();
@@ -270,66 +270,69 @@
             this.cmbMatricole.Size = new System.Drawing.Size(139, 21);
             this.cmbMatricole.TabIndex = 18;
             // 
-            // button1
+            // btnRicStudMat
             // 
-            this.button1.Location = new System.Drawing.Point(9, 296);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(204, 43);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "RICERCA STUDENTE IN BASE ALLA MATRICOLA";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnRicStudMat.Location = new System.Drawing.Point(9, 296);
+            this.btnRicStudMat.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRicStudMat.Name = "btnRicStudMat";
+            this.btnRicStudMat.Size = new System.Drawing.Size(204, 43);
+            this.btnRicStudMat.TabIndex = 19;
+            this.btnRicStudMat.Text = "RICERCA STUDENTE IN BASE ALLA MATRICOLA";
+            this.btnRicStudMat.UseVisualStyleBackColor = true;
+            this.btnRicStudMat.Click += new System.EventHandler(this.btnRicStudMat_Click);
             // 
-            // button2
+            // btnRicStudCogN
             // 
-            this.button2.Location = new System.Drawing.Point(9, 343);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(204, 43);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "RICERCA STUDENTE IN BASE A COGNOME E NOME";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnRicStudCogN.Location = new System.Drawing.Point(9, 343);
+            this.btnRicStudCogN.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRicStudCogN.Name = "btnRicStudCogN";
+            this.btnRicStudCogN.Size = new System.Drawing.Size(204, 43);
+            this.btnRicStudCogN.TabIndex = 20;
+            this.btnRicStudCogN.Text = "RICERCA STUDENTE IN BASE A COGNOME E NOME";
+            this.btnRicStudCogN.UseVisualStyleBackColor = true;
+            this.btnRicStudCogN.Click += new System.EventHandler(this.btnRicStudCogN_Click);
             // 
-            // button3
+            // btnOrdinaStudNominativo
             // 
-            this.button3.Location = new System.Drawing.Point(9, 390);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(204, 43);
-            this.button3.TabIndex = 21;
-            this.button3.Text = "ORDINA STUDENTE IN BASE AL NOMINATIVO";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnOrdinaStudNominativo.Location = new System.Drawing.Point(9, 390);
+            this.btnOrdinaStudNominativo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnOrdinaStudNominativo.Name = "btnOrdinaStudNominativo";
+            this.btnOrdinaStudNominativo.Size = new System.Drawing.Size(204, 43);
+            this.btnOrdinaStudNominativo.TabIndex = 21;
+            this.btnOrdinaStudNominativo.Text = "ORDINA STUDENTE IN BASE AL NOMINATIVO";
+            this.btnOrdinaStudNominativo.UseVisualStyleBackColor = true;
+            this.btnOrdinaStudNominativo.Click += new System.EventHandler(this.btnOrdinaStudNominativo_Click);
             // 
-            // button4
+            // btnContaStudClasse
             // 
-            this.button4.Location = new System.Drawing.Point(10, 437);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(203, 43);
-            this.button4.TabIndex = 22;
-            this.button4.Text = "CONTA NUMERO STUDENTI IN CLASSE";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnContaStudClasse.Location = new System.Drawing.Point(10, 437);
+            this.btnContaStudClasse.Margin = new System.Windows.Forms.Padding(2);
+            this.btnContaStudClasse.Name = "btnContaStudClasse";
+            this.btnContaStudClasse.Size = new System.Drawing.Size(203, 43);
+            this.btnContaStudClasse.TabIndex = 22;
+            this.btnContaStudClasse.Text = "CONTA NUMERO STUDENTI IN CLASSE";
+            this.btnContaStudClasse.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnContaVotiStudClasse
             // 
-            this.button5.Location = new System.Drawing.Point(10, 484);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(203, 43);
-            this.button5.TabIndex = 23;
-            this.button5.Text = "CONTA NUMERO DI VOTI DI STUDENTI CLASSE VIA COMBO";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnContaVotiStudClasse.Location = new System.Drawing.Point(10, 484);
+            this.btnContaVotiStudClasse.Margin = new System.Windows.Forms.Padding(2);
+            this.btnContaVotiStudClasse.Name = "btnContaVotiStudClasse";
+            this.btnContaVotiStudClasse.Size = new System.Drawing.Size(203, 43);
+            this.btnContaVotiStudClasse.TabIndex = 23;
+            this.btnContaVotiStudClasse.Text = "CONTA NUMERO DI VOTI DI STUDENTI CLASSE";
+            this.btnContaVotiStudClasse.UseVisualStyleBackColor = true;
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 529);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnContaVotiStudClasse);
+            this.Controls.Add(this.btnContaStudClasse);
+            this.Controls.Add(this.btnOrdinaStudNominativo);
+            this.Controls.Add(this.btnRicStudCogN);
+            this.Controls.Add(this.btnRicStudMat);
             this.Controls.Add(this.cmbMatricole);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox1);
@@ -385,11 +388,11 @@
         private System.Windows.Forms.RadioButton rdbScritto;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbMatricole;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnRicStudMat;
+        private System.Windows.Forms.Button btnRicStudCogN;
+        private System.Windows.Forms.Button btnOrdinaStudNominativo;
+        private System.Windows.Forms.Button btnContaStudClasse;
+        private System.Windows.Forms.Button btnContaVotiStudClasse;
     }
 }
 
