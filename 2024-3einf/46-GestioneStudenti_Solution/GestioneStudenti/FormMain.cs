@@ -62,13 +62,14 @@ namespace GestioneStudenti
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            this.Size = new Size(1120, 600);
+            this.Size = new Size(1120, 640);
             settaDgv(dgvStudenti, "MATRICOLA COGNOME NOME CLASSE");
             caricaDatiStudenti();
             nStudenti = datiStudenti.Length;
             settaDgv(dgvValutazioni, "MATERIA VOTO TIPO MATRICOLA");
             caricaDatiValutazioni();
             nValutazioni = datiValutazioni.Length;
+            rdbScritto.Checked = true;
         }
 
         private void settaDgv(DataGridView dgv, string intestazioni)
@@ -118,8 +119,9 @@ namespace GestioneStudenti
                 valutazioni[nValutazioni - 1].matricola = Convert.ToInt32(dati[3]);
                 dgvValutazioni.Rows.Add(dati[0], dati[1], dati[2], dati[3]);
                 //Popolo anche cmbMaterie
-                if (!cmbMaterie.Items.Contains(dati[0]))
-                    cmbMaterie.Items.Add(dati[0]);
+                //Meglio farlo fisso da designer
+                //if (!cmbMaterie.Items.Contains(dati[0]))
+                //    cmbMaterie.Items.Add(dati[0]);
             }
 
         }
@@ -216,6 +218,118 @@ namespace GestioneStudenti
             {
                 dgvStudenti.Rows.Add(studenti[i].matricola, studenti[i].cognome, studenti[i].nome, studenti[i].classe);
             }
+        }
+
+        private void btnContaStudClasse_Click(object sender, EventArgs e)
+        {
+            //Svolto a casa
+        }
+        private void btnContaVotiStudClasse_Click(object sender, EventArgs e)
+        {
+            //Svolto a casa
+        }
+
+        private void btnInserisciVoto_Click(object sender, EventArgs e)
+        {
+            string tipo = "";
+            if (cmbMatricole.Text != "" && cmbMaterie.Text != "" )
+            {
+                // Possiamo farlo così o con else if, non cambia nulla
+                if (rdbOrale.Checked) tipo = "O";
+                if (rdbScritto.Checked) tipo = "S";
+                if (rdbLaboratorio.Checked) tipo = "L";
+                InserisciVoto(cmbMaterie.Text, tipo, Convert.ToInt32(nudVoto.Value), Convert.ToInt32(cmbMatricole.Text));
+                VisualizzaVoti(dgvValutazioni, valutazioni);
+            }
+            else
+            {
+                MessageBox.Show("Inserisci tutti i dati!", "ATTENZIONE",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
+
+        private void VisualizzaVoti(DataGridView dgvValutazioni, valutazione[] valutazioni)
+        {
+            dgvValutazioni.Rows.Add(valutazioni[nValutazioni].materia, 
+                                    valutazioni[nValutazioni].voto, 
+                                    valutazioni[nValutazioni].tipo, 
+                                    valutazioni[nValutazioni].matricola);
+        }
+
+        private void InserisciVoto(string materia, string tipo, int voto, int matricola)
+        {
+            Array.Resize(ref valutazioni, nValutazioni + 1);
+            valutazioni[nValutazioni].materia = materia;
+            valutazioni[nValutazioni].tipo = tipo;
+            valutazioni[nValutazioni].voto = voto;
+            valutazioni[nValutazioni].matricola = matricola;
+        }
+
+        private void btnMediaPerMateria_Click(object sender, EventArgs e)
+        {
+            if(cmbMaterie.Text != "")
+            {
+                int somma = 0;
+                int contatore = 0;
+                for (int i = 0; i < nValutazioni; i++)
+                {
+                    if (valutazioni[i].materia == cmbMaterie.Text)
+                    {
+                        somma += valutazioni[i].voto;
+                        contatore++;
+                    }
+                }
+                if (contatore > 0)
+                    MessageBox.Show("La media di " + cmbMaterie.Text + " è " + 
+                                                    (double)somma / contatore);
+                else
+                    MessageBox.Show("Nessun voto per la materia selezionata!");
+            }
+            else
+            {
+                MessageBox.Show("Seleziona una materia!", "ATTENZIONE",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnContaVotiPerTipoPerStudente_Click(object sender, EventArgs e)
+        {
+            string cognome = Interaction.InputBox("Inserisci il cognome:");
+            string nome = Interaction.InputBox("Inserisci il nome:");
+            int matricola = CercaMatricola(studenti, cognome, nome);
+            if (matricola != -1)
+            {
+                OrdinaValutazioniMatricola(valutazioni, matricola);
+                string tipo = "";
+                if (rdbOrale.Checked) tipo = "O";
+                if (rdbScritto.Checked) tipo = "S";
+                if (rdbLaboratorio.Checked) tipo = "L";
+
+                int nVoti = ContaVoti(tipo, matricola);
+
+                MessageBox.Show($"Lo studente {cognome} {nome} ha {nVoti} voti di tipo {tipo}");
+            }
+            else
+            {
+                MessageBox.Show("Studente non trovato!", "ATTENZIONE",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private int ContaVoti(string tipo, int matricola)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void OrdinaValutazioniMatricola(valutazione[] valutazioni, int matricola)
+        {
+            throw new NotImplementedException();
+        }
+
+        private int CercaMatricola(studente[] studenti, string cognome, string nome)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -41,7 +41,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbMaterie = new System.Windows.Forms.ComboBox();
-            this.nupVoto = new System.Windows.Forms.NumericUpDown();
+            this.nudVoto = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rdbLaboratorio = new System.Windows.Forms.RadioButton();
             this.rdbOrale = new System.Windows.Forms.RadioButton();
@@ -53,9 +53,14 @@
             this.btnOrdinaStudNominativo = new System.Windows.Forms.Button();
             this.btnContaStudClasse = new System.Windows.Forms.Button();
             this.btnContaVotiStudClasse = new System.Windows.Forms.Button();
+            this.btnInserisciVoto = new System.Windows.Forms.Button();
+            this.btnMediaPerMateria = new System.Windows.Forms.Button();
+            this.btnContaVotiPerTipoPerStudente = new System.Windows.Forms.Button();
+            this.btnNumVotiPerStudente = new System.Windows.Forms.Button();
+            this.btnCercaStudenteMediaMaggiore = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudenti)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvValutazioni)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nupVoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVoto)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -180,28 +185,38 @@
             // cmbMaterie
             // 
             this.cmbMaterie.FormattingEnabled = true;
+            this.cmbMaterie.Items.AddRange(new object[] {
+            "Italiano",
+            "Matematica",
+            "Storia",
+            "Informatica",
+            "Sistemi",
+            "Inglese",
+            "TPSIT",
+            "Telecominucazioni",
+            "Motoria"});
             this.cmbMaterie.Location = new System.Drawing.Point(578, 176);
             this.cmbMaterie.Name = "cmbMaterie";
             this.cmbMaterie.Size = new System.Drawing.Size(139, 21);
             this.cmbMaterie.TabIndex = 14;
             // 
-            // nupVoto
+            // nudVoto
             // 
-            this.nupVoto.Location = new System.Drawing.Point(578, 203);
-            this.nupVoto.Maximum = new decimal(new int[] {
+            this.nudVoto.Location = new System.Drawing.Point(578, 203);
+            this.nudVoto.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.nupVoto.Minimum = new decimal(new int[] {
+            this.nudVoto.Minimum = new decimal(new int[] {
             3,
             0,
             0,
             0});
-            this.nupVoto.Name = "nupVoto";
-            this.nupVoto.Size = new System.Drawing.Size(139, 20);
-            this.nupVoto.TabIndex = 15;
-            this.nupVoto.Value = new decimal(new int[] {
+            this.nudVoto.Name = "nudVoto";
+            this.nudVoto.Size = new System.Drawing.Size(139, 20);
+            this.nudVoto.TabIndex = 15;
+            this.nudVoto.Value = new decimal(new int[] {
             3,
             0,
             0,
@@ -312,6 +327,7 @@
             this.btnContaStudClasse.TabIndex = 22;
             this.btnContaStudClasse.Text = "CONTA NUMERO STUDENTI IN CLASSE";
             this.btnContaStudClasse.UseVisualStyleBackColor = true;
+            this.btnContaStudClasse.Click += new System.EventHandler(this.btnContaStudClasse_Click);
             // 
             // btnContaVotiStudClasse
             // 
@@ -322,12 +338,71 @@
             this.btnContaVotiStudClasse.TabIndex = 23;
             this.btnContaVotiStudClasse.Text = "CONTA NUMERO DI VOTI DI STUDENTI CLASSE";
             this.btnContaVotiStudClasse.UseVisualStyleBackColor = true;
+            this.btnContaVotiStudClasse.Click += new System.EventHandler(this.btnContaVotiStudClasse_Click);
+            // 
+            // btnInserisciVoto
+            // 
+            this.btnInserisciVoto.Location = new System.Drawing.Point(505, 361);
+            this.btnInserisciVoto.Margin = new System.Windows.Forms.Padding(2);
+            this.btnInserisciVoto.Name = "btnInserisciVoto";
+            this.btnInserisciVoto.Size = new System.Drawing.Size(240, 25);
+            this.btnInserisciVoto.TabIndex = 24;
+            this.btnInserisciVoto.Text = "INSERISCI VOTO";
+            this.btnInserisciVoto.UseVisualStyleBackColor = true;
+            this.btnInserisciVoto.Click += new System.EventHandler(this.btnInserisciVoto_Click);
+            // 
+            // btnMediaPerMateria
+            // 
+            this.btnMediaPerMateria.Location = new System.Drawing.Point(505, 390);
+            this.btnMediaPerMateria.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMediaPerMateria.Name = "btnMediaPerMateria";
+            this.btnMediaPerMateria.Size = new System.Drawing.Size(240, 43);
+            this.btnMediaPerMateria.TabIndex = 25;
+            this.btnMediaPerMateria.Text = "CALCOLA MEDIA VOTI per MATERIA SELEZIONATA";
+            this.btnMediaPerMateria.UseVisualStyleBackColor = true;
+            this.btnMediaPerMateria.Click += new System.EventHandler(this.btnMediaPerMateria_Click);
+            // 
+            // btnContaVotiPerTipoPerStudente
+            // 
+            this.btnContaVotiPerTipoPerStudente.Location = new System.Drawing.Point(505, 437);
+            this.btnContaVotiPerTipoPerStudente.Margin = new System.Windows.Forms.Padding(2);
+            this.btnContaVotiPerTipoPerStudente.Name = "btnContaVotiPerTipoPerStudente";
+            this.btnContaVotiPerTipoPerStudente.Size = new System.Drawing.Size(240, 43);
+            this.btnContaVotiPerTipoPerStudente.TabIndex = 26;
+            this.btnContaVotiPerTipoPerStudente.Text = "CONTA NUMERO VOTI per TIPO SELEZIONATO con NOMINATIVO in INPUT";
+            this.btnContaVotiPerTipoPerStudente.UseVisualStyleBackColor = true;
+            this.btnContaVotiPerTipoPerStudente.Click += new System.EventHandler(this.btnContaVotiPerTipoPerStudente_Click);
+            // 
+            // btnNumVotiPerStudente
+            // 
+            this.btnNumVotiPerStudente.Location = new System.Drawing.Point(505, 484);
+            this.btnNumVotiPerStudente.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNumVotiPerStudente.Name = "btnNumVotiPerStudente";
+            this.btnNumVotiPerStudente.Size = new System.Drawing.Size(240, 43);
+            this.btnNumVotiPerStudente.TabIndex = 27;
+            this.btnNumVotiPerStudente.Text = "CONTARE IL NUMERO DI VOTI PER CIASCUN STUDENTE";
+            this.btnNumVotiPerStudente.UseVisualStyleBackColor = true;
+            // 
+            // btnCercaStudenteMediaMaggiore
+            // 
+            this.btnCercaStudenteMediaMaggiore.Location = new System.Drawing.Point(505, 531);
+            this.btnCercaStudenteMediaMaggiore.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCercaStudenteMediaMaggiore.Name = "btnCercaStudenteMediaMaggiore";
+            this.btnCercaStudenteMediaMaggiore.Size = new System.Drawing.Size(240, 43);
+            this.btnCercaStudenteMediaMaggiore.TabIndex = 28;
+            this.btnCercaStudenteMediaMaggiore.Text = "CERCA STUDENTE MEDIA MAGGIORE";
+            this.btnCercaStudenteMediaMaggiore.UseVisualStyleBackColor = true;
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1018, 529);
+            this.ClientSize = new System.Drawing.Size(1018, 576);
+            this.Controls.Add(this.btnCercaStudenteMediaMaggiore);
+            this.Controls.Add(this.btnNumVotiPerStudente);
+            this.Controls.Add(this.btnContaVotiPerTipoPerStudente);
+            this.Controls.Add(this.btnMediaPerMateria);
+            this.Controls.Add(this.btnInserisciVoto);
             this.Controls.Add(this.btnContaVotiStudClasse);
             this.Controls.Add(this.btnContaStudClasse);
             this.Controls.Add(this.btnOrdinaStudNominativo);
@@ -336,7 +411,7 @@
             this.Controls.Add(this.cmbMatricole);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.nupVoto);
+            this.Controls.Add(this.nudVoto);
             this.Controls.Add(this.cmbMaterie);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
@@ -358,7 +433,7 @@
             this.Load += new System.EventHandler(this.FormMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudenti)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvValutazioni)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nupVoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVoto)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -381,7 +456,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbMaterie;
-        private System.Windows.Forms.NumericUpDown nupVoto;
+        private System.Windows.Forms.NumericUpDown nudVoto;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rdbLaboratorio;
         private System.Windows.Forms.RadioButton rdbOrale;
@@ -393,6 +468,11 @@
         private System.Windows.Forms.Button btnOrdinaStudNominativo;
         private System.Windows.Forms.Button btnContaStudClasse;
         private System.Windows.Forms.Button btnContaVotiStudClasse;
+        private System.Windows.Forms.Button btnInserisciVoto;
+        private System.Windows.Forms.Button btnMediaPerMateria;
+        private System.Windows.Forms.Button btnContaVotiPerTipoPerStudente;
+        private System.Windows.Forms.Button btnNumVotiPerStudente;
+        private System.Windows.Forms.Button btnCercaStudenteMediaMaggiore;
     }
 }
 
