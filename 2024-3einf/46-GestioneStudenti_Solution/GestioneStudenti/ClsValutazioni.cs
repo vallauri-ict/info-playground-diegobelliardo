@@ -98,5 +98,41 @@ namespace GestioneStudenti
             }
             return contatore;
         }
+
+        internal static void OrdinaPerMatricola()
+        {
+            int posMin;
+            Valutazione aus;
+
+            for (int i = 0; i < _nValutazioni; i++)
+            {
+                posMin = i;
+                for (int j = i+1; j < _nValutazioni; j++)
+                {
+                    if (Valutazioni[posMin].matricola > Valutazioni[j].matricola)
+                    {
+                        posMin = j;
+                    }
+                }
+                if (posMin != i)
+                {
+                    aus = Valutazioni[posMin];
+                    Valutazioni[posMin] = Valutazioni[i];
+                    Valutazioni[i] = aus;
+                }
+            }
+        }
+
+        internal static string RotturaMatricolaValutazioni()
+        {
+            int cont = 1;
+            for (int i = 0; i < _nValutazioni; i++)
+            {
+                if (Valutazioni[i].matricola == Valutazioni[i+1].matricola)
+                {
+                    cont++;
+                }
+            }
+        }
     }
 }

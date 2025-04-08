@@ -19,7 +19,10 @@ namespace GestioneStudenti
             settaDgv(dgvStudenti, "MATRICOLA COGNOME NOME CLASSE");
             visualizzaDatiStudentiClassiMatricole();
             settaDgv(dgvValutazioni, "MATERIA VOTO TIPO MATRICOLA");
+
+            ClsValutazioni.CaricaDatiValutazioni();
             visualizzaDatiValutazioni();
+
             rdbScritto.Checked = true;
             cmbMaterie.SelectedIndex = 0;
         }
@@ -52,7 +55,7 @@ namespace GestioneStudenti
 
         private void visualizzaDatiValutazioni()
         {
-            ClsValutazioni.CaricaDatiValutazioni();
+            dgvValutazioni.Rows.Clear();
             for (int i = 0; i < ClsValutazioni.Valutazioni.Length; i++)
             {
                 ClsValutazioni.Valutazione v = ClsValutazioni.Valutazioni[i];
@@ -192,19 +195,11 @@ namespace GestioneStudenti
             }
         }
 
-        private int ContaVoti(string tipo, int matricola)
+        private void btnNumVotiPerStudente_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
-        }
-
-        private void OrdinaValutazioniMatricola(ClsValutazioni.Valutazione[] valutazioni, int matricola)
-        {
-            throw new NotImplementedException();
-        }
-
-        private int CercaMatricola(ClsStudenti.Studente[] studenti, string cognome, string nome)
-        {
-            throw new NotImplementedException();
+            ClsValutazioni.OrdinaPerMatricola();
+            visualizzaDatiValutazioni();
+            string msg = ClsValutazioni.RotturaMatricolaValutazioni();
         }
     }
 }

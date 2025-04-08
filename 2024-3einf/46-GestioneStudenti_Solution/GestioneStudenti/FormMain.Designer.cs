@@ -382,6 +382,7 @@
             this.btnNumVotiPerStudente.TabIndex = 27;
             this.btnNumVotiPerStudente.Text = "CONTARE IL NUMERO DI VOTI PER CIASCUN STUDENTE";
             this.btnNumVotiPerStudente.UseVisualStyleBackColor = true;
+            this.btnNumVotiPerStudente.Click += new System.EventHandler(this.btnNumVotiPerStudente_Click);
             // 
             // btnCercaStudenteMediaMaggiore
             // 
