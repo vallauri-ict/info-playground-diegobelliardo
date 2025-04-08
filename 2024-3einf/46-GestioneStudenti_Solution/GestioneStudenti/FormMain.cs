@@ -200,6 +200,15 @@ namespace GestioneStudenti
             ClsValutazioni.OrdinaPerMatricola();
             visualizzaDatiValutazioni();
             string msg = ClsValutazioni.RotturaMatricolaValutazioni();
+            MessageBox.Show(msg);
+        }
+
+        private void btnCercaStudenteMediaMaggiore_Click(object sender, EventArgs e)
+        {
+            ClsValutazioni.OrdinaPerMatricola();
+            visualizzaDatiValutazioni();
+            string msg = ClsValutazioni.CercaStudMediaMaggiore();
+            MessageBox.Show(msg);
         }
     }
 }

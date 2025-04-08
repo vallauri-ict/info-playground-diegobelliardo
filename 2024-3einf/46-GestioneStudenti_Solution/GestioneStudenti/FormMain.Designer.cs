@@ -393,6 +393,7 @@
             this.btnCercaStudenteMediaMaggiore.TabIndex = 28;
             this.btnCercaStudenteMediaMaggiore.Text = "CERCA STUDENTE MEDIA MAGGIORE";
             this.btnCercaStudenteMediaMaggiore.UseVisualStyleBackColor = true;
+            this.btnCercaStudenteMediaMaggiore.Click += new System.EventHandler(this.btnCercaStudenteMediaMaggiore_Click);
             // 
             // FormMain
             // 

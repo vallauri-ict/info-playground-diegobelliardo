@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,14 +13,17 @@ namespace GestioneStudenti
         static string[] _datiValutazioni =
         {
             "Inglese 7 O 1",
-            "Informatica 5 L 2",
+            "Informatica 8 L 2",
             "Informatica 4 S 3",
-            "Sistemi 9 O 4",
+            "Sistemi 3 O 4",
             "Inglese 5 S 5",
             "Sistemi 3 L 6",
-            "Sistemi 8 O 7",
-            "Italiano 6 S 8",
-            "Sistemi 8 O 8",
+            "Sistemi 7 O 7",
+            "Italiano 9 S 8",
+            "Sistemi 10 O 8",
+            "Italiano 8 S 1",
+            "Sistemi 8 S 2",
+            "Inglese 9 O 2"
         };
 
         public struct Valutazione
@@ -99,7 +103,7 @@ namespace GestioneStudenti
             return contatore;
         }
 
-        internal static void OrdinaPerMatricola()
+        public static void OrdinaPerMatricola()
         {
             int posMin;
             Valutazione aus;
@@ -123,16 +127,69 @@ namespace GestioneStudenti
             }
         }
 
-        internal static string RotturaMatricolaValutazioni()
+        public static string RotturaMatricolaValutazioni()
         {
+            string retVal = "";
             int cont = 1;
-            for (int i = 0; i < _nValutazioni; i++)
+            for (int i = 0; i < _nValutazioni - 1; i++)
             {
                 if (Valutazioni[i].matricola == Valutazioni[i+1].matricola)
-                {
                     cont++;
+                else
+                {
+                    retVal += ConcatenaDatiStudente(Valutazioni[i].matricola, cont) + "\n";
+                    cont = 1;
                 }
             }
+            retVal += ConcatenaDatiStudente(Valutazioni[Valutazioni.Length - 1].matricola, cont);
+            return retVal;
         }
+        private static string ConcatenaDatiStudente(int matricola, int nValutazioni)
+        {
+            int posStudente = ClsStudenti.RicercaStudentePerMatricola(matricola);
+            ClsStudenti.Studente stud = ClsStudenti.Studenti[posStudente];
+            string nominativo = $"{stud.cognome} {stud.nome}";
+            return $"{nominativo}: {nValutazioni}";
+        }
+
+
+        public static string CercaStudMediaMaggiore()
+        {
+            int cont = 1, sommaVotiStudente = Valutazioni[0].voto;
+            double mediaAlta = double.MinValue;
+            int matricolaStudenteMediaAlta = Valutazioni[0].matricola;
+            for (int i = 0; i < _nValutazioni - 1; i++)
+            {
+                if (Valutazioni[i].matricola == Valutazioni[i + 1].matricola)
+                {
+                    cont++;
+                    sommaVotiStudente += Valutazioni[i + 1].voto;
+                }
+                else
+                {
+                    double mediaStudente = (double)sommaVotiStudente / cont;
+                    if (mediaStudente > mediaAlta)
+                    {
+                        matricolaStudenteMediaAlta = Valutazioni[i].matricola;
+                        mediaAlta = mediaStudente;
+                    }
+                    cont = 1;
+                    sommaVotiStudente = Valutazioni[i + 1].voto;
+                }
+            }
+            double mediaUltimoStudente = (double)sommaVotiStudente / cont;
+            if (mediaUltimoStudente > mediaAlta)
+            {
+                matricolaStudenteMediaAlta = Valutazioni[Valutazioni.Length - 1].matricola;
+                mediaAlta = mediaUltimoStudente;
+            }
+
+            int posStudente = ClsStudenti.RicercaStudentePerMatricola(matricolaStudenteMediaAlta);
+            ClsStudenti.Studente stud = ClsStudenti.Studenti[posStudente];
+            string nominativo = $"{stud.cognome} {stud.nome}";
+            
+            return $"{nominativo}: {mediaAlta.ToString("0.00")}";
+        }
+
     }
 }
