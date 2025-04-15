@@ -19,7 +19,22 @@ namespace _47_PrimoEsFile
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            CaricaCombo("input.txt");
+        }
 
+        private void CaricaCombo(string inputFile)
+        {
+            cmbParole.Items.Clear();
+            string[] parole = new string[100];
+
+            parole = ClsFile.LeggiParoleNonRipetute(inputFile);
+
+            int i=0;
+            while (parole[i] != "")
+            {
+                cmbParole.Items.Add(parole[i]);
+                i++;
+            }
         }
     }
 }
