@@ -11,31 +11,30 @@ namespace _01_BollettaTelefonica
         static void Main(string[] args)
         {
             int numeroScatti;
-            double costo = 0;
+            double costo;
 
-            Console.Write("Inserisci il numero di scatti: ");
-            numeroScatti = Convert.ToInt32(Console.ReadLine());
-
-            if (numeroScatti >= 0)
+            do
             {
-                if (numeroScatti <= 30)
-                {
-                    costo = (numeroScatti * 0.2) + 2.5;
-                }
-                else if (numeroScatti > 30 && numeroScatti <= 100)
-                {
-                    costo = 6 + (numeroScatti - 30) * 0.15 + 2.5;
-                }
-                else
-                {
-                    costo = 16.5 + (numeroScatti - 100) * 0.1 + 2.5;
-                }
-                Console.WriteLine("Costo totale: " + costo);
+                Console.Clear();
+                Console.Write("Inserisci il numero di scatti (Maggiore di 0): ");
+                numeroScatti = Convert.ToInt32(Console.ReadLine());
+            } while (numeroScatti <= 0);
+
+            if (numeroScatti <= 30)
+            {
+                costo = (numeroScatti * 0.2) + 2.5;
+            }
+            else if (numeroScatti > 30 && numeroScatti <= 100)
+            {
+                costo = 6 + (numeroScatti - 30) * 0.15 + 2.5;
             }
             else
             {
-                Console.WriteLine("Numero scatti deve essere maggiore o uguale a 0");
+                costo = 16.5 + (numeroScatti - 100) * 0.1 + 2.5;
             }
+            Console.WriteLine("Costo totale: " + costo);
+
+            Console.ReadKey();
         }
     }
 }
