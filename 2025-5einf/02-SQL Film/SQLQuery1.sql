@@ -117,4 +117,62 @@ AND f.Regista='Spielberg'
 AND s.Citta='Pisa'
 GROUP BY f.Titolo
 
+-- 20- Per ogni regista e per ogni attore, 
+-- il numero di film del regista con l'attore
+SELECT f.Regista, a.Nome, Count(*) AS Numero_Film
+FROM Film f, Recita r, Attori a
+WHERE f.CodFilm=r.CodFilm
+AND r.CodAttore=a.CodAttore
+GROUP BY f.Regista, a.Nome
 
+-- 21 - Il regista ed il titolo dei film in cui recitano meno di 6 attori
+SELECT f.Regista, f.Titolo, count(*)
+FROM Film f, Recita r
+WHERE f.CodFilm=r.CodFilm
+GROUP BY r.CodFilm, f.Regista, f.Titolo
+HAVING COUNT(*)<2
+
+-- VARIANTE PER FAR COMPARIRE ANCHE I FILM SENZA ATTORI
+SELECT f.Regista, f.Titolo, count(r.CodAttore)
+FROM Film f LEFT JOIN Recita r ON f.CodFilm=r.CodFilm
+GROUP BY r.CodFilm, f.Regista, f.Titolo
+HAVING COUNT(*)<2
+
+-- OPPURE
+
+SELECT f.Regista, f.Titolo
+FROM Film f
+WHERE 2>(SELECT count(*)
+            FROM Recita r
+            WHERE r.CodFilm=f.CodFilm)
+
+-- 22- Per ogni film prodotto dopo il 2000, il codice, il titolo 
+-- e l'incasso totale di tutte le sue proiezioni
+SELECT f.CodFilm, f.Titolo, SUM(p.Incasso) as Incasso
+FROM Film f, Proiezioni p
+WHERE f.AnnoProduzione>2000
+AND f.CodFilm=p.CodFilm
+GROUP BY f.CodFilm, f.Titolo
+
+-- 23 - Il numero di attori dei film in cui appaiono solo attori 
+-- nati prima del 1970
+SELECT f.Titolo
+FROM Film f, Recita r, Attori a
+WHERE f.CodFilm=r.CodFilm
+AND r.CodAttore=a.CodAttore
+--AND a.AnnoNascita<1970
+GROUP BY f.Titolo
+HAVING MAX(a.AnnoNascita)<1970
+
+SELECT f.Titolo
+FROM Film f, Recita r, Attori a
+WHERE f.CodFilm=r.CodFilm
+AND r.CodAttore=a.CodAttore
+AND a.AnnoNascita<1970
+GROUP BY f.Titolo
+
+SELECT f.Titolo, a.*
+FROM Film f, Recita r, Attori a
+WHERE f.CodFilm=r.CodFilm
+AND r.CodAttore=a.CodAttore
+AND f.CodFilm=3
