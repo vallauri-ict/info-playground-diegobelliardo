@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _14_Es26pag52
+namespace _15_Es27pag._52
 {
     internal class Program
     {
-        static int fattoriale = 1;
 
         /// <summary>
         /// Legge un numero da tastiera e lo restituisce, se valido.
@@ -16,7 +15,7 @@ namespace _14_Es26pag52
         /// <param name="messaggio">Messaggio visualizzato</param>
         /// <param name="soloPositivi">[Opsionale] Se true accetta solo positivi</param>
         /// <returns>Numero inserito da tastiera</returns>
-        static int LeggiNumero(string messaggio,bool soloPositivi=true)
+        static int LeggiNumero(string messaggio, bool soloPositivi = true)
         {
             bool isCorrect = false;
             int numero;
@@ -46,26 +45,23 @@ namespace _14_Es26pag52
 
             return numero;
         }
-        private static void CalcolaFattoriale(int n)
-        {
-            while (n > 1)
-            {
-                fattoriale = fattoriale * n;
-                n--;
-            }
-        }
-
-
         static void Main(string[] args)
         {
-            int n;
+            int nDec,resto,numero;
+            string nBinario = "";
 
-            n = LeggiNumero("Inserisci il numero di cui vuoi il fattoriale: ");
-            CalcolaFattoriale(n);
-            Console.WriteLine($"Il fattoriale di {n} vale {fattoriale}");
+            nDec = LeggiNumero("Inserisci il numero da convertire in decimale: ");
+            numero = nDec;
 
+            while (numero > 0)
+            {
+                resto = numero % 2;
+                nBinario = resto + nBinario;
+                numero = numero / 2;
+            }
+
+            Console.WriteLine($"Il numero {nDec} in binario vale: {nBinario}");
             Console.ReadKey();
         }
-
     }
 }

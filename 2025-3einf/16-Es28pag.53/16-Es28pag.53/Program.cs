@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _14_Es26pag52
+namespace _16_Es28pag._53
 {
     internal class Program
     {
-        static int fattoriale = 1;
 
         /// <summary>
         /// Legge un numero da tastiera e lo restituisce, se valido.
@@ -16,7 +15,7 @@ namespace _14_Es26pag52
         /// <param name="messaggio">Messaggio visualizzato</param>
         /// <param name="soloPositivi">[Opsionale] Se true accetta solo positivi</param>
         /// <returns>Numero inserito da tastiera</returns>
-        static int LeggiNumero(string messaggio,bool soloPositivi=true)
+        static int LeggiNumero(string messaggio, bool soloPositivi = true)
         {
             bool isCorrect = false;
             int numero;
@@ -46,25 +45,35 @@ namespace _14_Es26pag52
 
             return numero;
         }
-        private static void CalcolaFattoriale(int n)
+        private static bool ControllaNBinario(string nBinario)
         {
-            while (n > 1)
+            for (int i = 0; i < nBinario.Length; i++)
             {
-                fattoriale = fattoriale * n;
-                n--;
+                if (nBinario[i] != '0' && nBinario[i] != '1')
+                    return false;
             }
+            
+            return true;
         }
-
 
         static void Main(string[] args)
         {
-            int n;
+            string nBinario = "";
+            bool isCorrect;
 
-            n = LeggiNumero("Inserisci il numero di cui vuoi il fattoriale: ");
-            CalcolaFattoriale(n);
-            Console.WriteLine($"Il fattoriale di {n} vale {fattoriale}");
+            do
+            {
+                Console.Write("Inserisci il numero binario da convertire in decimale: ");
+                nBinario = Console.ReadLine();
+                isCorrect = ControllaNBinario(nBinario);
+                if (!isCorrect)
+                {
+                    Console.WriteLine("Il numero inserito non è valido!!!");
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+            } while(!isCorrect);
 
-            Console.ReadKey();
         }
 
     }
