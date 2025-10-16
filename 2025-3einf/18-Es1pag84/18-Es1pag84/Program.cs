@@ -53,6 +53,20 @@ namespace _18_Es1pag84
                 vettore[i] = rnd.Next(100);
             }
         }
+        private static void CopiaVettore(int[] vettoreSorgente, int[] vettoreDestinazione)
+        {
+            for (int i = 0; i < vettoreSorgente.Length; i++)
+            {
+                vettoreDestinazione[i] = vettoreSorgente[i];
+            }
+        }
+        private static void StampaVettore(int[] vettoreSorgente)
+        {
+            for (int i = 0; i < vettoreSorgente.Length; i++)
+            {
+                Console.WriteLine($"Elemento {i + 1}: {vettoreSorgente[i]}");
+            }
+        }
 
         static void Main(string[] args)
         {
@@ -62,6 +76,13 @@ namespace _18_Es1pag84
             int[] vettoreDestinazione = new int[lunghezzaVet];
 
             CaricaVettore(vettoreSorgente);
+            Console.WriteLine("Vettore Sorgente prima della copia");
+            StampaVettore(vettoreSorgente);
+            CopiaVettore(vettoreSorgente, vettoreDestinazione);
+            Console.WriteLine("Vettore Destinazione dopa la copia");
+            StampaVettore(vettoreDestinazione);
+
+            Console.ReadKey();
         }
 
     }
