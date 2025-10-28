@@ -16,7 +16,8 @@ namespace MockTest
     {
 
         DatabaseMock db = new DatabaseMock();
-        DatabaseMockList dbl = new DatabaseMockList();
+        //DatabaseMockList dbl = new DatabaseMockList();
+        DatabaseMock dbl = new DatabaseMock();
         int idStudente, idAnno, idSezione, idClasse, idMateria, idVoto;
 
         public FormMain()
