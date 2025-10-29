@@ -8,7 +8,6 @@ namespace _27_Es7Pag84
 {
     internal class Program
     {
-        static Random rnd = new Random();
 
         /// <summary>
         /// Legge un numero da tastiera e lo restituisce, se valido.
@@ -23,7 +22,7 @@ namespace _27_Es7Pag84
 
             do
             {
-                Console.WriteLine(messaggio);
+                Console.Write(messaggio);
                 if (int.TryParse(Console.ReadLine(), out numero))
                     isCorrect = true;
                 else
@@ -46,9 +45,10 @@ namespace _27_Es7Pag84
         }
         private static void CaricaVettore(int[] vettore)
         {
+            Random casuale= new Random();
             for (int i = 0; i < vettore.Length; i++)
             {
-                vettore[i] = rnd.Next(100);
+                vettore[i] = casuale.Next(100);
             }
         }
         private static void StampaVettore(int[] vettore)
@@ -58,22 +58,35 @@ namespace _27_Es7Pag84
                 Console.WriteLine($"Elemento {i + 1}: {vettore[i]}");
             }
         }
-
         private static bool CercaNumero(int[] vettore, int numero)
         {
             bool trovato = false;
             int i = 0;
 
-            while (i < vettore.Length && vettore[i]!=numero)
+            while (i < vettore.Length && vettore[i] != numero)
             {
                 i++;
             }
-            if (i<vettore.Length)
+            if (i < vettore.Length)
             {
                 trovato = true;
             }
 
             return trovato;
+        }
+        private static int ContaNumero(int[] vettore, int numero)
+        {
+            int conta = 0;
+
+            for (int i = 0; i < vettore.Length; i++)
+            {
+                if (vettore[i]==numero)
+                {
+                    conta++;
+                }
+            }
+
+            return conta;
         }
 
         static void Main(string[] args)
@@ -81,16 +94,11 @@ namespace _27_Es7Pag84
             int n = LeggiNumero("Dimensione vettore: ");
             int[] vet = new int[n];
 
-            int x = LeggiNumero("Inserisci il numero da cercare: ");
-
             CaricaVettore(vet);
             StampaVettore(vet);
 
-            if (CercaNumero(vet,x))
-            {
-                Console.WriteLine($"Il numero {x} è presente nel vettore");
-            }
-            else Console.WriteLine($"Il numero {x} non è stato trovato");
+            int x = LeggiNumero("Inserisci il numero da cercare: ");
+            Console.WriteLine($"Il numero {x} è presente {ContaNumero(vet,x)} volta/e nel vettore");
 
             Console.ReadKey();
         }
