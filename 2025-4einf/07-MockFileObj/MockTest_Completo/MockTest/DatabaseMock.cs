@@ -16,7 +16,7 @@ namespace MockTest
         public List<Studente> GetStudenti()
         {
             
-            return studenti;
+            return null;
         }
         public void UpdateStudente(int id, Studente studenteAggiornato)
         {
@@ -35,7 +35,7 @@ namespace MockTest
         }
         public List<AnnoScolastico> GetAnniScolastici()
         {
-            
+            return null;
         }
         public void UpdateAnnoScolastico(int id, AnnoScolastico annoAggiornato)
         {
@@ -54,7 +54,7 @@ namespace MockTest
         }
         public List<Sezione> GetSezioni()
         {
-            
+            return null;
         }
         public void UpdateSezione(int id, Sezione sezioneAggiornata)
         {
@@ -73,7 +73,7 @@ namespace MockTest
         }
         public List<Classe> GetClassi()
         {
-            
+            return null;
         }
         public void UpdateClasse(int id, Classe classeAggiornata)
         {
@@ -92,7 +92,7 @@ namespace MockTest
         }
         public List<Materia> GetMaterie()
         {
-            
+            return null;
         }
         public void UpdateMateria(int id, Materia materiaAggiornata)
         {
@@ -111,7 +111,7 @@ namespace MockTest
         }
         public List<Voto> GetVoti()
         {
-            
+            return null;
         }
 
         public void UpdateVoto(int id, Voto votoAggiornato)
@@ -127,17 +127,17 @@ namespace MockTest
         // Operazioni specifiche
         public List<Studente> GetStudentiPerClasse(int classeId)
         {
-            
+            return null;
         }
 
         public List<Voto> GetVotiPerStudente(int studenteId)
         {
-            
+            return null;
         }
 
         public double CalcolaMediaVotiPerClasseEMateria(int classeId, int materiaId)
         {
-            
+            return 0;
         }
     }
 }
