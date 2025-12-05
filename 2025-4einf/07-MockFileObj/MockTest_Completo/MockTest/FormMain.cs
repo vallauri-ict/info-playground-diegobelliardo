@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -14,13 +15,20 @@ namespace MockTest
 {
     public partial class FormMain : Form
     {
-        DatabaseMockList dbl = new DatabaseMockList();
+        //DatabaseMockList dbl = new DatabaseMockList();
         //DatabaseMock dbl = new DatabaseMock();
+
+        private readonly IDatabaseMock dbl;
+
         int idStudente, idAnno, idSezione, idClasse, idMateria, idVoto;
 
         public FormMain()
         {
             InitializeComponent();
+
+            // Creo oggetto per gestire i dati (DB)
+            //dbl = DatabaseFactory.CreateDatabase();
+            dbl = DatabaseFactory.CreateDatabase(DataBaseType.FileBased);
         }
         // STUDENTI
         private void btnReadStudenti_Click(object sender, EventArgs e)
@@ -204,7 +212,7 @@ namespace MockTest
 
             foreach (Classe c in classi)
             {
-                if (c.Id==id)
+                if (c.Id == id)
                 {
                     return true;
                 }
@@ -410,6 +418,13 @@ namespace MockTest
 
         private bool CheckSectionValidation()
         {
+            if (txtIdSezione.Text!="" && txtNomeSezione.Text!="")
+            {
+                if (int.TryParse(txtIdSezione.Text,out int test))
+                {
+                    return true;
+                }
+            }
             return false;
         }
 

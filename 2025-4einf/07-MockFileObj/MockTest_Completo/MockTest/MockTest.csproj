@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="AnnoScolastico.cs" />
     <Compile Include="Classe.cs" />
+    <Compile Include="DatabaseFactory.cs" />
     <Compile Include="DatabaseMock.cs" />
     <Compile Include="DatabaseMockList.cs" />
     <Compile Include="FormMain.cs">
