@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36616.10 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "44-Correzione_verifica02", "44-Correzione_verifica02\44-Correzione_verifica02.csproj", "{D1E8FDA0-D8C2-4CB9-88A2-41863814C1BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1E8FDA0-D8C2-4CB9-88A2-41863814C1BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1E8FDA0-D8C2-4CB9-88A2-41863814C1BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1E8FDA0-D8C2-4CB9-88A2-41863814C1BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1E8FDA0-D8C2-4CB9-88A2-41863814C1BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E3591581-E08C-42E9-8535-D9B911F831F3}
+	EndGlobalSection
+EndGlobal
