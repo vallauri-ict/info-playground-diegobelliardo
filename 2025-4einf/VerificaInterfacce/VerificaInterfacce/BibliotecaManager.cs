@@ -79,5 +79,69 @@ namespace VerificaInterfacce
             }
             return disponibili;
         }
+
+        /// <summary>
+        /// Presta contenuto ad un utente
+        /// </summary>
+        /// <param name="codiceContenuto"></param>
+        /// <param name="nomeUtente"></param>
+        /// <returns></returns>
+        public bool PrestaContenuto(string codiceContenuto, string nomeUtente)
+        {
+            if (_catalogoDictionary.ContainsKey(codiceContenuto))
+            {
+                var contenuto = _catalogoDictionary[codiceContenuto];
+
+                if (contenuto is IPrestabile prestabile)
+                {
+                    // Verifica se non è già in prestito
+                    if (!prestabile.InPrestito)
+                    {
+                        //Controllo per le riviste
+                        if (contenuto is Rivista rivista && !rivista.IsPrestabile())
+                        {
+                            return false; //troppo recente
+                        }
+                        prestabile.Presta(nomeUtente,DateTime.Now);
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        public bool RestituisciContenuto(string codiceContenuto)
+        {
+            // TODO
+            throw new NotImplementedException();
+        }
+
+        public Dictionary<string, int> OttieniStatisticheTipo()
+        {
+            // TODO
+            throw new NotImplementedException();
+        }
+
+        public decimal OttieniValoreTotale()
+        {
+            // TODO
+            throw new NotImplementedException();
+        }
+        public int OttieniNumeroContenuti()
+        {
+            return _catalogo.Count;
+        }
+
+        public List<ContenutoMultimediale> OttieniPrestitiScaduti()
+        {
+            // TODO
+            throw new NotImplementedException();
+        }
+
+        public ContenutoMultimediale CercaContenutoPerCodice()
+        {
+            // TODO
+            throw new NotImplementedException();
+        }
     }
 }

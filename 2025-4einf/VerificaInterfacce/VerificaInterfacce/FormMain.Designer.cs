@@ -1,4 +1,4 @@
-namespace BibliotecaSolution
+namespace VerificaInterfacce
 {
     partial class FormMain
     {

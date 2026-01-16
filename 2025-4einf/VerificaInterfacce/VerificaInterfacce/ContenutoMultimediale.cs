@@ -29,7 +29,7 @@ namespace VerificaInterfacce
             AnnoPubblicazione = annoPubblicazione;
             Categoria = categoria;
             ValoreCommerciale = valoreCommerciale;
-            //CodiceIdentificativo = codiceIdentificativo;
+            CodiceIdentificativo = Guid.NewGuid().ToString().Substring(0,8);
         }
 
         public virtual string OttieniDescrizione()

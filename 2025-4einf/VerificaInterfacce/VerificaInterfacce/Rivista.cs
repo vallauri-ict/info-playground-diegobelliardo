@@ -15,9 +15,9 @@ namespace VerificaInterfacce
         private DateTime _dataEmissione;
 
         // Proprietà Interfaccia
-        public bool InPrestito { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string UtenteInPrestito { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTime? DataPrestito { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool InPrestito { get; set; }
+        public string UtenteInPrestito { get; set ; }
+        public DateTime? DataPrestito { get ; set ; }
 
         public int DurataPrestito { get { return 14; } } // 14 giorni
 
@@ -39,7 +39,12 @@ namespace VerificaInterfacce
 
         public bool IsPrestutoScaduto()
         {
-            throw new NotImplementedException();
+            if(!InPrestito || DataPrestito is null)
+            {
+                return false;
+            }
+
+            return (DateTime.Now - DataPrestito.Value).Days > DurataPrestito;
         }
 
         public override string OttieniTipo()
@@ -64,12 +69,19 @@ namespace VerificaInterfacce
         }
         public void Presta(string nomeUtente, DateTime dataPrestito)
         {
-            throw new NotImplementedException();
+            if (!InPrestito && IsPrestabile()) 
+            {
+                InPrestito=true;
+                UtenteInPrestito = nomeUtente;
+                DataPrestito = dataPrestito;
+            }
         }
 
         public void Restituisci()
         {
-            throw new NotImplementedException();
+            InPrestito = false;
+            UtenteInPrestito = null;
+            DataPrestito = null;
         }
 
     }
