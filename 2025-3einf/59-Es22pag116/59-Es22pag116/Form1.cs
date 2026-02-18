@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _57_Es17Pag116
+namespace _59_Es22pag116
 {
-    public partial class FormCanzoni : Form
+    public partial class Form1 : Form
     {
         string[] cantanti = {
             "Laura Pausini",
@@ -37,19 +37,25 @@ namespace _57_Es17Pag116
             "Albachiara",
             "Sally"
         };
-        public FormCanzoni()
+
+        int[] punteggi = new int[10];
+
+        Random rnd = new Random();
+        public Form1()
         {
             InitializeComponent();
             lstCantanti.Items.AddRange(cantanti);
             lstCanzoni.Items.AddRange(canzoni);
+          
         }
 
-        private void btnCercaCanzoni_Click(object sender, EventArgs e)
+        private void btnVotaGeneraHitParade_Click(object sender, EventArgs e)
         {
-            string cantante=txtNomeCantante.Text;
-
-            // toDo Ricerca CAnzoni e caricamento in ListBox
+            for (int i = 0; i < punteggi.Length; i++)
+            {
+                punteggi[i] = rnd.Next(1, 11);
+            }
+            lstPunteggio.Items.AddRange(punteggi);
         }
-
     }
 }

@@ -75,6 +75,7 @@
             this.lstCanzoni.Name = "lstCanzoni";
             this.lstCanzoni.Size = new System.Drawing.Size(185, 276);
             this.lstCanzoni.TabIndex = 2;
+            //this.lstCanzoni.SelectedIndexChanged += new System.EventHandler(this.lstCanzoni_SelectedIndexChanged);
             // 
             // label3
             // 

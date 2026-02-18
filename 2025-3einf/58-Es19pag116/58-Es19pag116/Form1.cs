@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _57_Es17Pag116
+namespace _58_Es19pag116
 {
-    public partial class FormCanzoni : Form
+    public partial class Form1 : Form
     {
         string[] cantanti = {
             "Laura Pausini",
@@ -37,19 +37,31 @@ namespace _57_Es17Pag116
             "Albachiara",
             "Sally"
         };
-        public FormCanzoni()
+        public Form1()
         {
             InitializeComponent();
-            lstCantanti.Items.AddRange(cantanti);
             lstCanzoni.Items.AddRange(canzoni);
+            lstCantanti.Items.AddRange(cantanti);
         }
 
-        private void btnCercaCanzoni_Click(object sender, EventArgs e)
+        private void btnCerca_Click(object sender, EventArgs e)
         {
-            string cantante=txtNomeCantante.Text;
+            if (txtCantante.Text != null && txtCantante.Text.Length>2)
+            {
+                int count = 0;
 
-            // toDo Ricerca CAnzoni e caricamento in ListBox
+                for (int i = 0; i < cantanti.Length; i++)
+                {
+                    if (txtCantante.Text.CompareTo(cantanti[i]) == 0)
+                    {
+                        count++;
+                    }
+                }
+
+                MessageBox.Show($"Sono presenti {count} canzoni di {txtCantante.Text}");
+            }
+            else MessageBox.Show("Devi inserire almeno 3 caratteri!",
+                    "ATTENZIONE!",MessageBoxButtons.OK,MessageBoxIcon.Warning);
         }
-
     }
 }
