@@ -27,7 +27,8 @@ namespace _69_Es26Pag174
         public Form1()
         {
             InitializeComponent();
-            LeggiFile("Professori.dat");
+            string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            LeggiFile(path+"\\Professori.dat");
             dgvElencoProf.DataSource = list;
         }
 
