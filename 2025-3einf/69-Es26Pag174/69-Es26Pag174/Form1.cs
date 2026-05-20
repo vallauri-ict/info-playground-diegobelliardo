@@ -21,13 +21,13 @@ namespace _69_Es26Pag174
     }
     public partial class Form1 : Form
     {
+        string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
         List<Professori> list = new List<Professori>();
         List<Professori> lstCerca = new List<Professori>();
 
         public Form1()
         {
             InitializeComponent();
-            string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
             LeggiFile(path+"\\Professori.dat");
             dgvElencoProf.DataSource = list;
         }
@@ -68,6 +68,20 @@ namespace _69_Es26Pag174
             }
             dgvCercaProf.DataSource = null;
             dgvCercaProf.DataSource = lstCerca;
+        }
+
+        private void btnContaInsegnanti_Click(object sender, EventArgs e)
+        {
+            int contaIns = 0;
+            string materia=txtMateria.Text.ToUpper();
+            foreach (var item in list)
+            {
+                if (item.Materia.ToUpper().Equals(materia))
+                {
+                    contaIns++;
+                }
+            }
+            MessageBox.Show($"Gli insegnanti di {txtMateria.Text} sono {contaIns}");
         }
     }
 }

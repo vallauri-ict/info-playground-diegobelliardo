@@ -34,6 +34,9 @@
             this.txtScuola = new System.Windows.Forms.TextBox();
             this.dgvCercaProf = new System.Windows.Forms.DataGridView();
             this.btnCerca = new System.Windows.Forms.Button();
+            this.btnContaInsegnanti = new System.Windows.Forms.Button();
+            this.txtMateria = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvElencoProf)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCercaProf)).BeginInit();
             this.SuspendLayout();
@@ -103,11 +106,41 @@
             this.btnCerca.UseVisualStyleBackColor = true;
             this.btnCerca.Click += new System.EventHandler(this.btnCerca_Click);
             // 
+            // btnContaInsegnanti
+            // 
+            this.btnContaInsegnanti.Location = new System.Drawing.Point(1141, 17);
+            this.btnContaInsegnanti.Name = "btnContaInsegnanti";
+            this.btnContaInsegnanti.Size = new System.Drawing.Size(136, 23);
+            this.btnContaInsegnanti.TabIndex = 8;
+            this.btnContaInsegnanti.Text = "Conta Insegnanti";
+            this.btnContaInsegnanti.UseVisualStyleBackColor = true;
+            this.btnContaInsegnanti.Click += new System.EventHandler(this.btnContaInsegnanti_Click);
+            // 
+            // txtMateria
+            // 
+            this.txtMateria.Location = new System.Drawing.Point(953, 17);
+            this.txtMateria.Name = "txtMateria";
+            this.txtMateria.Size = new System.Drawing.Size(182, 22);
+            this.txtMateria.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(782, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 25);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Materia:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(774, 616);
+            this.ClientSize = new System.Drawing.Size(1347, 616);
+            this.Controls.Add(this.btnContaInsegnanti);
+            this.Controls.Add(this.txtMateria);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCerca);
             this.Controls.Add(this.dgvCercaProf);
             this.Controls.Add(this.txtScuola);
@@ -131,6 +164,9 @@
         private System.Windows.Forms.TextBox txtScuola;
         private System.Windows.Forms.DataGridView dgvCercaProf;
         private System.Windows.Forms.Button btnCerca;
+        private System.Windows.Forms.Button btnContaInsegnanti;
+        private System.Windows.Forms.TextBox txtMateria;
+        private System.Windows.Forms.Label label3;
     }
 }
 
