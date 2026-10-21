@@ -56,15 +56,25 @@ namespace OOP_M5E1
             Console.WriteLine("Studenti inseriti!");
             if (lstStudenti.Remove(studente5))
             {
-                Console.WriteLine("Studente rimosso");
+                Console.WriteLine("Studente rimosso\n");
             }
-            else Console.WriteLine("Studente NON rimosso");
+            else Console.WriteLine("Studente NON rimosso\n");
 
             foreach (var st in lstStudenti)
-                {
-                    Console.WriteLine($"{st.Cognome} - {st.Nome}");
-                }
-            
+            {
+                Console.WriteLine($"{st.Cognome} - {st.Nome}");
+            }
+
+            Console.WriteLine("Studente rimosso con RemoveAt\n");
+
+            lstStudenti.RemoveAt(0);
+            foreach (var st in lstStudenti)
+            {
+                Console.WriteLine($"{st.Cognome} - {st.Nome}");
+            }
+
+            Studente stud = lstStudenti.Find(st => st.Nome == "N3");
+            Console.WriteLine($"Studente Trovato:\n{stud.Cognome}\n{stud.Nome}");
         }
     }
 }
