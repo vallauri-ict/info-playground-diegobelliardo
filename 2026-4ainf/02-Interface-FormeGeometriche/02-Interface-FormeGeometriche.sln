@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36616.10 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-Interface-FormeGeometriche", "02-Interface-FormeGeometriche\02-Interface-FormeGeometriche.csproj", "{3A3C10C6-55AC-4964-A522-D372689E0AC1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A3C10C6-55AC-4964-A522-D372689E0AC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A3C10C6-55AC-4964-A522-D372689E0AC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A3C10C6-55AC-4964-A522-D372689E0AC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A3C10C6-55AC-4964-A522-D372689E0AC1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {22C25B8A-8469-4D33-8717-0C9DF8BEA098}
+	EndGlobalSection
+EndGlobal
